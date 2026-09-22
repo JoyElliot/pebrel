@@ -1,4 +1,4 @@
-//! DPI-specific sidebar textures, shared by tabs, panes and settings.
+//! DPI-specific sidebar textures, shared by tabs and pane headers.
 
 use std::collections::HashMap;
 use std::sync::Arc;

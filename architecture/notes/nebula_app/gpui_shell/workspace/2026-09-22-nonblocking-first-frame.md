@@ -35,8 +35,9 @@ remain separate from the packaging integration branch.
 
 - A workspace-owned `LogoLoad` prepares the existing pixel pipeline on the
   background executor. Its UI task holds a weak entity and returns pixels into a
-  ready slot. Render consumes ready pixels and keeps the existing settings sync
-  call; it never waits for decoding.
+  ready slot. Render consumes ready pixels for tabs and pane headers without
+  waiting for decoding. Upstream #241 moved settings Agent icons to static SVGs;
+  the former settings-logo synchronization is no longer needed.
 - Replacing or dropping a request cancels its sole foreground publishing task
   and signals cooperative cancellation between images. Reset and publication
   run on the same foreground thread; a cancelled publisher cannot apply an old

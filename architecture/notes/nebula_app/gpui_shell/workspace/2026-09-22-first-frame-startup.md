@@ -2,6 +2,8 @@
 
 Superseded in its synchronous-preparation choice by
 [nonblocking first frame](2026-09-22-nonblocking-first-frame.md); geometry remains.
+The later upstream #241 integration also replaced the settings-logo synchronization
+described below with static SVGs, as recorded in that successor note.
 
 ## Status
 
