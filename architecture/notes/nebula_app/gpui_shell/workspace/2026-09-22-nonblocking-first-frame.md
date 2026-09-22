@@ -37,13 +37,14 @@ remain separate from the packaging integration branch.
   background executor. Its UI task holds a weak entity and returns pixels into a
   ready slot. Render consumes ready pixels and keeps the existing settings sync
   call; it never waits for decoding.
-- Each request carries target physical pixels and a generation. Replacing or
-  dropping its task signals cooperative cancellation between images. An image
-  already decoding can finish; its stale result cannot update a newer request.
+- Replacing or dropping a request cancels its sole foreground publishing task
+  and signals cooperative cancellation between images. Reset and publication
+  run on the same foreground thread; a cancelled publisher cannot apply an old
+  worker result. An image already decoding can finish without updating the UI.
 - Initial missing brand images use the existing glyph fallback in exactly the
   eventual image width. A DPI transition keeps its prior image while replacement
   is pending, avoiding a flash back to a different glyph. This can briefly resample
-  the old DPI texture; no old-generation result is committed afterward.
+  the old DPI texture; cancelled requests cannot replace it afterward.
 - Only visible, focused Windows windows defer their initial show. The caller
   leaves silent-start, background-created windows and Quick Terminal unchanged.
 - After window creation and deferred material setup, schedule a foreground task.
@@ -58,6 +59,8 @@ remain separate from the packaging integration branch.
   could reset geometry at later activation.
 - Making every window activate would break background and silent-start behavior.
 - A synchronous decode before showing merely relocates the startup stall.
+- Generation checks duplicate the owned foreground task's cancellation guarantee:
+  background workers only produce pixels and never publish into the workspace.
 - New image filters, rescaled source assets or persistent caches would change
   visual output or introduce unrelated cache/version/persistence policy.
 
@@ -75,7 +78,7 @@ Windows' normal opening animation remains enabled.
 ## Validation
 
 - Pixel comparisons at 15px/23px preserve the previous PNG/tint/filter output.
-- Replaced/DPI-returning requests reject old generations; dropping a request
+- Replaced/DPI-returning requests cancel their old publishers; dropping a request
   signals cancellation, and a pre-cancelled worker does not decode images.
 - Option tests cover visible/hidden and focused/background combinations.
 - Geometry and the first-PTY-size/maximize regression remain passing.

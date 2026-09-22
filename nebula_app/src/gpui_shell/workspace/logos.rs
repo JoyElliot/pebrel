@@ -14,7 +14,6 @@ type LogoImages = HashMap<(crate::display::AiLogo, bool), Arc<RenderImage>>;
 #[derive(Default)]
 pub(super) struct LogoLoad {
     target: u32,
-    generation: u64,
     pending: Option<PendingLoad>,
     ready: Option<LogoImages>,
 }
@@ -33,20 +32,12 @@ impl Drop for PendingLoad {
 }
 
 impl LogoLoad {
-    fn reset(&mut self, target: u32) -> u64 {
+    fn reset(&mut self, target: u32) {
+        // Reset and publication run on the foreground thread. Dropping the sole
+        // publishing task prevents an old worker result from reaching this load.
         self.pending = None;
         self.ready = None;
         self.target = target;
-        self.generation = self.generation.wrapping_add(1);
-        self.generation
-    }
-
-    fn complete(&mut self, target: u32, generation: u64, images: LogoImages) -> bool {
-        if self.target != target || self.generation != generation {
-            return false;
-        }
-        self.ready = Some(images);
-        true
     }
 }
 
@@ -64,7 +55,7 @@ pub(super) fn poll_sidebar_logo_images(
         return None;
     }
     if load.target != target {
-        let generation = load.reset(target);
+        load.reset(target);
         let cancelled = Arc::new(AtomicBool::new(false));
         let worker_cancelled = cancelled.clone();
         let worker = cx
@@ -73,9 +64,8 @@ pub(super) fn poll_sidebar_logo_images(
         let task = cx.spawn(async move |workspace, cx| {
             let Some(images) = worker.await else { return };
             let _ = workspace.update(cx, |workspace, cx| {
-                if workspace.sidebar_logo_load.complete(target, generation, images) {
-                    cx.notify();
-                }
+                workspace.sidebar_logo_load.ready = Some(images);
+                cx.notify();
             });
         });
         load.pending = Some(PendingLoad { cancelled, _task: task });
@@ -164,18 +154,36 @@ mod tests {
         }
     }
 
-    #[test]
-    fn superseded_dpi_results_cannot_replace_the_current_request() {
-        let mut load = LogoLoad::default();
-        let old = load.reset(15);
-        let current = load.reset(23);
-        assert!(!load.complete(15, old, HashMap::new()));
-        assert!(load.ready.is_none());
-        assert!(load.complete(23, current, HashMap::new()));
-        let newest = load.reset(15);
-        assert!(load.ready.is_none());
-        assert!(!load.complete(15, old, HashMap::new()), "same DPI does not revive an old job");
-        assert!(load.complete(15, newest, HashMap::new()));
+    #[cfg(feature = "gpui-test-support")]
+    #[gpui::test]
+    fn replacing_load_cancels_already_queued_publication(cx: &mut gpui::TestAppContext) {
+        use std::cell::Cell;
+        use std::rc::Rc;
+
+        for replace in [true, false] {
+            let published = Rc::new(Cell::new(false));
+            let result = published.clone();
+            let (reply, received) = futures::channel::oneshot::channel::<()>();
+            let worker = cx.executor().spawn(async move { received.await.unwrap() });
+            let task = cx.foreground_executor().spawn(async move {
+                worker.await;
+                result.set(true);
+            });
+            let mut load = LogoLoad::default();
+            load.reset(15);
+            load.pending =
+                Some(PendingLoad { cancelled: Arc::new(AtomicBool::new(false)), _task: task });
+            cx.run_until_parked();
+            reply.send(()).unwrap();
+            // Finish the worker, leaving its foreground publisher queued.
+            assert!(cx.dispatcher.tick(true));
+            if replace {
+                load.reset(23);
+                load.reset(15); // Returning to the old DPI must not revive its task.
+            }
+            cx.run_until_parked();
+            assert_eq!(published.get(), !replace, "only the retained request may publish");
+        }
     }
 
     #[test]
