@@ -58,7 +58,6 @@ mod file_tree;
 mod key_actions;
 mod launcher_menu;
 mod logos;
-use logos::sidebar_logo_images;
 mod notifications;
 mod palette;
 mod pane_header;
@@ -783,6 +782,7 @@ pub struct NebulaWorkspace {
     sidebar_logo_images: HashMap<(crate::display::AiLogo, bool), Arc<RenderImage>>,
     /// 品牌图缓存对应的整数物理像素边长；窗口跨 DPI 显示器时据此重建。
     sidebar_logo_target_px: u32,
+    sidebar_logo_load: logos::LogoLoad,
     /// 跟随系统深浅：OS 外观切换的监听（旧壳 ThemeChanged 的对应物）。
     _appearance_sub: Subscription,
     /// spinner 在窗口失焦时冻结为静态状态；重新聚焦后由一次 render 恢复按需帧循环。
@@ -942,8 +942,6 @@ impl NebulaWorkspace {
             cx.subscribe_in(&command_manager_input, window, Self::on_command_manager_input_event);
         let file_tree_search_subscription =
             cx.subscribe_in(&file_tree_search_input, window, Self::on_file_tree_search_event);
-        let sidebar_logo_target_px =
-            (TAB_LABEL_ICON_SIZE * window.scale_factor()).round().max(1.0) as u32;
         let mut this = Self {
             tabs: Vec::new(),
             tab_meta: Vec::new(),
@@ -1022,8 +1020,9 @@ impl NebulaWorkspace {
             remote_files_scroll: gpui::UniformListScrollHandle::new(),
             tab_menu: None,
             selection_context_menu: None,
-            sidebar_logo_images: sidebar_logo_images(sidebar_logo_target_px),
-            sidebar_logo_target_px,
+            sidebar_logo_images: HashMap::new(),
+            sidebar_logo_target_px: 0,
+            sidebar_logo_load: logos::LogoLoad::default(),
             _appearance_sub: appearance_sub,
             spinner_window_active,
             _spinner_activation_sub: spinner_activation_sub,
@@ -3023,10 +3022,10 @@ impl Render for NebulaWorkspace {
         let draw_file_divider = self.side_panel.open;
         let sidebar_logo_target_px =
             (TAB_LABEL_ICON_SIZE * window.scale_factor()).round().max(1.0) as u32;
-        if sidebar_logo_target_px != self.sidebar_logo_target_px {
+        if let Some(images) = logos::poll_sidebar_logo_images(self, sidebar_logo_target_px, cx) {
             // GPUI 窗口可跨不同 DPI 的显示器；原纹理只在整数物理像素尺寸
             // 变化时重建，普通 render 不重复解码 PNG。
-            self.sidebar_logo_images = sidebar_logo_images(sidebar_logo_target_px);
+            self.sidebar_logo_images = images;
             self.sidebar_logo_target_px = sidebar_logo_target_px;
             self.sync_settings_agent_logos(cx);
         }

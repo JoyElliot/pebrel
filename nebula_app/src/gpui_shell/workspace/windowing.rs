@@ -516,6 +516,7 @@ fn open_workspace_window(
         options.show = false;
         options.focus = false;
     }
+    let deferred_show = crate::platform::startup::first_frame::defer_show(&mut options);
     let workspace_slot = Rc::new(RefCell::new(None));
     let hwnd_slot = Rc::new(RefCell::new(0isize));
     let workspace_out = workspace_slot.clone();
@@ -566,6 +567,9 @@ fn open_workspace_window(
         role,
     });
     crate::gpui_shell::wallpaper::refresh(cx);
+    if deferred_show {
+        crate::platform::startup::first_frame::present_then_show(handle, cx);
+    }
     Ok((runtime_window_id, workspace))
 }
 

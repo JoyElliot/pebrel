@@ -2,9 +2,86 @@
 
 use std::collections::HashMap;
 use std::sync::Arc;
+use std::sync::atomic::{AtomicBool, Ordering};
 
-use gpui::RenderImage;
+use gpui::{Context, RenderImage, Task};
 use image::Frame;
+
+use super::NebulaWorkspace;
+
+type LogoImages = HashMap<(crate::display::AiLogo, bool), Arc<RenderImage>>;
+
+#[derive(Default)]
+pub(super) struct LogoLoad {
+    target: u32,
+    generation: u64,
+    pending: Option<PendingLoad>,
+    ready: Option<LogoImages>,
+}
+
+struct PendingLoad {
+    cancelled: Arc<AtomicBool>,
+    _task: Task<()>,
+}
+
+impl Drop for PendingLoad {
+    fn drop(&mut self) {
+        // A synchronous decode already running on a worker cannot be preempted;
+        // stop between images, and drop the foreground task that would publish it.
+        self.cancelled.store(true, Ordering::Relaxed);
+    }
+}
+
+impl LogoLoad {
+    fn reset(&mut self, target: u32) -> u64 {
+        self.pending = None;
+        self.ready = None;
+        self.target = target;
+        self.generation = self.generation.wrapping_add(1);
+        self.generation
+    }
+
+    fn complete(&mut self, target: u32, generation: u64, images: LogoImages) -> bool {
+        if self.target != target || self.generation != generation {
+            return false;
+        }
+        self.ready = Some(images);
+        true
+    }
+}
+
+/// Render consumes already prepared pixels; it never decodes or waits for a worker.
+pub(super) fn poll_sidebar_logo_images(
+    workspace: &mut NebulaWorkspace,
+    target: u32,
+    cx: &mut Context<NebulaWorkspace>,
+) -> Option<LogoImages> {
+    let load = &mut workspace.sidebar_logo_load;
+    if target == workspace.sidebar_logo_target_px {
+        if load.target != target {
+            load.reset(target);
+        }
+        return None;
+    }
+    if load.target != target {
+        let generation = load.reset(target);
+        let cancelled = Arc::new(AtomicBool::new(false));
+        let worker_cancelled = cancelled.clone();
+        let worker = cx
+            .background_executor()
+            .spawn(async move { sidebar_logo_images(target, &worker_cancelled) });
+        let task = cx.spawn(async move |workspace, cx| {
+            let Some(images) = worker.await else { return };
+            let _ = workspace.update(cx, |workspace, cx| {
+                if workspace.sidebar_logo_load.complete(target, generation, images) {
+                    cx.notify();
+                }
+            });
+        });
+        load.pending = Some(PendingLoad { cancelled, _task: task });
+    }
+    load.ready.take()
+}
 
 fn decode_sidebar_logo(
     logo: crate::display::AiLogo,
@@ -30,13 +107,14 @@ fn decode_sidebar_logo(
     Some(Arc::new(RenderImage::new([Frame::new(rgba)])))
 }
 
-pub(super) fn sidebar_logo_images(
-    target_size: u32,
-) -> HashMap<(crate::display::AiLogo, bool), Arc<RenderImage>> {
+fn sidebar_logo_images(target_size: u32, cancelled: &AtomicBool) -> Option<LogoImages> {
     use crate::display::AiLogo;
 
     let mut images = HashMap::new();
     for logo in AiLogo::ALL {
+        if cancelled.load(Ordering::Relaxed) {
+            return None;
+        }
         if logo.shares_theme_texture() {
             if let Some(image) = decode_sidebar_logo(logo, false, target_size) {
                 images.insert((logo, false), image.clone());
@@ -45,12 +123,15 @@ pub(super) fn sidebar_logo_images(
             continue;
         }
         for dark in [false, true] {
+            if cancelled.load(Ordering::Relaxed) {
+                return None;
+            }
             if let Some(image) = decode_sidebar_logo(logo, dark, target_size) {
                 images.insert((logo, dark), image);
             }
         }
     }
-    images
+    Some(images)
 }
 
 #[cfg(test)]
@@ -62,7 +143,7 @@ mod tests {
     fn sidebar_logos_share_only_identical_theme_pixels_at_each_dpi() {
         // 100% and 150% DPI keep separate physical textures. There is no global cache.
         for target in [15, 23] {
-            let images = sidebar_logo_images(target);
+            let images = sidebar_logo_images(target, &AtomicBool::new(false)).unwrap();
             assert_eq!(images.len(), AiLogo::ALL.len() * 2);
             let unique = images.values().map(Arc::as_ptr).collect::<std::collections::HashSet<_>>();
             assert_eq!(unique.len(), 15, "five color assets must not be prepared twice");
@@ -81,5 +162,28 @@ mod tests {
                 }
             }
         }
+    }
+
+    #[test]
+    fn superseded_dpi_results_cannot_replace_the_current_request() {
+        let mut load = LogoLoad::default();
+        let old = load.reset(15);
+        let current = load.reset(23);
+        assert!(!load.complete(15, old, HashMap::new()));
+        assert!(load.ready.is_none());
+        assert!(load.complete(23, current, HashMap::new()));
+        let newest = load.reset(15);
+        assert!(load.ready.is_none());
+        assert!(!load.complete(15, old, HashMap::new()), "same DPI does not revive an old job");
+        assert!(load.complete(15, newest, HashMap::new()));
+    }
+
+    #[test]
+    fn releasing_or_replacing_a_load_cancels_further_image_work() {
+        let cancelled = Arc::new(AtomicBool::new(false));
+        let pending = PendingLoad { cancelled: cancelled.clone(), _task: Task::ready(()) };
+        drop(pending);
+        assert!(cancelled.load(Ordering::Relaxed));
+        assert!(sidebar_logo_images(23, &cancelled).is_none());
     }
 }

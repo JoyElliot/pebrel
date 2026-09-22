@@ -1,5 +1,8 @@
 # First-frame geometry and repeated logo preparation
 
+Superseded in its synchronous-preparation choice by
+[nonblocking first frame](2026-09-22-nonblocking-first-frame.md); geometry remains.
+
 ## Status
 
 Proposed; Windows native startup measurements and focused regressions verified.
