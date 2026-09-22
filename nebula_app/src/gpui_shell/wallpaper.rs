@@ -26,8 +26,6 @@ use gpui::{
 use image::{Frame, RgbaImage};
 
 mod image_loader;
-#[cfg(all(test, windows))]
-mod native_tests;
 #[cfg(all(test, feature = "gpui-test-support"))]
 mod tests;
 use nebula_settings::BlurModeName;
@@ -406,7 +404,6 @@ fn apply_window_effects(cx: &mut App) {
             already_applied.intersection(&window_ids).copied().collect::<HashSet<_>>();
         for handle in pending {
             if let Err(err) = handle.update(cx, |_, window, _| {
-                #[cfg(windows)]
                 crate::platform::acrylic::remove(window.window_handle().window_id());
                 window.set_background_appearance(appearance);
                 #[cfg(windows)]
@@ -838,4 +835,21 @@ fn image_corners(bounds: Bounds<Pixels>, image: Bounds<Pixels>, radius: Pixels) 
         bottom_left: if left && bottom { radius } else { px(0.0) },
         bottom_right: if right && bottom { radius } else { px(0.0) },
     }
+}
+
+/// Initialize only the visual state needed by native material acceptance tests.
+#[cfg(test)]
+pub(crate) fn test_install_visual_effects(cx: &mut App, opacity: f32, blur: BlurModeName) {
+    cx.set_global(VisualEffects {
+        opacity,
+        blur,
+        wallpaper: None,
+        generation: Arc::new(AtomicU64::new(0)),
+        loading: false,
+    });
+}
+
+#[cfg(test)]
+pub(crate) fn test_apply_window_effects(cx: &mut App) {
+    apply_window_effects(cx);
 }

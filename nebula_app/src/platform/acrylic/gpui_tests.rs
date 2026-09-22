@@ -1,8 +1,12 @@
 //! Opt-in real GPUI/WinRT lifecycle acceptance; no terminal, settings or user data.
 
-use super::*;
+use crate::gpui_shell::wallpaper::{
+    VisualEffects, test_apply_window_effects as apply_window_effects, test_install_visual_effects,
+};
 use crate::platform::acrylic;
-use gpui::{AppContext, AsyncApp, Context, Render, WindowHandle, WindowOptions};
+use gpui::{App, AppContext, AsyncApp, Context, Render, WindowHandle, WindowOptions};
+use gpui::{IntoElement, Styled, Window, WindowBackgroundAppearance, div};
+use nebula_settings::BlurModeName;
 use std::cell::{Cell, RefCell};
 use std::rc::Rc;
 use std::time::Duration;
@@ -87,13 +91,7 @@ fn native_acrylic_gpui_material_switches_and_window_lifecycle() {
     let guard = acrylic::RunGuard::default();
     gpui_platform::application().run(move |cx| {
         acrylic::init(cx);
-        cx.set_global(VisualEffects {
-            opacity: 0.4,
-            blur: BlurModeName::Acrylic,
-            wallpaper: None,
-            generation: Arc::new(AtomicU64::new(0)),
-            loading: false,
-        });
+        test_install_visual_effects(cx, 0.4, BlurModeName::Acrylic);
         let first = open(cx);
         apply_window_effects(cx);
         cx.spawn(async move |cx| {
