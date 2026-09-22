@@ -13,6 +13,8 @@ mod gpui_tests;
 mod runtime;
 #[cfg(all(test, windows))]
 mod tests;
+#[cfg(windows)]
+mod transitions;
 
 #[cfg(all(test, windows))]
 pub(crate) use controller::test_snapshot;

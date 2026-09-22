@@ -21,6 +21,7 @@ use windows_sys::Win32::UI::WindowsAndMessaging::{
 
 use super::bindings::{Acrylic, Configuration};
 use super::runtime::Runtime;
+use super::transitions::Transitions;
 
 struct Apartment;
 impl Drop for Apartment {
@@ -74,7 +75,8 @@ impl Context {
         let interop: ICompositorDesktopInterop = compositor.cast()?;
         // GPUI owns the topmost target; the material occupies the lower target.
         let target = unsafe { interop.CreateDesktopWindowTarget(HWND(hwnd as _), false)? };
-        let mut backdrop = Backdrop { controller: None, config: None, target, _host: host };
+        let mut backdrop =
+            Backdrop { transitions: None, controller: None, config: None, target, _host: host };
         let root = compositor.CreateContainerVisual()?;
         let mut relative_size = root.RelativeSizeAdjustment()?;
         relative_size.X = 1.0;
@@ -85,6 +87,7 @@ impl Context {
         let controller = backdrop.controller.as_ref().unwrap();
         controller.attach(hwnd, &backdrop.target.cast()?)?;
         backdrop.config = Some(controller.configure()?);
+        backdrop.transitions = Some(Transitions::new(hwnd, backdrop.target.cast()?)?);
         Ok(backdrop)
     }
 
@@ -141,6 +144,7 @@ impl Context {
 }
 
 pub(super) struct Backdrop {
+    transitions: Option<Transitions>,
     controller: Option<Acrylic>,
     config: Option<Configuration>,
     target: DesktopWindowTarget,
@@ -159,6 +163,8 @@ impl Backdrop {
 
 impl Drop for Backdrop {
     fn drop(&mut self) {
+        // The HWND callback must stop using its target before the SDK closes it.
+        self.transitions.take();
         if let Some(controller) = self.controller.take() {
             controller.close();
         }
