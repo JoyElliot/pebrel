@@ -7,7 +7,6 @@ mod answer_reader;
 pub mod colors;
 mod completion_viewport;
 pub(super) mod confirmation;
-mod cursor_motion;
 pub mod element;
 mod event_mailbox;
 mod inline_image;

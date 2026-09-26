@@ -1,5 +1,4 @@
 use super::*;
-use crate::i18n::Message;
 
 /// 折叠箭头的固定布局槽。图标是 SVG，不应借任一字体的 advance 决定留白。
 const TABS_DISCLOSURE_SLOT_W: f32 = 24.0;
@@ -232,7 +231,6 @@ impl NebulaWorkspace {
                     is_settings,
                     activity,
                     logo_image,
-                    logo_pending,
                     program_glyph,
                     shell_tag,
                     color: tab_color,
@@ -446,7 +444,7 @@ impl NebulaWorkspace {
                 .when_some(program_glyph, |row, glyph| {
                     row.child(
                         div()
-                            .w(px(if logo_pending { TAB_LABEL_ICON_SIZE } else { TAB_LABEL_ICON_W }))
+                            .w(px(TAB_LABEL_ICON_W))
                             .flex_shrink_0()
                             .font_family(symbol_family.clone())
                             .text_size(px(label_px))
@@ -867,7 +865,6 @@ impl NebulaWorkspace {
         let settings_active_bg = cx.theme().sidebar_accent;
         let settings_active_fg = cx.theme().sidebar_accent_foreground;
         let sidebar_visible = !self.sidebar_collapsed && !self.reader_focus_active(cx);
-        let language = crate::gpui_shell::config::ui_language(cx);
         h_flex()
             .size_full()
             .items_center()
@@ -890,7 +887,7 @@ impl NebulaWorkspace {
                             // Ghost 的全局 selected 使用 hover_strong，静态底比
                             // 旧壳亮一档；仅此按钮覆写回旧壳 surface。
                             .when(sidebar_visible, |button| button.bg(secondary))
-                            .tooltip(language.text(Message::ChromeToggleSidebar))
+                            .tooltip("折叠/展开侧边栏 (Ctrl+Shift+B)")
                             .on_click(cx.listener(|this, _, _, cx| {
                                 if this.reader_focus_active(cx) {
                                     this.clear_reader_focus(cx);
@@ -909,7 +906,7 @@ impl NebulaWorkspace {
                             .when(settings_active, |button| {
                                 button.bg(settings_active_bg).text_color(settings_active_fg)
                             })
-                            .tooltip(language.text(Message::ChromeSettingsShortcut))
+                            .tooltip("设置 (Ctrl+,)")
                             .on_click(cx.listener(|this, _, window, cx| {
                                 this.toggle_settings(window, cx);
                             })),
@@ -927,7 +924,7 @@ impl NebulaWorkspace {
                             )
                             .ghost()
                             .selected(self.command_manager_open)
-                            .tooltip(language.text(Message::ChromeCommandList))
+                            .tooltip("命令列表")
                             .on_click(cx.listener(|this, _, window, cx| {
                                 this.toggle_command_manager(window, cx);
                             })),
@@ -967,7 +964,7 @@ impl NebulaWorkspace {
         let chrome_family = theme.mono_font_family.clone();
         let symbol_family: SharedString = crate::font_install::REQUIRED_FONT_FAMILY.into();
         let label_px = settings.map(|settings| settings.ui_font_size_px).unwrap_or(15.0);
-        let TabPresentation { title, logo_image, logo_pending, program_glyph, pane_count, .. } =
+        let TabPresentation { title, logo_image, program_glyph, pane_count, .. } =
             self.tab_presentation(self.active, cx, dark);
         slot.child(
             h_flex()
@@ -989,7 +986,6 @@ impl NebulaWorkspace {
                 .when_some(program_glyph, |row, glyph| {
                     row.child(
                         div()
-                            .when(logo_pending, |slot| slot.w(px(TAB_LABEL_ICON_SIZE)))
                             .flex_shrink_0()
                             .font_family(symbol_family)
                             .text_size(px(label_px))

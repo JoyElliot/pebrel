@@ -17,7 +17,6 @@ use gpui::{
 use gpui_component::menu::PopupMenuItem;
 
 use crate::gpui_shell::prelude::*;
-use crate::i18n::Message;
 
 use super::NebulaWorkspace;
 
@@ -455,7 +454,7 @@ impl NebulaWorkspace {
                             .ghost()
                             .xsmall()
                             .disabled(root_dir.is_none())
-                            .tooltip(language.text(Message::FilesOpenTerminalHere))
+                            .tooltip("在此新建终端")
                             .on_click(cx.listener(|this, _, window, cx| {
                                 // WSL 树根要开的是**来宾**终端：宿主那份拼写只是
                                 // 展开用的键，在来宾的 shell 里不存在。
@@ -482,7 +481,7 @@ impl NebulaWorkspace {
                             .ghost()
                             .xsmall()
                             .disabled(root_dir.is_none())
-                            .tooltip(language.text(Message::FilesTreeOpenInExplorer))
+                            .tooltip("在资源管理器中打开")
                             .on_click(cx.listener(|this, _, _, _cx| {
                                 let wsl = this
                                     .side_panel
@@ -511,7 +510,7 @@ impl NebulaWorkspace {
                             .icon(IconName::Redo2)
                             .ghost()
                             .xsmall()
-                            .tooltip(language.text(Message::FilesTreeFollowRefresh))
+                            .tooltip("跟随当前终端并刷新 (Alt+R)")
                             .on_click(cx.listener(|this, _, _, cx| {
                                 this.side_panel.request_refresh();
                                 // 刷新同时恢复“跟随当前 pane”；否则点过 `..` 后
@@ -613,11 +612,12 @@ impl NebulaWorkspace {
     /// 目录仍然是空的；"读不到"和"确实是空的"必须分开说，否则用户没法判断该
     /// 重试还是该换目录。
     fn file_tree_empty_state(&self, cx: &gpui::App) -> Option<crate::ux::EmptyState> {
-        let language = crate::gpui_shell::config::ui_language(cx);
         if self.side_panel.file_rows().iter().any(|row| !row.is_parent) {
             return None;
         }
         if !self.side_panel.search.trim().is_empty() {
+            use crate::i18n::Message;
+            let language = crate::gpui_shell::config::ui_language(cx);
             return Some(if let Some(error) = self.side_panel.file_search_error() {
                 crate::ux::EmptyState::new(
                     language.text(Message::FilesSearchFailed),
@@ -647,28 +647,28 @@ impl NebulaWorkspace {
 
         Some(if self.side_panel.snapshot_pending() {
             crate::ux::EmptyState::new(
-                language.text(Message::FilesEmptyReadingTitle),
-                language.text(Message::FilesEmptyReadingBody),
-                language.text(Message::FilesEmptyReadingHint),
+                "正在读取目录",
+                "还在枚举当前工作目录的内容。",
+                "稍等一下，或点右上角重新跟随。",
             )
         } else if self.side_panel.enumeration_failed() {
             // 读不到 ≠ 目录是空的。WSL 冷启动可能耗尽预算，那时必须给可重试的提示。
             crate::ux::EmptyState::new(
-                language.text(Message::FilesEmptyReadFailedTitle),
-                language.text(Message::FilesEmptyReadFailedBody),
-                language.text(Message::FilesEmptyReadFailedHint),
+                "读取目录失败",
+                "枚举这个目录时被系统拒绝，或超出了单次预算。",
+                "点右上角重新跟随重试，或换一个目录。",
             )
         } else if self.side_panel.root().is_none() {
             crate::ux::EmptyState::new(
-                language.text(Message::FilesEmptyNoDirectoryTitle),
-                language.text(Message::FilesEmptyNoDirectoryBody),
-                language.text(Message::FilesEmptyNoDirectoryHint),
+                "没有可浏览的目录",
+                "当前终端尚未报告工作目录。",
+                "在终端中进入一个目录后点击右上角跟随。",
             )
         } else {
             crate::ux::EmptyState::new(
-                language.text(Message::FilesEmptyDirectoryEmptyTitle),
-                language.text(Message::FilesEmptyDirectoryEmptyBody),
-                language.text(Message::FilesEmptyDirectoryEmptyHint),
+                "此目录为空",
+                "当前工作目录中没有可显示的文件。",
+                "在终端创建文件，或选择其他目录。",
             )
         })
     }
@@ -784,17 +784,12 @@ impl NebulaWorkspace {
             .file_name()
             .map(|name| name.to_string_lossy().into_owned())
             .unwrap_or_else(|| path.display().to_string());
-        let language = crate::gpui_shell::config::ui_language(cx);
-        let title: SharedString = language
-            .format(
-                Message::FilesDeleteTitle,
-                &[("name", &crate::display::truncate_tab_label(&name, 28))],
-            )
-            .into();
+        let title: SharedString =
+            format!("删除 {}？", crate::display::truncate_tab_label(&name, 28)).into();
         let body: SharedString = if is_dir {
-            language.text(Message::FilesDeleteFolderBody).into()
+            "文件夹及其全部内容会移入回收站。".into()
         } else {
-            language.text(Message::FilesDeleteFileBody).into()
+            "文件会移入回收站。".into()
         };
         let workspace = cx.entity().downgrade();
         window.open_dialog(cx, move |dialog, window, _cx| {
@@ -805,8 +800,8 @@ impl NebulaWorkspace {
                 window,
                 title.clone(),
                 body.clone(),
-                language.text(Message::CommonDelete),
-                language.text(Message::CommonCancel),
+                "删除",
+                "取消",
                 ButtonVariant::Danger,
             )
             .on_ok(move |_, _, cx| {
@@ -875,9 +870,8 @@ fn file_tree_popup_menu(
 ) -> PopupMenu {
     if let Some(guest_path) = guest_path {
         let copy_guest = guest_path.clone();
-        let copy = PopupMenuItem::new(language.text(Message::FilesCopyLinuxPath))
-            .icon(IconName::Copy)
-            .on_click(move |_, _, cx| {
+        let copy =
+            PopupMenuItem::new("复制 Linux 路径").icon(IconName::Copy).on_click(move |_, _, cx| {
                 cx.write_to_clipboard(ClipboardItem::new_string(copy_guest.clone()));
             });
         let Some(distro) = wsl_distro else { return menu.item(copy) };
@@ -885,9 +879,8 @@ fn file_tree_popup_menu(
             let open_here = workspace.clone();
             let open_distro = distro.clone();
             let open_guest = guest_path.clone();
-            PopupMenuItem::new(language.text(Message::FilesOpenTerminalHere))
-                .icon(IconName::SquareTerminal)
-                .on_click(move |_, window, cx| {
+            PopupMenuItem::new("在此处打开终端").icon(IconName::SquareTerminal).on_click(
+                move |_, window, cx| {
                     if let Some(workspace) = open_here.upgrade() {
                         workspace.update(cx, |this, cx| {
                             this.add_wsl_terminal_at(
@@ -898,56 +891,51 @@ fn file_tree_popup_menu(
                             );
                         });
                     }
-                })
+                },
+            )
         } else {
             let open = workspace.clone();
             let open_guest = guest_path.clone();
-            PopupMenuItem::new(language.text(Message::CommonOpen)).icon(IconName::File).on_click(
-                move |_, window, cx| {
-                    if let Some(workspace) = open.upgrade() {
-                        workspace.update(cx, |this, cx| {
-                            this.open_wsl_document_path(open_guest.clone(), window, cx);
-                        });
-                    }
-                },
-            )
+            PopupMenuItem::new("打开").icon(IconName::File).on_click(move |_, window, cx| {
+                if let Some(workspace) = open.upgrade() {
+                    workspace.update(cx, |this, cx| {
+                        this.open_wsl_document_path(open_guest.clone(), window, cx);
+                    });
+                }
+            })
         };
         let reveal_path = crate::shell_detect::wsl_unc_path(&distro, &guest_path);
         return menu
             .item(first)
-            .item(
-                PopupMenuItem::new(language.text(Message::FilesRevealInExplorer))
-                    .icon(IconName::FolderOpen)
-                    .on_click(move |_, _, _| {
-                        super::reveal_in_file_manager(&reveal_path);
-                    }),
-            )
+            .item(PopupMenuItem::new("在资源管理器中显示").icon(IconName::FolderOpen).on_click(
+                move |_, _, _| {
+                    super::reveal_in_file_manager(&reveal_path);
+                },
+            ))
             .item(copy);
     }
     let first = if is_dir {
         let open_here = workspace.clone();
         let dir = path.clone();
-        PopupMenuItem::new(language.text(Message::FilesOpenTerminalHere))
-            .icon(IconName::SquareTerminal)
-            .on_click(move |_, window, cx| {
+        PopupMenuItem::new("在此处打开终端").icon(IconName::SquareTerminal).on_click(
+            move |_, window, cx| {
                 if let Some(workspace) = open_here.upgrade() {
                     workspace.update(cx, |this, cx| {
                         this.add_terminal_at(Some(dir.clone()), None, window, cx);
                     });
                 }
-            })
+            },
+        )
     } else {
         let open = workspace.clone();
         let file = path.clone();
-        PopupMenuItem::new(language.text(Message::CommonOpen)).icon(IconName::File).on_click(
-            move |_, window, cx| {
-                if let Some(workspace) = open.upgrade() {
-                    workspace.update(cx, |this, cx| {
-                        this.open_document_path(file.clone(), window, cx);
-                    });
-                }
-            },
-        )
+        PopupMenuItem::new("打开").icon(IconName::File).on_click(move |_, window, cx| {
+            if let Some(workspace) = open.upgrade() {
+                workspace.update(cx, |this, cx| {
+                    this.open_document_path(file.clone(), window, cx);
+                });
+            }
+        })
     };
     let reveal_path = path.clone();
     let copy_path = path.clone();
@@ -975,18 +963,18 @@ fn file_tree_popup_menu(
     });
     let delete = workspace;
     menu.item(first)
-        .item(PopupMenuItem::new(language.text(Message::FilesRevealInExplorer)).icon(IconName::FolderOpen).on_click(
+        .item(PopupMenuItem::new("在资源管理器中显示").icon(IconName::FolderOpen).on_click(
             move |_, _, _| {
                 super::reveal_in_file_manager(&reveal_path);
             },
         ))
-        .item(PopupMenuItem::new(language.text(Message::FilesCopyPath)).icon(IconName::Copy).on_click(move |_, _, cx| {
+        .item(PopupMenuItem::new("复制路径").icon(IconName::Copy).on_click(move |_, _, cx| {
             cx.write_to_clipboard(ClipboardItem::new_string(copy_path.display().to_string()));
         }))
         .separator()
         // 忽略在删除上面：两者都改工作区，但删除不可逆，危险的排最后。
         .when_some(ignore_item, |menu, item| menu.item(item))
-        .item(PopupMenuItem::new(language.text(Message::CommonDelete)).icon(IconName::Delete).on_click(move |_, window, cx| {
+        .item(PopupMenuItem::new("删除").icon(IconName::Delete).on_click(move |_, window, cx| {
             if let Some(workspace) = delete.upgrade() {
                 workspace.update(cx, |this, cx| {
                     this.request_delete_file_tree_path(path.clone(), window, cx);

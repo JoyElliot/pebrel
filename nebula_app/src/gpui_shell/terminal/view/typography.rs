@@ -5,8 +5,7 @@
 //! the startup grid from drifting away from the first prepainted frame.
 
 use gpui::{
-    App, Font, FontFeatures, FontStyle, FontWeight, Hsla, Pixels, SharedString, TextRun, Window,
-    WindowTextSystem, px,
+    App, Font, FontFeatures, FontStyle, FontWeight, Hsla, Pixels, SharedString, TextRun, Window, px,
 };
 use nebula_settings::CellWidthModeName;
 
@@ -88,8 +87,7 @@ pub(super) fn line_height_for_view(
 }
 
 fn measure_cell_metrics(
-    text_system: &WindowTextSystem,
-    scale: f32,
+    window: &Window,
     family: &str,
     font_size: Pixels,
     mode: CellWidthModeName,
@@ -98,7 +96,7 @@ fn measure_cell_metrics(
     line_height_multiplier: Option<f32>,
 ) -> (Pixels, Pixels) {
     let font = mono_font(family, FontWeight::NORMAL, FontStyle::Normal, false);
-    let sample = text_system.shape_line(
+    let sample = window.text_system().shape_line(
         SharedString::new_static("M"),
         font_size,
         &[TextRun {
@@ -112,13 +110,13 @@ fn measure_cell_metrics(
         None,
     );
     (
-        effective_cell_width(sample.width.as_f32(), mode, scale, offset_x),
+        effective_cell_width(sample.width.as_f32(), mode, window.scale_factor(), offset_x),
         effective_line_height_with_theme(
             sample.ascent.as_f32() + sample.descent.as_f32(),
             font_size.as_f32(),
             line_height_multiplier,
             offset_y,
-            scale,
+            window.scale_factor(),
         ),
     )
 }
@@ -137,8 +135,7 @@ pub(super) fn cell_metrics(window: &Window, cx: &App) -> (Pixels, Pixels) {
             None => (REQUIRED_FONT_FAMILY, 15.0, CellWidthModeName::Compact, 0.0, 0.0, None),
         };
     measure_cell_metrics(
-        window.text_system(),
-        window.scale_factor(),
+        window,
         family,
         px(font_size),
         mode,
@@ -151,20 +148,6 @@ pub(super) fn cell_metrics(window: &Window, cx: &App) -> (Pixels, Pixels) {
 /// Startup sizing uses the configured base font, while a persisted terminal
 /// zoom only affects the live grid after the window has been created.
 pub(super) fn startup_cell_metrics(window: &Window, cx: &App) -> (Pixels, Pixels) {
-    measure_startup_cell_metrics(window.text_system(), window.scale_factor(), cx)
-}
-
-/// The same font system and rounding rules can size a window before its HWND exists.
-pub(super) fn startup_cell_metrics_at_scale(scale: f32, cx: &App) -> (Pixels, Pixels) {
-    let text_system = WindowTextSystem::new(cx.text_system().clone());
-    measure_startup_cell_metrics(&text_system, scale, cx)
-}
-
-fn measure_startup_cell_metrics(
-    text_system: &WindowTextSystem,
-    scale: f32,
-    cx: &App,
-) -> (Pixels, Pixels) {
     let (family, font_size, mode, offset_x, offset_y, line_height_multiplier) =
         match cx.try_global::<Settings>() {
             Some(settings) => (
@@ -178,8 +161,7 @@ fn measure_startup_cell_metrics(
             None => (REQUIRED_FONT_FAMILY, 15.0, CellWidthModeName::Compact, 0.0, 0.0, None),
         };
     measure_cell_metrics(
-        text_system,
-        scale,
+        window,
         family,
         px(font_size),
         mode,
