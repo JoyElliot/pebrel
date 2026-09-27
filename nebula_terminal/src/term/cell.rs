@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::grid::{self, GridCell};
 use crate::index::Column;
+use crate::inline_image::ImageCell;
 use crate::vte::ansi::{Color, Hyperlink as VteHyperlink, NamedColor};
 
 bitflags! {
@@ -126,6 +127,8 @@ pub struct CellExtra {
     zerowidth: Vec<char>,
     underline_color: Option<Color>,
     hyperlink: Option<Hyperlink>,
+    #[cfg_attr(feature = "serde", serde(skip))]
+    image: Option<ImageCell>,
 }
 
 /// Content and attributes of a single cell in the terminal grid.
@@ -171,7 +174,9 @@ impl Cell {
     pub fn clear_wide(&mut self) {
         self.flags.remove(Flags::WIDE_CHAR);
         if let Some(extra) = self.extra.as_mut() {
-            Arc::make_mut(extra).zerowidth = Vec::new();
+            let extra = Arc::make_mut(extra);
+            extra.zerowidth = Vec::new();
+            extra.image = None;
         }
         self.c = ' ';
     }
@@ -180,10 +185,9 @@ impl Cell {
     pub fn set_underline_color(&mut self, color: Option<Color>) {
         // If we reset color and we don't have zerowidth we should drop extra storage.
         if color.is_none()
-            && self
-                .extra
-                .as_ref()
-                .is_none_or(|extra| extra.zerowidth.is_empty() && extra.hyperlink.is_none())
+            && self.extra.as_ref().is_none_or(|extra| {
+                extra.zerowidth.is_empty() && extra.hyperlink.is_none() && extra.image.is_none()
+            })
         {
             self.extra = None;
         } else {
@@ -201,10 +205,11 @@ impl Cell {
     /// Set hyperlink.
     pub fn set_hyperlink(&mut self, hyperlink: Option<Hyperlink>) {
         let should_drop = hyperlink.is_none()
-            && self
-                .extra
-                .as_ref()
-                .is_none_or(|extra| extra.zerowidth.is_empty() && extra.underline_color.is_none());
+            && self.extra.as_ref().is_none_or(|extra| {
+                extra.zerowidth.is_empty()
+                    && extra.underline_color.is_none()
+                    && extra.image.is_none()
+            });
 
         if should_drop {
             self.extra = None;
@@ -219,9 +224,24 @@ impl Cell {
     pub fn hyperlink(&self) -> Option<Hyperlink> {
         self.extra.as_ref()?.hyperlink.clone()
     }
+
+    pub fn image(&self) -> Option<&ImageCell> {
+        self.extra.as_ref()?.image.as_ref()
+    }
+
+    pub fn set_image(&mut self, image: ImageCell) {
+        Arc::make_mut(self.extra.get_or_insert(Default::default())).image = Some(image);
+    }
 }
 
 impl GridCell for Cell {
+    #[inline]
+    fn discard(&mut self) {
+        if self.image().is_some() {
+            Arc::make_mut(self.extra.as_mut().unwrap()).image = None;
+        }
+    }
+
     #[inline]
     fn is_empty(&self) -> bool {
         (self.c == ' ' || self.c == '\t')
@@ -236,6 +256,7 @@ impl GridCell for Cell {
                     | Flags::LEADING_WIDE_CHAR_SPACER,
             )
             && self.extra.as_ref().map(|extra| extra.zerowidth.is_empty()) != Some(false)
+            && self.image().is_none()
     }
 
     #[inline]

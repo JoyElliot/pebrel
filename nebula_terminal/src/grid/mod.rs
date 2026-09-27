@@ -26,6 +26,10 @@ pub trait GridCell: Sized {
     /// Perform an opinionated cell reset based on a template cell.
     fn reset(&mut self, template: &Self);
 
+    /// Release transient content when a row leaves the logical grid, even
+    /// when its text allocation remains in the ring's reusable row cache.
+    fn discard(&mut self) {}
+
     fn flags(&self) -> &Flags;
     fn flags_mut(&mut self) -> &mut Flags;
 }
@@ -428,7 +432,10 @@ impl<T> Grid<T> {
     }
 
     #[inline]
-    pub fn clear_history(&mut self) {
+    pub fn clear_history(&mut self)
+    where
+        T: GridCell,
+    {
         // Explicitly purge all lines from history.
         self.scrolled_out += self.history_size();
         self.raw.shrink_lines(self.history_size());

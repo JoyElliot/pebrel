@@ -6,7 +6,7 @@ use std::ops::{Index, IndexMut};
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-use super::Row;
+use super::{GridCell, Row};
 use crate::index::Line;
 
 /// Bounds for the number of initialized rows kept ahead of active scrollback.
@@ -94,7 +94,10 @@ impl<T> Storage<T> {
 
     /// Decrease the number of lines in the buffer.
     #[inline]
-    pub fn shrink_visible_lines(&mut self, next: usize) {
+    pub fn shrink_visible_lines(&mut self, next: usize)
+    where
+        T: GridCell,
+    {
         // Shrink the size without removing any lines.
         let shrinkage = self.visible_lines - next;
 
@@ -105,7 +108,14 @@ impl<T> Storage<T> {
 
     /// Shrink the number of lines in the buffer.
     #[inline]
-    pub fn shrink_lines(&mut self, shrinkage: usize) {
+    pub fn shrink_lines(&mut self, shrinkage: usize)
+    where
+        T: GridCell,
+    {
+        for logical in self.len - shrinkage..self.len {
+            let index = (self.zero + logical) % self.inner.len();
+            self.inner[index].discard();
+        }
         self.len -= shrinkage;
 
         // Free memory.
@@ -185,11 +195,23 @@ impl<T> Storage<T> {
 
     /// Rotate the grid, moving all lines up/down in history.
     #[inline]
-    pub fn rotate(&mut self, count: isize) {
+    pub fn rotate(&mut self, count: isize)
+    where
+        T: GridCell,
+    {
         debug_assert!(count.unsigned_abs() <= self.inner.len());
 
         let len = self.inner.len();
-        self.zero = (self.zero as isize + count + len as isize) as usize % len;
+        let new_zero = (self.zero as isize + count + len as isize) as usize % len;
+        let candidates = count.unsigned_abs().min(self.len);
+        let start = if count < 0 { self.len - candidates } else { 0 };
+        for logical in start..start + candidates {
+            let index = (self.zero + logical) % len;
+            if (index + len - new_zero) % len >= self.len {
+                self.inner[index].discard();
+            }
+        }
+        self.zero = new_zero;
     }
 
     /// Rotate all existing lines down in history.
@@ -198,8 +220,11 @@ impl<T> Storage<T> {
     ///
     /// [`rotate_left`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.rotate_left
     #[inline]
-    pub fn rotate_down(&mut self, count: usize) {
-        self.zero = (self.zero + count) % self.inner.len();
+    pub fn rotate_down(&mut self, count: usize)
+    where
+        T: GridCell,
+    {
+        self.rotate(count as isize);
     }
 
     /// Update the raw storage buffer.

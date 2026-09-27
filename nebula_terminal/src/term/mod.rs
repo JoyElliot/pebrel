@@ -31,6 +31,8 @@ pub mod cell;
 mod clear;
 pub mod color;
 mod damage;
+mod inline_image;
+pub(crate) use inline_image::PendingImage;
 mod keyboard;
 #[cfg(test)]
 mod keyboard_contract_tests;
@@ -38,6 +40,7 @@ mod prompt;
 mod redraw_anchor;
 mod renderable;
 pub mod search;
+mod title;
 
 use damage::TermDamageState;
 pub use damage::{LineDamageBounds, TermDamage, TermDamageIterator};
@@ -160,6 +163,7 @@ pub fn viewport_to_point_from(origin: Line, point: Point<usize>) -> Point {
 }
 
 pub struct Term<T> {
+    pending_images: inline_image::PendingImages,
     redraw_anchor: redraw_anchor::RedrawAnchor,
     /// Terminal focus controlling the cursor shape.
     pub is_focused: bool,
@@ -386,6 +390,7 @@ impl<T> Term<T> {
         let damage = TermDamageState::new(num_cols, num_lines);
 
         Term {
+            pending_images: Default::default(),
             redraw_anchor: Default::default(),
             inactive_grid,
             scroll_region,
@@ -2342,40 +2347,17 @@ impl<T: EventListener> Handler for Term<T> {
 
     #[inline]
     fn set_title(&mut self, title: Option<String>) {
-        trace!("Setting title to '{title:?}'");
-
-        self.title.clone_from(&title);
-
-        let title_event = match title {
-            Some(title) => Event::Title(title),
-            None => Event::ResetTitle,
-        };
-
-        self.event_proxy.send_event(title_event);
+        self.apply_title(title);
     }
 
     #[inline]
     fn push_title(&mut self) {
-        trace!("Pushing '{:?}' onto title stack", self.title);
-
-        if self.title_stack.len() >= TITLE_STACK_MAX_DEPTH {
-            let removed = self.title_stack.remove(0);
-            trace!(
-                "Removing '{removed:?}' from bottom of title stack that exceeds its maximum depth"
-            );
-        }
-
-        self.title_stack.push(self.title.clone());
+        self.save_title();
     }
 
     #[inline]
     fn pop_title(&mut self) {
-        trace!("Attempting to pop title from stack...");
-
-        if let Some(popped) = self.title_stack.pop() {
-            trace!("Title '{popped:?}' popped from stack");
-            self.set_title(popped);
-        }
+        self.restore_title();
     }
 
     #[inline]
