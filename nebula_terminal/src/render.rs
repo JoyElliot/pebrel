@@ -265,6 +265,19 @@ pub struct SnapshotConfig {
 
 impl RenderSnapshot {
     pub fn capture<T: EventListener>(term: &Term<T>, cfg: &SnapshotConfig) -> Self {
+        if term.grid().may_have_transient_content() {
+            Self::capture_grid::<T, true>(term, cfg)
+        } else {
+            Self::capture_grid::<T, false>(term, cfg)
+        }
+    }
+
+    // Select once per snapshot so the no-image loop contains no image lookup
+    // or per-cell guard. Both paths share the same text/selection implementation.
+    fn capture_grid<T: EventListener, const IMAGES: bool>(
+        term: &Term<T>,
+        cfg: &SnapshotConfig,
+    ) -> Self {
         let rows = cfg.rows as usize;
         let cols = cfg.cols as usize;
         let content = term.renderable_content_with_viewport(rows, cols);
@@ -322,7 +335,7 @@ impl RenderSnapshot {
                 continue;
             }
             let (row, col) = (row as u16, col as u16);
-            if let Some(tile) = indexed.cell.image() {
+            if IMAGES && let Some(tile) = indexed.cell.image() {
                 push_image_run(&mut snap.image_runs, row, col, tile);
             }
             let flags = indexed.cell.flags;

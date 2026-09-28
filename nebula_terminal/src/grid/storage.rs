@@ -29,7 +29,7 @@ const MAX_CACHE_SIZE: usize = 128;
 /// [`slice::rotate_left`]: https://doc.rust-lang.org/std/primitive.slice.html#method.rotate_left
 /// [`Deref`]: std::ops::Deref
 /// [`zero`]: #structfield.zero
-#[derive(Clone, Debug)]
+#[derive(Debug)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Storage<T> {
     inner: Vec<Row<T>>,
@@ -51,6 +51,29 @@ pub struct Storage<T> {
     /// As long as `len` is bigger than `inner`, it is also possible to grow the scrollback buffer
     /// without any additional insertions.
     len: usize,
+
+    /// Conservative guard for cached-row cleanup. Only private, newly empty
+    /// terminal grids opt out; arbitrary mutable access opts back in forever.
+    #[cfg_attr(feature = "serde", serde(skip, default = "transient_content_default"))]
+    pub(super) may_have_transient_content: bool,
+}
+
+#[cfg(feature = "serde")]
+fn transient_content_default() -> bool {
+    true
+}
+
+impl<T: Clone> Clone for Storage<T> {
+    fn clone(&self) -> Self {
+        Self {
+            inner: self.inner.clone(),
+            zero: self.zero,
+            visible_lines: self.visible_lines,
+            len: self.len,
+            // A cloned grid can escape the terminal and receive arbitrary cells.
+            may_have_transient_content: true,
+        }
+    }
 }
 
 impl<T: PartialEq> PartialEq for Storage<T> {
@@ -73,7 +96,13 @@ impl<T> Storage<T> {
         let mut inner = Vec::with_capacity(visible_lines);
         inner.resize_with(visible_lines, || Row::new(columns));
 
-        Storage { inner, zero: 0, visible_lines, len: visible_lines }
+        Storage {
+            inner,
+            zero: 0,
+            visible_lines,
+            len: visible_lines,
+            may_have_transient_content: true,
+        }
     }
 
     /// Increase the number of lines in the buffer.
@@ -112,9 +141,11 @@ impl<T> Storage<T> {
     where
         T: GridCell,
     {
-        for logical in self.len - shrinkage..self.len {
-            let index = (self.zero + logical) % self.inner.len();
-            self.inner[index].discard();
+        if self.may_have_transient_content {
+            for logical in self.len - shrinkage..self.len {
+                let index = (self.zero + logical) % self.inner.len();
+                self.inner[index].discard();
+            }
         }
         self.len -= shrinkage;
 
@@ -203,12 +234,14 @@ impl<T> Storage<T> {
 
         let len = self.inner.len();
         let new_zero = (self.zero as isize + count + len as isize) as usize % len;
-        let candidates = count.unsigned_abs().min(self.len);
-        let start = if count < 0 { self.len - candidates } else { 0 };
-        for logical in start..start + candidates {
-            let index = (self.zero + logical) % len;
-            if (index + len - new_zero) % len >= self.len {
-                self.inner[index].discard();
+        if self.may_have_transient_content {
+            let candidates = count.unsigned_abs().min(self.len);
+            let start = if count < 0 { self.len - candidates } else { 0 };
+            for logical in start..start + candidates {
+                let index = (self.zero + logical) % len;
+                if (index + len - new_zero) % len >= self.len {
+                    self.inner[index].discard();
+                }
             }
         }
         self.zero = new_zero;
@@ -383,6 +416,7 @@ mod tests {
     fn grow_after_zero() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1'), filled_row('-')],
             zero: 0,
             visible_lines: 3,
@@ -394,6 +428,7 @@ mod tests {
 
         // Make sure the result is correct.
         let mut expected = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1'), filled_row('-')],
             zero: 0,
             visible_lines: 4,
@@ -424,6 +459,7 @@ mod tests {
     fn grow_before_zero() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('-'), filled_row('0'), filled_row('1')],
             zero: 1,
             visible_lines: 3,
@@ -435,6 +471,7 @@ mod tests {
 
         // Make sure the result is correct.
         let mut expected = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1'), filled_row('-')],
             zero: 0,
             visible_lines: 4,
@@ -462,6 +499,7 @@ mod tests {
     fn shrink_before_zero() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('2'), filled_row('0'), filled_row('1')],
             zero: 1,
             visible_lines: 3,
@@ -473,6 +511,7 @@ mod tests {
 
         // Make sure the result is correct.
         let expected = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('2'), filled_row('0'), filled_row('1')],
             zero: 1,
             visible_lines: 2,
@@ -498,6 +537,7 @@ mod tests {
     fn shrink_after_zero() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1'), filled_row('2')],
             zero: 0,
             visible_lines: 3,
@@ -509,6 +549,7 @@ mod tests {
 
         // Make sure the result is correct.
         let expected = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1'), filled_row('2')],
             zero: 0,
             visible_lines: 2,
@@ -540,6 +581,7 @@ mod tests {
     fn shrink_before_and_after_zero() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -558,6 +600,7 @@ mod tests {
 
         // Make sure the result is correct.
         let expected = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -592,6 +635,7 @@ mod tests {
     fn truncate_invisible_lines() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -610,6 +654,7 @@ mod tests {
 
         // Make sure the result is correct.
         let expected = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1')],
             zero: 0,
             visible_lines: 1,
@@ -634,6 +679,7 @@ mod tests {
     fn truncate_invisible_lines_beginning() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('1'), filled_row('2'), filled_row('0')],
             zero: 2,
             visible_lines: 1,
@@ -645,6 +691,7 @@ mod tests {
 
         // Make sure the result is correct.
         let expected = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('0'), filled_row('1')],
             zero: 0,
             visible_lines: 1,
@@ -684,6 +731,7 @@ mod tests {
     fn shrink_then_grow() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -702,6 +750,7 @@ mod tests {
 
         // Make sure the result after shrinking is correct.
         let shrinking_expected = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -723,6 +772,7 @@ mod tests {
 
         // Make sure the previously freed elements are reused.
         let growing_expected = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -745,6 +795,7 @@ mod tests {
     fn initialize() {
         // Setup storage area.
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![
                 filled_row('4'),
                 filled_row('5'),
@@ -773,7 +824,13 @@ mod tests {
         ];
         let expected_init_size = std::cmp::max(init_size, MIN_CACHE_SIZE);
         expected_inner.append(&mut vec![filled_row('\0'); expected_init_size]);
-        let expected_storage = Storage { inner: expected_inner, zero: 0, visible_lines: 0, len: 9 };
+        let expected_storage = Storage {
+            may_have_transient_content: true,
+            inner: expected_inner,
+            zero: 0,
+            visible_lines: 0,
+            len: 9,
+        };
 
         assert_eq!(storage.len, expected_storage.len);
         assert_eq!(storage.zero, expected_storage.zero);
@@ -851,6 +908,7 @@ mod tests {
     #[test]
     fn rotate_wrap_zero() {
         let mut storage: Storage<char> = Storage {
+            may_have_transient_content: true,
             inner: vec![filled_row('-'), filled_row('-'), filled_row('-')],
             zero: 2,
             visible_lines: 0,

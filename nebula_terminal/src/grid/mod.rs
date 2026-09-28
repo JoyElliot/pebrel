@@ -7,7 +7,7 @@ use std::ops::{Bound, Deref, Index, IndexMut, Range, RangeBounds};
 use serde::{Deserialize, Serialize};
 
 use crate::index::{Column, Line, Point};
-use crate::term::cell::{Flags, ResetDiscriminant};
+use crate::term::cell::{Cell, Flags, ResetDiscriminant};
 use crate::vte::ansi::{CharsetIndex, StandardCharset};
 
 pub mod resize;
@@ -405,6 +405,17 @@ impl<T: GridCell + Default + PartialEq> Grid<T> {
 }
 
 impl<T> Grid<T> {
+    /// Raw mutable access can introduce transient content without using the
+    /// protocol insertion path. Keep cleanup enabled even after a later reset.
+    pub(crate) fn track_transient_content(&mut self) -> &mut Self {
+        self.raw.may_have_transient_content = true;
+        self
+    }
+
+    pub(crate) fn may_have_transient_content(&self) -> bool {
+        self.raw.may_have_transient_content
+    }
+
     /// Reset a visible region within the grid.
     pub fn reset_region<D, R: RangeBounds<Line>>(&mut self, bounds: R)
     where
@@ -655,6 +666,25 @@ impl<T> Deref for Indexed<T> {
     #[inline]
     fn deref(&self) -> &T {
         &self.cell
+    }
+}
+
+impl Grid<Cell> {
+    /// Alternate-screen entry copies the cursor, including an image template
+    /// supplied through raw mutable access, without moving the source grid.
+    pub(crate) fn copy_cursor_from(&mut self, source: &Self) {
+        if source.cursor.template.image().is_some() {
+            self.track_transient_content();
+        }
+        self.cursor = source.cursor.clone();
+    }
+
+    /// Only `Term` owns these initially empty grids without exposing mutable
+    /// cells. Public constructors, clones and deserialization stay conservative.
+    pub(crate) fn new_for_terminal(lines: usize, columns: usize, history: usize) -> Self {
+        let mut grid = Self::new(lines, columns, history);
+        grid.raw.may_have_transient_content = false;
+        grid
     }
 }
 

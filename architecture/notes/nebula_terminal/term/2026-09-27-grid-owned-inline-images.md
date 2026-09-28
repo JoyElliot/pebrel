@@ -145,8 +145,8 @@ measured allocation. A one-cell history eviction also verifies that its image
 owner dies and its extra allocation is immediately released while the cached
 row remains. Local compatibility checks cover all combinations of zero-width
 characters, underline colors and links, shared mutation, replacement, wide-cell
-clearing and the legacy serde field representation. The updated layout still
-requires cross-platform CI; the earlier functional-head results do not cover it.
+clearing and the legacy serde field representation. Cross-platform native CI
+validated the memory refinement at `ccb918c`.
 
 A separate, uninstrumented release harness used the same manifest, package name
 and source with separate build targets for the old and new core. Nine alternating
@@ -155,6 +155,8 @@ pairs of 50,000 ASCII/CRLF lines had median feed times of 41,636 and 43,899 us
 43,221-44,564 us. Both snapshot medians were 149 us. This memory refinement
 is not a claim of zero throughput cost; the local timing tradeoff remains a
 review consideration, rather than justification for tuning to one benchmark.
+The [no-image fast path refinement](2026-09-28-no-image-grid-fast-path.md)
+records the subsequent ownership guard and its separate cost comparison.
 
 ## Supersedes
 
