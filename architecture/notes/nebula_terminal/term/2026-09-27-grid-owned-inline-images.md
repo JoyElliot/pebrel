@@ -2,8 +2,7 @@
 
 ## Status
 
-Proposed; implemented locally and verified on Windows. Cross-platform CI has
-not run for this change.
+Proposed; implemented locally and verified on Windows. Cross-platform native CI completed successfully.
 
 ## Context
 
