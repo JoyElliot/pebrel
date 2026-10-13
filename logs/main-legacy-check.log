@@ -1,0 +1,244 @@
+    Checking nebula_terminal v2.2.0 (<main-checkout>\nebula_terminal)
+   Compiling nebula v2.2.0 (<main-checkout>\nebula_app)
+warning: nebula@2.2.0: could not deploy conpty.dll (系统找不到指定的路径。 (os error 3)); resize reflow may use the in-box ConPTY
+warning: nebula@2.2.0: could not deploy OpenConsole.exe (系统找不到指定的路径。 (os error 3)); resize reflow may use the in-box ConPTY
+error[E0433]: cannot find `theme_library` in `crate`
+   --> nebula_app\src\cli.rs:317:18
+    |
+317 |     Theme(crate::theme_library::package::cli::Options),
+    |                  ^^^^^^^^^^^^^ could not find `theme_library` in the crate root
+    |
+note: found an item that was configured out
+   --> nebula_app\src\main.rs:134:16
+    |
+133 | #[cfg(feature = "gpui-shell")]
+    |       ---------------------- the item is gated behind the `gpui-shell` feature
+134 | pub(crate) mod theme_library;
+    |                ^^^^^^^^^^^^^
+help: consider importing this module
+    |
+  1 + use crate::plugins::cli;
+    |
+help: if you import `cli`, refer to it directly
+    |
+317 -     Theme(crate::theme_library::package::cli::Options),
+317 +     Theme(cli::Options),
+    |
+
+error[E0433]: cannot find module or crate `theme_library` in this scope
+   --> nebula_app\src\main.rs:272:32
+    |
+272 |             std::process::exit(theme_library::package::cli::run(options))
+    |                                ^^^^^^^^^^^^^ use of unresolved module or unlinked crate `theme_library`
+    |
+note: found an item that was configured out
+   --> nebula_app\src\main.rs:134:16
+    |
+133 | #[cfg(feature = "gpui-shell")]
+    |       ---------------------- the item is gated behind the `gpui-shell` feature
+134 | pub(crate) mod theme_library;
+    |                ^^^^^^^^^^^^^
+help: to make use of source file nebula_app\src\theme_library\mod.rs, use `mod theme_library` in this file to declare the module
+    |
+ 12 + mod theme_library;
+    |
+help: consider importing this module
+    |
+ 18 + use crate::plugins::cli;
+    |
+help: if you import `cli`, refer to it directly
+    |
+272 -             std::process::exit(theme_library::package::cli::run(options))
+272 +             std::process::exit(cli::run(options))
+    |
+
+warning: unused imports: `AiHookCapabilities` and `capabilities_for`
+  --> nebula_app\src\ai_hook.rs:24:24
+   |
+24 |     AiBackgroundTasks, AiHookCapabilities, AiHookEvent, AiHookKind, AiPermissionMode,
+   |                        ^^^^^^^^^^^^^^^^^^
+25 |     AiTurnOutcome, AttentionContext, capabilities_for,
+   |                                      ^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `ordering::GateVerdict`
+  --> nebula_app\src\ai_hook.rs:27:9
+   |
+27 | pub use ordering::GateVerdict;
+   |         ^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `reorder_batch`
+  --> nebula_app\src\ai_hook.rs:28:44
+   |
+28 | pub(crate) use ordering::{accept_for_pane, reorder_batch};
+   |                                            ^^^^^^^^^^^^^
+
+warning: unused import: `windows::spawn_gpui_server`
+   --> nebula_app\src\ai_hook.rs:120:9
+    |
+120 | pub use windows::spawn_gpui_server;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `write_atomic`
+ --> nebula_app\src\ai_hook\local\runtime_skills.rs:2:50
+  |
+2 | use super::{claude_config_dir, codex_config_dir, write_atomic};
+  |                                                  ^^^^^^^^^^^^
+
+warning: unused import: `taskbar::refresh_pinned`
+   --> nebula_app\src\app_icon.rs:123:20
+    |
+123 |     pub(crate) use taskbar::refresh_pinned;
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `pane_geometry_in_horizontal_bounds` and `pane_geometry`
+  --> nebula_app\src\display\ui\widgets.rs:20:46
+   |
+20 | pub(crate) use super::geometry::{centered_y, pane_geometry, pane_geometry_in_horizontal_bounds};
+   |                                              ^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `gitignore::*`
+  --> nebula_app\src\display\side_panel\mod.rs:40:16
+   |
+40 | pub(crate) use gitignore::*;
+   |                ^^^^^^^^^^^^
+
+warning: unused imports: `BACKGROUND_SWATCHES`, `hsv_to_rgb`, and `rgb_to_hsv`
+   --> nebula_app\src\display\mod.rs:109:41
+    |
+109 | pub(crate) use background_color_model::{BACKGROUND_SWATCHES, hsv_to_rgb, rgb_to_hsv};
+    |                                         ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^  ^^^^^^^^^^
+
+warning: unused import: `nebula_shell_ready_from_raw_grid`
+   --> nebula_app\src\display\mod.rs:122:49
+    |
+122 |     nebula_shell_prompt_restored_from_raw_grid, nebula_shell_ready_from_raw_grid,
+    |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ai_logo_for_program`
+   --> nebula_app\src\display\mod.rs:128:14
+    |
+128 |     ai_logo, ai_logo_for_program, prepare_ai_logo_texture, program_icon,
+    |              ^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `percent_decode_lossy`
+   --> nebula_app\src\display\mod.rs:137:15
+    |
+137 |     fit_tail, percent_decode_lossy, strip_file_scheme, truncate_tab_label,
+    |               ^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `nebula_data_dir`
+  --> nebula_app\src\display\settings.rs:38:49
+   |
+38 |     chrome_settings_button_rect, contains_rect, nebula_data_dir, truncate_tab_label,
+   |                                                 ^^^^^^^^^^^^^^^
+
+warning: unused imports: `auth_sections`, `join_destination_port`, `join_destination_user`, `push_private_key`, `split_destination_port`, and `split_destination_user`
+   --> nebula_app\src\display\mod.rs:154:5
+    |
+154 |     auth_sections, join_destination_port, join_destination_user, push_private_key,
+    |     ^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^
+155 |     split_destination_port, split_destination_user,
+    |     ^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `crate::runtime_exec::PaneExecContext`
+  --> nebula_app\src\git_completion.rs:11:5
+   |
+11 | use crate::runtime_exec::PaneExecContext;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `compile_formula_source`
+  --> nebula_app\src\math\mod.rs:16:43
+   |
+16 | pub(crate) use compile::{compile_formula, compile_formula_source};
+   |                                           ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `parser::parse_formula`
+  --> nebula_app\src\math\mod.rs:17:16
+   |
+17 | pub(crate) use parser::parse_formula;
+   |                ^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `recovery::available_address`
+  --> nebula_app\src\mobile_connection.rs:23:16
+   |
+23 | pub(crate) use recovery::available_address;
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Seek as _`
+  --> nebula_app\src\platform\ai_session_identity.rs:10:27
+   |
+10 | use std::io::{self, Read, Seek as _};
+   |                           ^^^^^^^^^
+
+warning: unused import: `Stdio`
+  --> nebula_app\src\platform\ai_session_identity.rs:12:29
+   |
+12 | use std::process::{Command, Stdio};
+   |                             ^^^^^
+
+warning: unused import: `prepare`
+ --> nebula_app\src\platform\wsl_hooks.rs:5:26
+  |
+5 | pub(crate) use windows::{prepare, setup_cli};
+  |                          ^^^^^^^
+
+warning: unused import: `ExitStatus`
+  --> nebula_app\src\runtime_exec.rs:10:29
+   |
+10 | use std::process::{Command, ExitStatus, Stdio};
+   |                             ^^^^^^^^^^
+
+warning: unused import: `groups::BUILTIN_GROUP_ID`
+ --> nebula_app\src\saved_commands.rs:6:16
+  |
+6 | pub(crate) use groups::BUILTIN_GROUP_ID;
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `window_layout::combine_sessions`
+  --> nebula_app\src\session.rs:27:16
+   |
+27 | pub(crate) use window_layout::combine_sessions;
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `LocalForward` and `open_local_forward`
+  --> nebula_app\src\ssh_session.rs:37:26
+   |
+37 | pub(crate) use forward::{LocalForward, open_local_forward};
+   |                          ^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `refresh_app_icon`
+  --> nebula_app\src\tray.rs:47:15
+   |
+47 | pub use win::{refresh_app_icon, set_enabled, shutdown, update};
+   |               ^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Column`, `Line`, and `Point`
+  --> nebula_app\src\window_context.rs:29:30
+   |
+29 | use nebula_terminal::index::{Column, Direction, Line, Point};
+   |                              ^^^^^^             ^^^^  ^^^^^
+
+error[E0282]: type annotations needed
+   --> nebula_app\src\window_context\runtime.rs:538:35
+    |
+538 |             let palette = |index| term.colors()[index].unwrap_or(*self.display.colors[index]);
+    |                                   ^^^^^^^^^^^^^^^^^^^^ cannot infer type
+
+warning: variable does not need to be mutable
+   --> nebula_app\src\display\keymap.rs:175:9
+    |
+175 |     let mut shortcuts: Vec<(String, Action)> = cached_defaults()
+    |         ----^^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+Some errors have detailed explanations: E0282, E0433.
+For more information about an error, try `rustc --explain E0282`.
+warning: `nebula` (bin "pebrel") generated 28 warnings
+warning: nebula@2.2.0: could not deploy conpty.dll (系统找不到指定的路径。 (os error 3)); resize reflow may use the in-box ConPTY
+warning: nebula@2.2.0: could not deploy OpenConsole.exe (系统找不到指定的路径。 (os error 3)); resize reflow may use the in-box ConPTY
+error: could not compile `nebula` (bin "pebrel") due to 3 previous errors; 28 warnings emitted

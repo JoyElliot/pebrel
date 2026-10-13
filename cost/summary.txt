@@ -1,0 +1,16 @@
+ascii  base       feed=41.640ms [41.039,44.065] snapshot=154.63us [152.31,178.02]
+ascii  review     feed=41.540ms [40.740,46.982] snapshot=155.28us [153.57,159.86]
+ascii  fixed      feed=41.552ms [41.237,45.954] snapshot=154.52us [152.72,154.94]
+cjk    base       feed=53.677ms [53.188,54.902] snapshot=94.65us [93.10,95.61]
+cjk    review     feed=53.563ms [53.176,54.379] snapshot=93.47us [92.29,94.22]
+cjk    fixed      feed=53.799ms [53.236,54.701] snapshot=93.33us [91.98,94.59]
+ansi   base       feed=47.911ms [47.135,48.879] snapshot=153.38us [150.68,156.63]
+ansi   review     feed=47.952ms [47.119,48.445] snapshot=154.12us [151.83,158.67]
+ansi   fixed      feed=48.078ms [47.432,48.331] snapshot=153.54us [151.43,155.69]
+image  review     feed=14.115ms [13.536,14.730] snapshot=19.38us [19.25,19.73]
+image  fixed      feed=13.884ms [13.540,14.023] snapshot=19.39us [19.32,21.04]
+mixed  review     feed=14.327ms [13.750,14.895] snapshot=23.09us [22.82,23.73]
+mixed  fixed      feed=14.310ms [14.032,14.611] snapshot=23.08us [22.91,25.66]
+base lock 6ae86e338ff303a8d18a622c01f2f87eb8ddb6c27120fe887d76520619653c1d
+review lock 6ae86e338ff303a8d18a622c01f2f87eb8ddb6c27120fe887d76520619653c1d
+fixed lock 6ae86e338ff303a8d18a622c01f2f87eb8ddb6c27120fe887d76520619653c1d

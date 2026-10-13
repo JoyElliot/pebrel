@@ -1,0 +1,74 @@
+PR #316 verification, 2026-10-13 (Asia/Taipei)
+Candidate: 6dfd941319ccc057f8ca768acb6de6812b1016fe
+Main control: 277a03f38c60fcc1b2edbbc149bbb21a09087639
+Synced PR before repairs: d62577228cabc3d2712f481e8e5156182dd28b5d
+
+Product/core commands (run from the respective source checkout):
+  cargo +1.97.1 test --locked -p nebula_terminal --all-targets
+  cargo +1.97.1 test --locked -p nebula --bin pebrel --features gpui-test-support --no-run
+  <resulting-native-pebrel-test.exe> image --test-threads=4
+  <resulting-native-pebrel-test.exe> --test-threads=4
+  cargo +1.97.1 check --locked -p nebula --bin pebrel --features gpui-shell --tests
+  cargo +1.97.1 check --locked -p nebula --bin pebrel --no-default-features --features legacy-shell
+  cargo +1.97.1 test --manifest-path tools/i18n-contract/Cargo.toml --locked
+  cargo +1.97.1 fmt --all -- --check
+  python scripts/check_architecture.py --base 277a03f38c60fcc1b2edbbc149bbb21a09087639
+  python scripts/check_prohibited_names.py range --base 277a03f38c60fcc1b2edbbc149bbb21a09087639 --head HEAD
+  git diff --check 277a03f38c60fcc1b2edbbc149bbb21a09087639 HEAD
+
+Linux core tests were run in an isolated one-member workspace containing the
+unchanged terminal crate and the same locked dependency versions. Windows product
+tests/checks used a full source export. source-manifest.json verifies all 2294
+tracked files against the candidate commit and records the native binary hash.
+Actual Windows commands called the installed MSVC toolchain executables directly
+and supplied an explicit target directory; native-rustc.txt identifies rustc.
+
+Run the native test binary from the source checkout root. The existing
+file_uri::tests::local_link_contract_gates expects ./Cargo.toml there. A diagnostic
+run from the evidence directory failed this assertion on both candidate and main;
+the published full-suite result was rerun from the correct checkout directory.
+
+For the main-control failures, build the same gpui-test-support test binary at the
+main revision, then run each named test with --exact --nocapture --test-threads=1.
+logs/main-* and logs/retry-* retain the observed individual outcomes.
+
+Native editor acceptance (fresh empty output directory):
+  pwsh -NoProfile -File scripts/tests/run_completion_e2e.ps1 -TestBinary <native-test.exe> -OutputDirectory <absolute-empty-directory> -Case editor -RuntimeDirectory <directory-containing-conpty.dll-and-OpenConsole.exe> -PowerShellProgram <PowerShell-7-pwsh.exe>
+Runtime hashes and the eight scenario results are in native-editor/. Prediction
+was not enabled. This uses product input handlers and a native shell on the
+script's private desktop; it is not a GPU screenshot or an OMP live acceptance.
+
+Cost reproduction (Windows x64, after fetching the candidate commit):
+  python cost/prepare.py <local-pebrel-git-checkout>
+For each variant base/review/fixed, cd to cost/<variant>, then:
+  cargo +1.97.1 build --release --locked --bins --target-dir target
+For review and fixed, add --features images to that build command.
+After all compilation has completed:
+  python cost/compare.py
+  cost/base/target/release/memory.exe
+  cost/review/target/release/memory.exe
+  cost/fixed/target/release/memory.exe
+  cost/base/target/release/term-workloads.exe
+  cost/review/target/release/term-workloads.exe
+  cost/fixed/target/release/term-workloads.exe
+
+The four Rust harnesses and outer Cargo.lock are byte-identical across variants.
+compare.py warms up once, then records nine samples per workload/variant with
+rotating/reversed execution order (117 samples). Text content/position checksums
+and image tile counts are asserted equal for the compared variants. Release uses
+opt-level=3, thin LTO and one codegen unit. Image/mixed compare review vs fixed;
+main has different image semantics and is not used as their equivalent baseline.
+
+memory/term-workloads count live requested allocator bytes, not process RSS,
+allocator overhead or GPU memory. Their instrumented timing is not the timing
+benchmark. The cost harness measures terminal input and snapshots, not whole-app
+frame rate or formula/GPU painting. Results are observations on this machine.
+
+Published log copies replace machine-local absolute paths, temporary fixture
+identifiers and panic thread IDs with placeholders. Native desktop handles and
+cursor coordinates are omitted. Original local logs are retained by the author.
+
+Use distinct native Cargo target directories for candidate and main controls.
+A shared target retained old terminal metadata during a legacy recheck; cleaning
+only nebula_terminal and rebuilding restored the three original baseline errors.
+logs/legacy-check-publish.log is the result after that clean rebuild.

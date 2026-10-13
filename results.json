@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-13",
+  "timezone": "Asia/Taipei",
+  "head": "6dfd941319ccc057f8ca768acb6de6812b1016fe",
+  "main": "277a03f38c60fcc1b2edbbc149bbb21a09087639",
+  "source_identity": {
+    "all_tracked_files_match_native_build_snapshot": 2294,
+    "native_binary_sha256": "ccc83b00af8eac58f542b9fb95d115c68f790eae5739d1e4e01548357a664f5e",
+    "main_control_binary_sha256": "ec44aa5508eb5bd7811a6588630304d1894e2aa43d25d1187cec024393bbf4f8"
+  },
+  "pr_size": {
+    "counted_additions_plus_deletions": 1944,
+    "limit": 1500,
+    "excess": 444,
+    "rule": ".github/workflows/pr-size.yml",
+    "source": "local Git diff and GitHub PR file API; excludes docs/Markdown/assets/locks per workflow",
+    "tests_retained": true,
+    "budgets_or_checks_modified": false
+  },
+  "tests": {
+    "linux_terminal_all_targets": {
+      "passed": 317,
+      "failed": 0
+    },
+    "windows_image_filtered": {
+      "passed": 52,
+      "failed": 0
+    },
+    "windows_full_gpui_test_support": {
+      "passed": 2342,
+      "failed": 4,
+      "ignored": 36,
+      "total": 2382,
+      "cwd": "candidate source checkout"
+    },
+    "native_editor": {
+      "passed_scenarios": 8,
+      "prediction_enabled": false,
+      "evidence": "native-editor/result.json"
+    },
+    "i18n_contract": {
+      "passed": 24,
+      "ignored": 1
+    },
+    "architecture_unit_tests": {
+      "passed": 54
+    },
+    "architecture_check": "pass",
+    "format_check": "pass",
+    "git_diff_check": "pass",
+    "prohibited_names_check": "pass",
+    "windows_gpui_shell_check_with_tests": "pass"
+  },
+  "full_suite_failures_reproduced_individually_on_main": [
+    "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+    "platform::ai_session_identity::windows::tests::native_shells_bind_only_their_own_open_rollout_and_keep_the_id_and_file_cursor",
+    "platform::local_paths::tests::completion_directory_quotes_survive_native_cmd_and_powershell_arguments",
+    "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+  ],
+  "legacy_shell_check": {
+    "status": "failed_on_candidate_and_main",
+    "diagnostics": [
+      "E0433 theme_library in cli.rs",
+      "E0433 theme_library in main.rs",
+      "E0282 in window_context/runtime.rs"
+    ],
+    "native_window_acceptance": false
+  },
+  "diagnostic_runs": {
+    "earlier_density_failure": "Passed in isolated candidate/main reruns and final full candidate run; original failure not treated as a clean full-suite result.",
+    "artifact_directory_file_uri_failure": "Both candidate/main failed because test expects cwd/Cargo.toml. Final full candidate run used checkout root and passed this test."
+  },
+  "cost": {
+    "timing_samples": 117,
+    "samples_per_workload_variant": 9,
+    "variants": "cost/revisions.json",
+    "raw_samples": "cost/samples.json",
+    "summary": "cost/summary.json",
+    "memory_measure": "live requested allocator bytes, not RSS or GPU memory",
+    "platform": "Windows x64 MSVC Rust 1.97.1",
+    "interpretation": "sample ranges overlap; no universal performance or whole-app frame-rate claim"
+  },
+  "limitations": [
+    "No new final-GPU screenshot or fresh live OMP session in this repair run.",
+    "Native editor acceptance exercises product handlers and real native shell input, not a screenshot.",
+    "Legacy cannot compile on current main in this feature configuration; no current legacy window acceptance.",
+    "Main-control comparison reruns the named failures individually; it is not a full-suite main control.",
+    "Timing harness covers terminal feed/snapshot, not math/GPU painting.",
+    "GitHub native matrix was still running when the update was prepared; pr-size failed as expected."
+  ],
+  "publication": "Source regression tests remain in the product PR. This separate evidence branch contains raw measurements, harnesses, sanitized logs and source identities."
+}

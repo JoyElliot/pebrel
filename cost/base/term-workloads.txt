@@ -1,0 +1,6 @@
+Windows x64; requested live allocation bytes, not RSS; timing includes allocation instrumentation; 120x40 grid, 10000 history, 12000 text rows or 40 images of 120x80 cells.
+case=plain payload=1464010 cell=24 extra=40 history=10000 tiles=0 checksum=144565440 fill=31457627 clear_history=2657627 reset=2657627 truncate=2657627 after_drop=0 instrumented_feed_us=15207
+case=combining payload=4344010 cell=24 extra=40 history=10000 tiles=0 checksum=1048055154 fill=118173419 clear_history=2994587 reset=2657627 truncate=2657627 after_drop=0 instrumented_feed_us=143662
+case=underline_rows payload=1638840 cell=24 extra=40 history=10000 tiles=0 checksum=145770120 fill=32019811 clear_history=2659811 reset=2657627 truncate=2657627 after_drop=0 instrumented_feed_us=22513
+case=underline_cells payload=21744010 cell=24 extra=40 history=10000 tiles=0 checksum=145770120 fill=98919707 clear_history=2919707 reset=2657627 truncate=2657627 after_drop=0 instrumented_feed_us=207946
+case=hyperlink_rows payload=1921790 cell=24 extra=40 history=10000 tiles=0 checksum=174922440 fill=32957494 clear_history=2663572 reset=2657683 truncate=2657683 after_drop=0 instrumented_feed_us=26338

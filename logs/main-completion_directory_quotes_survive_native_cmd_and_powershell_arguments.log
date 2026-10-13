@@ -1,0 +1,15 @@
+
+running 1 test
+test platform::local_paths::tests::completion_directory_quotes_survive_native_cmd_and_powershell_arguments ... 
+thread 'platform::local_paths::tests::completion_directory_quotes_survive_native_cmd_and_powershell_arguments' (<thread-id>) panicked at nebula_app\src\platform\local_paths.rs:115:14:
+called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: "Process probe exited with exit code: 1" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED
+
+failures:
+
+failures:
+    platform::local_paths::tests::completion_directory_quotes_survive_native_cmd_and_powershell_arguments
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2373 filtered out; finished in 1.60s
+

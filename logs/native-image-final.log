@@ -1,0 +1,60 @@
+running 52 tests
+test assistant_answer::document::tests::code_and_money_stay_literal_and_html_cannot_fetch_images ... ok
+test assistant_answer::document::tests::images_are_explicit_placeholders_not_automatic_network_requests ... ok
+test assistant_answer::document::tests::reference_images_and_extra_images_remain_bounded ... ok
+test display::image_viewer::tests::dragging_is_clamped_to_the_image_edges ... ok
+test assistant_answer::document::tests::image_loader_rejects_wrong_formats_directories_and_oversized_files ... ok
+test display::image_viewer::tests::initial_image_width_fills_the_viewport ... ok
+test display::image_viewer::tests::zoom_keeps_the_pointer_anchor_stable ... ok
+test display::terminal_math::tests::expanded_formula_clips_image_without_changing_texture_origin ... ok
+test display::terminal_math::tests::image_projection_preserves_erased_tiles_row_offsets_and_clipping ... ok
+test assistant_answer::tests::image_directory_is_captured_with_the_completed_answer ... ok
+test assistant_answer::document::tests::image_paths_cannot_escape_the_reading_directory ... ok
+test gpui_shell::file_editor::block_inline::tests::preparing_inline_images_keeps_source_offsets_and_uses_a_still_preview ... ok
+test gpui_shell::file_editor::inline_edit::tests::image_and_math_fallbacks_have_local_reveal_ranges ... ok
+test gpui_shell::file_editor::image_cache::tests::suspension_drops_decodes_cancels_jobs_and_reloads_only_on_resume ... ok
+test gpui_shell::math_view::tests::formula_image_export_rejects_layouts_with_font_fallback_text ... ok
+test gpui_shell::scientific_render::tests::bitmap_allocation_waits_for_the_ui_to_release_evicted_images ... ok
+test gpui_shell::file_editor::image_cache::tests::decoding_reuses_hot_images_evicts_cold_pixels_and_releases_with_document ... ok
+test gpui_shell::terminal::answer_reader::tests::only_generated_image_placeholders_can_load_files ... ok
+test gpui_shell::terminal::inline_image::tests::cache_drops_an_image_after_its_last_grid_cell_is_removed ... ok
+test gpui_shell::terminal::inline_image::tests::cache_is_bounded_by_count ... ok
+test gpui_shell::terminal::inline_image::tests::clearing_while_decode_runs_cannot_resurrect_image ... ok
+test gpui_shell::terminal::inline_image::tests::clipboard_bitmaps_become_png_without_extending_terminal_protocol_formats ... ok
+test gpui_shell::terminal::inline_image::tests::clipboard_rejects_invalid_bytes_and_pixel_bombs_before_staging ... ok
+test gpui_shell::terminal::inline_image::tests::decode_gif_keeps_only_the_first_frame ... ok
+test gpui_shell::terminal::inline_image::tests::decode_png_produces_one_bgra_frame ... ok
+test gpui_shell::terminal::inline_image::tests::decode_rejects_mp4_bytes ... ok
+test gpui_shell::terminal::inline_image::tests::obsolete_queued_jobs_release_bytes_without_decoding ... ok
+test gpui_shell::terminal::inline_image::tests::queue_rejects_unbounded_encoded_backlog ... ok
+test gpui_shell::terminal::math_overlay::tests::image_cells_are_not_formula_whitespace ... ok
+test gpui_shell::terminal::math_overlay::tests::image_projection_splits_an_older_snapshot_around_new_formula_cells ... ok
+test gpui_shell::terminal::math_overlay::tests::image_span_filter_only_reads_visible_rows_after_height_shrink ... ok
+CASE=main formulas=1 frame_counts=[0, 0, 1] image_px=[32,64) tail_source_visual_px=[("T", 10, 8, 64.0), ("A", 11, 9, 72.0), ("I", 12, 10, 80.0), ("L", 13, 11, 88.0)] overlapping_cells=[]
+CASE=alternate formulas=1 frame_counts=[1] image_px=[48,80) tail_source_visual_px=[("T", 10, 10, 80.0), ("A", 11, 11, 88.0), ("I", 12, 12, 96.0), ("L", 13, 13, 104.0)] overlapping_cells=[]
+CASE=active-line formulas=0 frame_counts=[0] image_px=[48,80) tail_source_visual_px=[("T", 10, 10, 80.0), ("A", 11, 11, 88.0), ("I", 12, 12, 96.0), ("L", 13, 13, 104.0)] overlapping_cells=[]
+CASE=ansi-code-background formulas=0 frame_counts=[0] image_px=[48,80) tail_source_visual_px=[("T", 10, 10, 80.0), ("A", 11, 11, 88.0), ("I", 12, 12, 96.0), ("L", 13, 13, 104.0)] overlapping_cells=[]
+test gpui_shell::terminal::math_overlay::tests::protocol_image_with_real_math_bitmaps_keeps_text_visible ... ok
+test gpui_shell::terminal::view::image_paste::tests::image_only_clipboard_is_preserved_and_text_keeps_priority ... ok
+test gpui_shell::terminal::view::image_paste::tests::staged_files_are_unique_and_removed_when_their_owner_is_dropped ... ok
+test gpui_shell::terminal::view::image_paste::tests::submission_cancels_pending_image_but_typing_and_bracketed_paste_do_not ... ok
+test gpui_shell::terminal::view::image_paste::tests::wsl_paths_preserve_spaces_and_reject_host_or_multiline_paths ... ok
+test gpui_shell::wallpaper::image_loader::tests::cancelled_preview_does_not_open_or_decode_a_file ... ok
+test gpui_shell::file_editor::image_cache::tests::large_decodes_are_not_retained_or_retried_and_pending_work_has_an_owner ... ok
+test gpui_shell::wallpaper::image_loader::tests::output_budget_handles_large_square_panorama_and_portrait ... ok
+test gpui_shell::wallpaper::image_loader::tests::corrupt_and_missing_images_fail_without_a_render_resource ... ok
+test gpui_shell::wallpaper::image_loader::tests::pixels_move_to_bgra_without_baking_opacity_and_unchanged_files_are_reused ... ok
+test gpui_shell::wallpaper::image_loader::tests::source_budget_is_checked_before_allocating_pixels ... ok
+test gpui_shell::file_editor::inline_object_tests::image_source_is_local_and_surrounding_formula_stays_rendered ... ok
+test gpui_shell::wallpaper::tests::loading_yields_and_layout_opacity_refreshes_reuse_the_same_image ... ok
+test gpui_shell::workspace::logos::tests::releasing_or_replacing_a_load_cancels_further_image_work ... ok
+test gpui_shell::workspace::runtime_tabs::tests::image_reads_detect_replacement_and_enforce_the_budget ... ok
+test markdown::parser::tests::images_become_blocks_with_alt_text ... ok
+test render_cache::tests::resize_replacements_and_oversized_images_preserve_accounting ... ok
+test theme_library::package::tests::image_theme_round_trips_with_author_and_installs_without_applying ... ok
+test gpui_shell::wallpaper::image_loader::tests::preview_has_a_one_mib_output_budget_and_keeps_layout_and_bgra ... ok
+test gpui_shell::wallpaper::tests::latest_request_wins_and_clearing_during_decode_cannot_restore_an_image ... ok
+test gpui_shell::settings_pane::theme_studio_tests::background_tests::background_save_apply_publishes_image_and_independent_opacities ... ok
+
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 2330 filtered out; finished in 0.81s
+

@@ -1,0 +1,6 @@
+Counts are live requested allocator bytes, not RSS or allocator usable size.
+case=plain count=100000 requested_live_fill=2400000 requested_live_after_discard=2400000 retained_extras=0 after_drop=0
+case=combining_unique count=100000 requested_live_fill=9600000 requested_live_after_discard=9600000 retained_extras=100000 after_drop=0
+case=underline_unique count=100000 requested_live_fill=8000000 requested_live_after_discard=8000000 retained_extras=100000 after_drop=0
+case=hyperlink_shared_template count=100000 requested_live_fill=2400000 requested_live_after_discard=2400000 retained_extras=100000 after_drop=0
+case=hyperlink_unique count=100000 requested_live_fill=16888890 requested_live_after_discard=16888890 retained_extras=100000 after_drop=0

@@ -1,0 +1,17 @@
+
+running 1 test
+test platform::ai_session_identity::windows::tests::native_shells_bind_only_their_own_open_rollout_and_keep_the_id_and_file_cursor ... 
+thread 'platform::ai_session_identity::windows::tests::native_shells_bind_only_their_own_open_rollout_and_keep_the_id_and_file_cursor' (<thread-id>) panicked at nebula_app\src\platform\ai_session_identity\windows\tests.rs:155:9:
+assertion `left == right` failed
+  left: "F:\\Git\\pebrel\\tmp\\pr316-fix-20261013\\.tmp3SMKVr\\rollout-date-<fixture-id>.jsonl"
+ right: "F:\\git\\pebrel\\tmp\\pr316-fix-20261013\\.tmp3SMKVr\\rollout-date-<fixture-id>.jsonl"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED
+
+failures:
+
+failures:
+    platform::ai_session_identity::windows::tests::native_shells_bind_only_their_own_open_rollout_and_keep_the_id_and_file_cursor
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2380 filtered out; finished in 0.20s
+

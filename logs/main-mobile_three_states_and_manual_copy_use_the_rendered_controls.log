@@ -1,0 +1,15 @@
+
+running 1 test
+test gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls ... 
+thread 'gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls' (<thread-id>) panicked at nebula_app\src\gpui_shell\settings_pane\mobile\tests.rs:310:9:
+assertion failed: bounds.size.width >= px(48.0)
+FAILEDnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+
+failures:
+    gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2373 filtered out; finished in 0.12s
+

@@ -1,0 +1,19 @@
+{
+  "console_runtime_sha256": [
+    {
+      "name": "conpty.dll",
+      "Hash": "375BFB0479B6C53836AB307E3F9FD17BEDBD733F2E9690943D0F12E72FB80777"
+    },
+    {
+      "name": "OpenConsole.exe",
+      "Hash": "55B18996761C88C351820E82508E05AB0EC2194AEEAD20724FDFAEEDEC076EF4"
+    }
+  ],
+  "exit_code": 0,
+  "console_runtime": "supplied pair",
+  "global_input_injected": false,
+  "case": "editor",
+  "input_path": "product EntityInputHandler and keyboard handler",
+  "prediction_enabled": false,
+  "desktop_was_switched": false
+}
