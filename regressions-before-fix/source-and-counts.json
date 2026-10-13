@@ -1,0 +1,43 @@
+{
+  "unrepaired_synced_pr": "d62577228cabc3d2712f481e8e5156182dd28b5d",
+  "unrepaired_source_tree": "ed5bfa5aa118d04a8159a749bc8cf67c1b885fa6",
+  "fixed_head": "6dfd941319ccc057f8ca768acb6de6812b1016fe",
+  "main": "277a03f38c60fcc1b2edbbc149bbb21a09087639",
+  "size_rule": "additions plus deletions, exclusions from .github/workflows/pr-size.yml",
+  "unrepaired_pr_size": 1471,
+  "fixed_pr_size": 1944,
+  "limit": 1500,
+  "excess": 444,
+  "repair_diff": {
+    "total": 479,
+    "production": 88,
+    "tests_and_test_wiring": 391,
+    "sync_production": 17,
+    "sync_tests_and_wiring": 151,
+    "app_production": 71,
+    "app_tests": 240,
+    "overlap_cancellation_with_original_diff": 6
+  },
+  "arithmetic_without_added_test_lines": 1553,
+  "before_results": {
+    "pty_committed_prefix_wire_bytes": 144,
+    "pty_sync_bytes": 169,
+    "pty_wakeup_events": 0,
+    "pty_tests_failed": 2,
+    "math_image_pixels": [
+      48,
+      80
+    ],
+    "math_tail_pixels": [
+      64,
+      96
+    ],
+    "math_overlap_letters": [
+      "T",
+      "A"
+    ],
+    "math_test_failed": true
+  },
+  "interpretation": "The original production sources were exported from the unrepaired merge tree; only the supplied probes were injected. The PTY probe measures immediate Wakeup, not permanent freezing. The math probe measures production layout geometry using real PNG decoding and asynchronous math bitmaps, not final GPU pixels. These are earlier diagnostic runs; final source/binary identity and passing regressions are recorded separately in source-manifest.json and logs/.",
+  "limits": "The evidence supports retaining these behavior fixes and regression coverage. It does not establish that every line is irreducible, that all optimizations are correctness requirements, or that splitting is impossible."
+}

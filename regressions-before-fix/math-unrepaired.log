@@ -1,0 +1,19 @@
+running 1 test
+test gpui_shell::terminal::math_overlay::tests::review_protocol_image_with_real_math_bitmaps_keeps_text_visible ... CASE=main formulas=1 frame_counts=[0, 0, 1] image_px=[48,80) tail_source_visual_px=[("T", 10, 8, 64.0), ("A", 11, 9, 72.0), ("I", 12, 10, 80.0), ("L", 13, 11, 88.0)] overlapping_cells=[("T", 10, 8, 64.0), ("A", 11, 9, 72.0)]
+CASE=alternate formulas=1 frame_counts=[1] image_px=[48,80) tail_source_visual_px=[("T", 10, 10, 80.0), ("A", 11, 11, 88.0), ("I", 12, 12, 96.0), ("L", 13, 13, 104.0)] overlapping_cells=[]
+CASE=active-line formulas=0 frame_counts=[0] image_px=[48,80) tail_source_visual_px=[("T", 10, 10, 80.0), ("A", 11, 11, 88.0), ("I", 12, 12, 96.0), ("L", 13, 13, 104.0)] overlapping_cells=[]
+CASE=ansi-code-background formulas=0 frame_counts=[0] image_px=[48,80) tail_source_visual_px=[("T", 10, 10, 80.0), ("A", 11, 11, 88.0), ("I", 12, 12, 96.0), ("L", 13, 13, 104.0)] overlapping_cells=[]
+
+thread 'gpui_shell::terminal::math_overlay::tests::review_protocol_image_with_real_math_bitmaps_keeps_text_visible' (<thread-id>) panicked at nebula_app\src\gpui_shell\terminal\math_overlay.rs:1070:9:
+production image paint overlaps projected text in ["main"]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED
+
+failures:
+
+failures:
+    gpui_shell::terminal::math_overlay::tests::review_protocol_image_with_real_math_bitmaps_keeps_text_visible
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2376 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `-p nebula --bin pebrel`

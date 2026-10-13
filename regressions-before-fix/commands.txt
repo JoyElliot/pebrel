@@ -1,0 +1,9 @@
+Unrepaired reproduction: use a separate checkout of d62577228cabc3d2712f481e8e5156182dd28b5d. Its Git tree is ed5bfa5aa118d04a8159a749bc8cf67c1b885fa6.
+
+Append real-pty-probe.rs to nebula_terminal/src/event_loop.rs, then on Unix run:
+  cargo +1.97.1 test --locked -p nebula_terminal review_real_pty -- --nocapture
+
+Insert math-image-probe.rs inside the existing tests module at the end of nebula_app/src/gpui_shell/terminal/math_overlay.rs, then on Windows run:
+  cargo +1.97.1 test --locked -p nebula --bin pebrel --features gpui-test-support review_protocol_image_with_real_math_bitmaps_keeps_text_visible -- --nocapture
+
+Use separate target directories for these controls. The probes leave production code unchanged; only diagnostic tests are added. Compare their failing outcomes with the regression tests committed in the fixed head. Raw earlier logs are retained here; final passing logs and source/binary identities remain at the evidence branch root.

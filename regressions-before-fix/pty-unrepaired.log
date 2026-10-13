@@ -1,0 +1,32 @@
+running 4 tests
+prefix="A" images=0 closed=false wire=9 sync=0 Wakeup=1 InlineImage=0
+prefix="A" images=1 closed=false wire=144 sync=169 Wakeup=0 InlineImage=0
+prefix="\u{1b}[?2026hA\u{1b}[?2026l" images=1 closed=false wire=160 sync=177 Wakeup=0 InlineImage=0
+
+thread 'event_loop::review_real_pty::committed_prefix_has_actual_wakeup_before_open_image_batch' (<thread-id>) panicked at nebula_terminal/src/event_loop.rs:1176:77:
+assertion `left == right` failed
+  left: 0
+ right: 1
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test event_loop::review_real_pty::separately_read_prefix_and_final_commit_both_refresh ... ok
+thread 'event_loop::review_real_pty::completed_frame_has_actual_wakeup_before_next_open_image_batch' (<thread-id>) panicked at nebula_terminal/src/event_loop.rs:1177:81:
+assertion `left == right` failed
+  left: 0
+ right: 1
+
+test event_loop::review_real_pty::committed_prefix_has_actual_wakeup_before_open_image_batch ... FAILED
+test event_loop::review_real_pty::completed_frame_has_actual_wakeup_before_next_open_image_batch ... FAILED
+prefix="" images=1 closed=false wire=143 sync=169 Wakeup=0 InlineImage=0
+prefix="A" images=1 closed=true wire=152 sync=0 Wakeup=1 InlineImage=1
+prefix="A" images=3 closed=false wire=414 sync=507 Wakeup=0 InlineImage=0
+test event_loop::review_real_pty::report_sync_controls_and_older_multi_image_accounting ... ok
+
+failures:
+
+failures:
+    event_loop::review_real_pty::committed_prefix_has_actual_wakeup_before_open_image_batch
+    event_loop::review_real_pty::completed_frame_has_actual_wakeup_before_next_open_image_batch
+
+test result: FAILED. 2 passed; 2 failed; 0 ignored; 0 measured; 239 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `-p nebula_terminal --lib`
