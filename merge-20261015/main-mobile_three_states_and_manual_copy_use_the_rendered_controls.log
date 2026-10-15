@@ -1,0 +1,11 @@
+
+running 1 test
+test gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls ... FAILED
+
+failures:
+
+failures:
+    gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2455 filtered out; finished in 0.14s
+

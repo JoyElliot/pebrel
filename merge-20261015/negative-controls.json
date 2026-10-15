@@ -1,0 +1,17 @@
+[
+  {
+    "omission": "missing-reading-B",
+    "test": "command_output_with_images_preserves_reading_at_every_split",
+    "exit_code": 101
+  },
+  {
+    "omission": "missing-grid-reading-invalidation",
+    "test": "external_image_cells_invalidate_reading_and_release_after_eviction",
+    "exit_code": 101
+  },
+  {
+    "omission": "missing-grid-image-tracking",
+    "test": "external_image_cells_invalidate_reading_and_release_after_eviction",
+    "exit_code": 101
+  }
+]

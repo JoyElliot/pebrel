@@ -1,0 +1,22 @@
+[
+  {
+    "exit_code": 101,
+    "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+    "variant": "merged"
+  },
+  {
+    "exit_code": 101,
+    "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
+    "variant": "merged"
+  },
+  {
+    "exit_code": 101,
+    "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+    "variant": "main"
+  },
+  {
+    "exit_code": 101,
+    "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
+    "variant": "main"
+  }
+]

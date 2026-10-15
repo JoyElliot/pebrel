@@ -1,0 +1,25 @@
+    |
+146 | impl<T> Refreshing<T> {
+    | --------------------- method in this implementation
+...
+167 |     pub fn is_refreshing(&self) -> bool {
+    |            ^^^^^^^^^^^^^
+
+warning: method `set` is never used
+   --> nebula_app\src\ux.rs:182:12
+    |
+177 | impl FocusIndex {
+    | --------------- method in this implementation
+...
+182 |     pub fn set(&mut self, index: usize, count: usize) {
+    |            ^^^
+
+warning: function `nebula_fastfetch_intro_command` is never used
+   --> nebula_app\src\window_context\welcome.rs:148:15
+    |
+148 | pub(super) fn nebula_fastfetch_intro_command() -> Vec<u8> {
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `nebula` (bin "pebrel" test) generated 1294 warnings (run `cargo fix --bin "pebrel" -p nebula --tests` to apply 53 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 26s
+  Executable unittests src\main.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\pebrel-24c8875f5142553d.exe)

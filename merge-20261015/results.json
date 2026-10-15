@@ -1,0 +1,64 @@
+{
+  "candidate": "d1a29979111538116d44c2edca54ab0d9e0ca65e",
+  "candidate_tree": "6d3963a3c272822f77497d13ced8c5be995ba3ab",
+  "merged_upstream": "a2f9b0f666267d1f71e5360e5846b00d2e56c575",
+  "latest_main_control": "3b3287d1d7f65f1b4a517fb81faf81564d872b33",
+  "linux_core": {
+    "passed": 346,
+    "failed": 0,
+    "ignored": 2
+  },
+  "windows_core": {
+    "passed": 402,
+    "failed": 0,
+    "ignored": 2,
+    "lifecycle_child_result_counted_once": true
+  },
+  "windows_product": {
+    "passed": 2425,
+    "failed": 2,
+    "ignored": 36,
+    "image_named_tests_passed": 54
+  },
+  "baseline_controls": [
+    {
+      "exit_code": 101,
+      "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "variant": "merged"
+    },
+    {
+      "exit_code": 101,
+      "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
+      "variant": "merged"
+    },
+    {
+      "exit_code": 101,
+      "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "variant": "main"
+    },
+    {
+      "exit_code": 101,
+      "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
+      "variant": "main"
+    }
+  ],
+  "native_editor_scenarios_passed": 8,
+  "architecture_unit_tests_passed": 75,
+  "i18n": {
+    "passed": 24,
+    "ignored": 1
+  },
+  "counted_pr_lines": 2050,
+  "default_size_limit": 1500,
+  "size_hard_limit": 5000,
+  "size_exempt_present": false,
+  "negative_controls": "All three compiled and failed runtime assertions when the corresponding merge behavior was deliberately omitted in a temporary isolated core copy.",
+  "binary_sha256": {
+    "merged-test.exe": "2943606a95dd53594d70bea4b154d8bde8f7be7f7d1de1923571187e3f5a3f96",
+    "main-test.exe": "0f961b500846fc0a6fcefff89dc1ca772dd701bb9022037daa895d896b536ca0"
+  },
+  "console_runtime_sha256": {
+    "conpty.dll": "39fba2713e2495117b1591ae8c32a3b904bea7aa66069cf7815e2844c76d75d8",
+    "OpenConsole.exe": "b7fd936c2668b87b9ecf7b3366dc6568afc1c6f981874cba3e955a1c35cf8160"
+  }
+}

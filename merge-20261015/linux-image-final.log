@@ -1,0 +1,24 @@
+   Compiling nebula_terminal v2.2.0 (/tmp/pr316-conflict-20261015-core/nebula_terminal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.41s
+     Running tests/inline_image.rs (target/debug/deps/inline_image-6f71ae4acfff14e4)
+
+running 16 tests
+test alternate_screen_hides_main_images_and_restores_them_on_return ... ok
+test image_at_pending_right_margin_does_not_overwrite_last_text_cell ... ok
+test image_geometry_honors_units_and_preserves_explicit_footprint ... ok
+test image_from_bottom_scrolls_only_between_image_rows ... ok
+test external_image_cells_invalidate_reading_and_release_after_eviction ... ok
+test image_replay_does_not_change_application_title_stack ... ok
+test partial_erasure_preserves_source_coordinates_of_remaining_pixels ... ok
+test resize_and_reset_do_not_leave_images_at_old_absolute_rows ... ok
+test image_sync_timeout_is_atomic_and_post_image_clear_invalidates_decode ... ok
+test reset_during_sync_preserves_images_queued_after_reset ... ok
+test interrupted_sync_stream_releases_pending_image_quota ... ok
+test omp_save_move_image_restore_does_not_scroll_reserved_bottom_rows ... ok
+test timed_out_image_frame_commits_before_command_output_is_recorded ... ok
+test uncommitted_command_markers_do_not_record_image_output ... ok
+test image_at_every_chunk_boundary_obeys_synchronized_cursor_order ... ok
+test command_output_with_images_preserves_reading_at_every_split ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

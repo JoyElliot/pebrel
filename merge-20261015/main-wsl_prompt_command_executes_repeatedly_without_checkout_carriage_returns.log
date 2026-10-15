@@ -1,0 +1,11 @@
+
+running 1 test
+test shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns ... FAILED
+
+failures:
+
+failures:
+    shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2455 filtered out; finished in 0.47s
+

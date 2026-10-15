@@ -1,0 +1,21 @@
+   Compiling nebula_terminal v2.2.0 (/tmp/pr316-conflict-20261015-core/nebula_terminal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.78s
+     Running tests/inline_image.rs (target/debug/deps/inline_image-6f71ae4acfff14e4)
+
+running 1 test
+
+thread 'external_image_cells_invalidate_reading_and_release_after_eviction' (46542) panicked at nebula_terminal/tests/inline_image.rs:344:5:
+assertion `left == right` failed
+  left: 0
+ right: 1
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test external_image_cells_invalidate_reading_and_release_after_eviction ... FAILED
+
+failures:
+
+failures:
+    external_image_cells_invalidate_reading_and_release_after_eviction
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test inline_image`
