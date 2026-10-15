@@ -1,0 +1,14 @@
+
+running 9 tests
+test gpui_shell::workspace::settings_navigation::tests::initially_collapsed_sidebar_stays_collapsed_after_repeated_switches ... ok
+test gpui_shell::workspace::settings_navigation::tests::settings_opened_in_top_mode_fold_the_sidebar_after_switching ... ok
+test gpui_shell::workspace::settings_navigation::tests::sidebar_top_sidebar_round_trip_preserves_exclusive_settings ... ok
+test gpui_shell::workspace::settings_navigation::ui_tests::closing_last_regular_tab_keeps_settings_until_it_is_closed ... ok
+test gpui_shell::workspace::settings_navigation::ui_tests::instant_slide_animation_keeps_the_side_panel_static ... ok
+test gpui_shell::workspace::settings_navigation::ui_tests::keyboard_navigation_can_return_to_background_settings ... ok
+test gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch ... ok
+test gpui_shell::workspace::settings_navigation::ui_tests::settings_survives_overflow_and_layout_changes ... ok
+test gpui_shell::workspace::settings_navigation::ui_tests::switching_top_tabs_keeps_settings_reachable_until_explicit_close ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 2455 filtered out; finished in 4.81s
+

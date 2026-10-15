@@ -1,7 +1,7 @@
 {
-  "candidate": "d1a29979111538116d44c2edca54ab0d9e0ca65e",
-  "candidate_tree": "6d3963a3c272822f77497d13ced8c5be995ba3ab",
-  "merged_upstream": "a2f9b0f666267d1f71e5360e5846b00d2e56c575",
+  "candidate": "fe45d862238c817dade384a7e954d0f1be413b5e",
+  "candidate_tree": "6578766b946a5e826cf63430ddc6f3f8c96c7ccb",
+  "merged_upstream": "3b3287d1d7f65f1b4a517fb81faf81564d872b33",
   "latest_main_control": "3b3287d1d7f65f1b4a517fb81faf81564d872b33",
   "linux_core": {
     "passed": 346,
@@ -16,30 +16,40 @@
   },
   "windows_product": {
     "passed": 2425,
-    "failed": 2,
+    "failed": 3,
     "ignored": 36,
     "image_named_tests_passed": 54
   },
   "baseline_controls": [
     {
-      "exit_code": 101,
+      "variant": "merged",
+      "test": "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "exit_code": 0
+    },
+    {
+      "variant": "merged",
       "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
-      "variant": "merged"
+      "exit_code": 101
     },
     {
-      "exit_code": 101,
+      "variant": "merged",
       "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
-      "variant": "merged"
+      "exit_code": 101
     },
     {
-      "exit_code": 101,
+      "variant": "main",
+      "test": "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "exit_code": 0
+    },
+    {
+      "variant": "main",
       "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
-      "variant": "main"
+      "exit_code": 101
     },
     {
-      "exit_code": 101,
+      "variant": "main",
       "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
-      "variant": "main"
+      "exit_code": 101
     }
   ],
   "native_editor_scenarios_passed": 8,
@@ -54,11 +64,30 @@
   "size_exempt_present": false,
   "negative_controls": "All three compiled and failed runtime assertions when the corresponding merge behavior was deliberately omitted in a temporary isolated core copy.",
   "binary_sha256": {
-    "merged-test.exe": "2943606a95dd53594d70bea4b154d8bde8f7be7f7d1de1923571187e3f5a3f96",
+    "merged-test.exe": "8883ecaed3ede19de8faecf99e1c1fb4784636bce6e860c734aec08fca34be44",
     "main-test.exe": "0f961b500846fc0a6fcefff89dc1ca772dd701bb9022037daa895d896b536ca0"
   },
   "console_runtime_sha256": {
     "conpty.dll": "39fba2713e2495117b1591ae8c32a3b904bea7aa66069cf7815e2844c76d75d8",
     "OpenConsole.exe": "b7fd936c2668b87b9ecf7b3366dc6568afc1c6f981874cba3e955a1c35cf8160"
+  },
+  "conflict_resolution_commit": "d1a29979111538116d44c2edca54ab0d9e0ca65e",
+  "core_tested_at": "d1a29979111538116d44c2edca54ab0d9e0ca65e",
+  "core_source_unchanged_at_final_candidate": true,
+  "latest_main_full": {
+    "passed": 2418,
+    "failed": 2,
+    "ignored": 36
+  },
+  "density_context": {
+    "exact_candidate": "pass",
+    "exact_main": "pass",
+    "settings_navigation_group_candidate": "9 pass",
+    "settings_navigation_group_main": "9 pass",
+    "workspace_group_candidate": "216 pass, 0 fail, 2 ignored",
+    "workspace_group_main": "215 pass, 1 fail, 2 ignored; density fails at ui_tests.rs:232 active 0 != 1",
+    "full_candidate": "density failed in both final-head full runs",
+    "full_main": "density passed; the other two persistent failures remained",
+    "conclusion": "Suite-dependent density failure reproduced on latest main; no root-cause or failure-frequency claim."
   }
 }

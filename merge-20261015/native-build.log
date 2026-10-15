@@ -21,5 +21,5 @@ warning: function `nebula_fastfetch_intro_command` is never used
     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: `nebula` (bin "pebrel" test) generated 1296 warnings (run `cargo fix --bin "pebrel" -p nebula --tests` to apply 54 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 08s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 20s
   Executable unittests src\main.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\pebrel-24c8875f5142553d.exe)

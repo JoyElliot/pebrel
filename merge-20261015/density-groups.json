@@ -1,0 +1,22 @@
+[
+  {
+    "exit_code": 0,
+    "filter": "gpui_shell::workspace::settings_navigation",
+    "variant": "merged"
+  },
+  {
+    "exit_code": 0,
+    "filter": "gpui_shell::workspace",
+    "variant": "merged"
+  },
+  {
+    "exit_code": 0,
+    "filter": "gpui_shell::workspace::settings_navigation",
+    "variant": "main"
+  },
+  {
+    "exit_code": 101,
+    "filter": "gpui_shell::workspace",
+    "variant": "main"
+  }
+]

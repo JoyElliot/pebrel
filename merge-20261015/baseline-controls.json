@@ -1,22 +1,32 @@
 [
   {
-    "exit_code": 101,
+    "variant": "merged",
+    "test": "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+    "exit_code": 0
+  },
+  {
+    "variant": "merged",
     "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
-    "variant": "merged"
+    "exit_code": 101
   },
   {
-    "exit_code": 101,
+    "variant": "merged",
     "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
-    "variant": "merged"
+    "exit_code": 101
   },
   {
-    "exit_code": 101,
+    "variant": "main",
+    "test": "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+    "exit_code": 0
+  },
+  {
+    "variant": "main",
     "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
-    "variant": "main"
+    "exit_code": 101
   },
   {
-    "exit_code": 101,
+    "variant": "main",
     "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
-    "variant": "main"
+    "exit_code": 101
   }
 ]

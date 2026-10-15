@@ -22,4 +22,4 @@ warning: method `set` is never used
     |            ^^^
 
 warning: `nebula` (bin "pebrel" test) generated 1259 warnings (1200 duplicates) (run `cargo fix --bin "pebrel" -p nebula --tests` to apply 6 suggestions)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 40.24s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 13.02s

@@ -1,0 +1,6 @@
+
+thread 'gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch' (36088) panicked at nebula_app\src\gpui_shell\workspace\settings_navigation\ui_tests.rs:232:53:
+assertion `left == right` failed
+  left: 0
+ right: 1
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

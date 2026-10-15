@@ -1,6 +1,7 @@
 {
-  "candidate_tree": "6d3963a3c272822f77497d13ced8c5be995ba3ab",
-  "upstream": "a2f9b0f666267d1f71e5360e5846b00d2e56c575",
+  "candidate_commit": "fe45d862238c817dade384a7e954d0f1be413b5e",
+  "candidate_tree": "6578766b946a5e826cf63430ddc6f3f8c96c7ccb",
+  "upstream": "3b3287d1d7f65f1b4a517fb81faf81564d872b33",
   "files": {
     ".coderabbit.yaml": "3c142e2c36f8cad39cdf778f0107ff31e7d922fb7392dacbfb8a571367e23b17",
     ".config/nextest.toml": "576bdb1b2acf25174be6366ed395a4edccc5a3132e0cb1a530a9ac7ca3ebaa5b",
@@ -1285,7 +1286,7 @@
     "nebula_app/src/gpui_shell/terminal/view/tab_identity.rs": "f635c4a7665fac9651ce7b18ebaa3266e24ff785d37353e97c9e7ac2f54f0d02",
     "nebula_app/src/gpui_shell/terminal/view/tests.rs": "76813ec442bd371f74d2a37980e602480e57acd0bd2d631a4ef7f2193655466b",
     "nebula_app/src/gpui_shell/terminal/view/typography.rs": "8f3e41c056e90a627842e75ec4a3cedfd675667c90647eabd77571142bc208b7",
-    "nebula_app/src/gpui_shell/theme.rs": "d94de8efc5dde3fba62017472337f187fd6cb50580bfa119149c685e45664f16",
+    "nebula_app/src/gpui_shell/theme.rs": "b7ffa4a48a15e7d15c85acb974dbc57fcfdf5f2a439ae35af4ae511d02462e37",
     "nebula_app/src/gpui_shell/theme/custom.rs": "996066279043c1652e626da68b02bc61f2b10da6d8a0f5dd9d9ddbbf6f10c1f9",
     "nebula_app/src/gpui_shell/theme/selection_tests.rs": "f1bf05391bd1d48203a38b099521ee4822712dea26f91c94adb3e5a3ef8d84cd",
     "nebula_app/src/gpui_shell/theme/syntax.rs": "9c872cfdf336dadf8719cb85d02ae5309bf6f007dfdfc96991bbf6c42aed71c6",
@@ -2339,6 +2340,5 @@
     "tools/i18n-contract/Cargo.toml": "ed7778ed02102834ae2cdec105aa38a14949a7eecd933c74ab85a12752bb5d0c",
     "tools/i18n-contract/build.rs": "730fa971750b9b1142532ca98833b83dfb777a1d9208f668211b3027488460fc",
     "tools/probe_ime.rs": "740e3bf1f24df711379809787935fd048a3aa2a5fae22da06c6c472dc43ab630"
-  },
-  "candidate_commit": "d1a29979111538116d44c2edca54ab0d9e0ca65e"
+  }
 }

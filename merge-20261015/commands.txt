@@ -1,7 +1,7 @@
 PR #316 conflict merge verification, 2026-10-15 Asia/Taipei
-Candidate d1a29979111538116d44c2edca54ab0d9e0ca65e merges a2f9b0f into 6dfd9413.
+Candidate fe45d862238c817dade384a7e954d0f1be413b5e follows conflict-resolution merge d1a29979111538116d44c2edca54ab0d9e0ca65e (a2f9b0f into 6dfd9413) and also merges latest main 3b3287d1, satisfying the repository strict up-to-date rule.
 Latest main control: 3b3287d1d7f65f1b4a517fb81faf81564d872b33.
-Source export was made from the resolved index before committing; source-manifest.json records every tracked file hash and the matching committed tree.
+The final source export was compared byte-for-byte with git archive of the final commit; source-manifest.json records all 2337 tracked file hashes and the committed tree. Terminal-core source is unchanged from tested d1a29979 to final fe45d862 (git diff --exit-code d1a29979 fe45d862 -- nebula_terminal), so core/negative-control results apply to identical source; Windows product and native editor were rebuilt and rerun at the final commit.
 
 Linux terminal crate: isolated one-member workspace, original crate bytes and current Cargo.lock, workspace edition=2024 and rust-version=1.97.1, original dev optimization settings. Cargo pruned unrelated lock entries; selected dependency versions remained locked.
   cargo +1.97.1 test --offline --all-targets
@@ -14,10 +14,10 @@ Native Windows: Rust 1.97.1 x64 MSVC, current repository lockfile. After cleanin
   <copied-candidate-test.exe> --test-threads=4
   cargo check --locked -p nebula --bin pebrel --features gpui-shell --tests
 
-Use the machine+user Windows PATH and PATHEXT, with Git for Windows bin first. Direct WSL inheritance lacks PATHEXT and selects WSL Bash; that preliminary invalid-environment run is excluded. run-native.ps1 records the setup. For GUI-subsystem test executables use Start-Process -Wait -PassThru with redirected output to capture the exit code reliably; the full-suite verdict comes from the complete harness result, not an immediately returning PowerShell GUI invocation.
+Use the machine+user Windows PATH and PATHEXT, with Git for Windows bin first. Direct WSL inheritance lacks PATHEXT and selects WSL Bash; that preliminary invalid-environment run is excluded. run-native.ps1 records the setup and uses Start-Process -Wait -PassThru with redirected output to capture the GUI-subsystem test executable exit code reliably.
 Run test binaries from their source root, where Cargo.toml exists. Native ConPTY fixtures use the exact current prepare-windows-runtime.ps1 pair, hashes in results.json.
 
-Baseline: archive exact latest main, clean terminal metadata before rebuilding the native product test executable, copy it to main-test.exe, then run the two failed candidate cases against both binaries. run-baseline-controls.ps1 records Start-Process commands and per-process exit codes. Both fail at the same assertions on both revisions. This is baseline evidence, not a full-suite pass.
+Baseline: archive exact latest main, clean terminal metadata before rebuilding the native product test executable, copy it to main-test.exe, then run failed candidate cases against both binaries. run-baseline-controls.ps1 records Start-Process commands and per-process exit codes. The two persistent failures hit the same assertions on both revisions. The density UI test failed in both final-candidate full runs (the second had no concurrent native build/editor activity), while it passed in the full main run. It passed exactly and in the 9-case settings_navigation group on both revisions. Crucially, the larger workspace group passed on the candidate (216 pass, 2 ignored) and failed on main at the same density assertion (215 pass, 1 fail, 2 ignored). run-density-groups.ps1 plus the full and filtered logs preserve this suite-dependent baseline instability; no root cause or frequency guarantee is asserted. These controls do not turn failures into passes.
 
 Editor: scripts/tests/run_completion_e2e.ps1 -TestBinary <copied-candidate-test.exe> -OutputDirectory <new-empty-dir> -Case editor -RuntimeDirectory <current-pinned-ConPTY-pair> -PowerShellProgram <PowerShell7-pwsh.exe>
 Eight scenarios passed. Private desktop, no desktop switch, no global input injection; native-editor/ has the structured results. This is product input-handler/native-shell acceptance, not a GPU/OMP visual test.

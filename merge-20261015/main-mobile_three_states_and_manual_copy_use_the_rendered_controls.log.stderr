@@ -1,4 +1,4 @@
 
-thread 'gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls' (34680) panicked at nebula_app\src\gpui_shell\settings_pane\mobile\tests.rs:310:9:
+thread 'gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls' (20104) panicked at nebula_app\src\gpui_shell\settings_pane\mobile\tests.rs:310:9:
 assertion failed: bounds.size.width >= px(48.0)
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
