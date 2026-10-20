@@ -1,0 +1,100 @@
+{
+  "data": {
+    "viewer": {
+      "login": "JoyElliot"
+    },
+    "repository": {
+      "viewerPermission": "READ",
+      "defaultBranchRef": {
+        "name": "main",
+        "target": {
+          "oid": "f5cf5a688675e88c976d6ca286068fac2c475b21"
+        }
+      },
+      "pullRequest": {
+        "url": "https://github.com/Kuddev/pebrel/pull/316",
+        "headRefOid": "5a5fa0e8b5047e250b090189385809aebb6891e9",
+        "baseRefOid": "f5cf5a688675e88c976d6ca286068fac2c475b21",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "BLOCKED",
+        "reviewDecision": "CHANGES_REQUESTED",
+        "reviewRequests": {
+          "totalCount": 1,
+          "nodes": [
+            {
+              "requestedReviewer": {
+                "login": "Kuddev"
+              }
+            }
+          ]
+        },
+        "latestOpinionatedReviews": {
+          "nodes": [
+            {
+              "id": "PRR_kwDOTOM2Ss8AAAABPheNQA",
+              "state": "CHANGES_REQUESTED",
+              "author": {
+                "login": "Kuddev"
+              },
+              "url": "https://github.com/Kuddev/pebrel/pull/316#pullrequestreview-5336698176"
+            }
+          ]
+        },
+        "commits": {
+          "nodes": [
+            {
+              "commit": {
+                "oid": "5a5fa0e8b5047e250b090189385809aebb6891e9",
+                "statusCheckRollup": {
+                  "state": "PENDING",
+                  "contexts": {
+                    "nodes": [
+                      {
+                        "__typename": "CheckRun",
+                        "name": "architecture-contracts",
+                        "status": "IN_PROGRESS",
+                        "conclusion": null,
+                        "detailsUrl": "https://github.com/Kuddev/pebrel/actions/runs/39357419704/job/118415329430"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "pr-size",
+                        "status": "IN_PROGRESS",
+                        "conclusion": null,
+                        "detailsUrl": "https://github.com/Kuddev/pebrel/actions/runs/39357419741/job/118415329186"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "windows-diagnostics",
+                        "status": "COMPLETED",
+                        "conclusion": "SKIPPED",
+                        "detailsUrl": "https://github.com/Kuddev/pebrel/actions/runs/39357419751/job/118415330452"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "lint",
+                        "status": "IN_PROGRESS",
+                        "conclusion": null,
+                        "detailsUrl": "https://github.com/Kuddev/pebrel/actions/runs/39357419751/job/118415329326"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "labels": {
+          "nodes": [
+            {
+              "name": "copilot-review-requested"
+            },
+            {
+              "name": "ai-review-requested"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

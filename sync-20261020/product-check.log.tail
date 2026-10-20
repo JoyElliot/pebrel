@@ -1,0 +1,35 @@
+    |            ^^^^^^
+
+warning: variants `OpenSettings` and `OpenLogs` are never constructed
+  --> nebula_app\src\ux.rs:9:5
+   |
+ 6 | pub enum RetryAction {
+   |          ----------- variants in this enum
+...
+ 9 |     OpenSettings,
+   |     ^^^^^^^^^^^^
+10 |     OpenLogs,
+   |     ^^^^^^^^
+   |
+   = note: `RetryAction` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: method `is_refreshing` is never used
+   --> nebula_app\src\ux.rs:167:12
+    |
+146 | impl<T> Refreshing<T> {
+    | --------------------- method in this implementation
+...
+167 |     pub fn is_refreshing(&self) -> bool {
+    |            ^^^^^^^^^^^^^
+
+warning: method `set` is never used
+   --> nebula_app\src\ux.rs:182:12
+    |
+177 | impl FocusIndex {
+    | --------------- method in this implementation
+...
+182 |     pub fn set(&mut self, index: usize, count: usize) {
+    |            ^^^
+
+warning: `nebula` (bin "pebrel" test) generated 1275 warnings (1215 duplicates) (run `cargo fix --bin "pebrel" -p nebula --tests` to apply 6 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 48.33s

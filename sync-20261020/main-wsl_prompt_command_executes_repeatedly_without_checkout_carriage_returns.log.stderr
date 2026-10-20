@@ -1,0 +1,4 @@
+
+thread 'shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns' (14076) panicked at nebula_app\src\shell_detect.rs:1480:13:
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

@@ -1,0 +1,198 @@
+{
+  "counted": 2050,
+  "ignored": 417,
+  "files": [
+    {
+      "path": "architecture/notes/nebula_app/gpui_shell/terminal/2026-10-13-images-and-math-projection.md",
+      "additions": 74,
+      "deletions": 0,
+      "ignored": true
+    },
+    {
+      "path": "architecture/notes/nebula_terminal/event_loop/2026-10-13-parser-input-sync-accounting.md",
+      "additions": 56,
+      "deletions": 0,
+      "ignored": true
+    },
+    {
+      "path": "architecture/notes/nebula_terminal/term/2026-09-27-grid-owned-inline-images.md",
+      "additions": 170,
+      "deletions": 0,
+      "ignored": true
+    },
+    {
+      "path": "architecture/notes/nebula_terminal/term/2026-09-28-no-image-grid-fast-path.md",
+      "additions": 117,
+      "deletions": 0,
+      "ignored": true
+    },
+    {
+      "path": "nebula_app/src/display/inline_image.rs",
+      "additions": 62,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/display/mod.rs",
+      "additions": 18,
+      "deletions": 32,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/display/state.rs",
+      "additions": 2,
+      "deletions": 5,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/display/terminal_math.rs",
+      "additions": 37,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/display/terminal_math/scan.rs",
+      "additions": 12,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/display/terminal_math/tests.rs",
+      "additions": 61,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/event.rs",
+      "additions": 2,
+      "deletions": 8,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/element.rs",
+      "additions": 16,
+      "deletions": 61,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/inline_image.rs",
+      "additions": 132,
+      "deletions": 62,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/math_overlay.rs",
+      "additions": 187,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/view.rs",
+      "additions": 2,
+      "deletions": 4,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/renderer/image.rs",
+      "additions": 22,
+      "deletions": 2,
+      "ignored": false
+    },
+    {
+      "path": "nebula_app/src/renderer/mod.rs",
+      "additions": 13,
+      "deletions": 1,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/event.rs",
+      "additions": 4,
+      "deletions": 6,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/event_loop.rs",
+      "additions": 34,
+      "deletions": 21,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/event_loop/sync_tests.rs",
+      "additions": 147,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/grid/mod.rs",
+      "additions": 39,
+      "deletions": 2,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/grid/row.rs",
+      "additions": 9,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/grid/storage.rs",
+      "additions": 93,
+      "deletions": 10,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/inline_image.rs",
+      "additions": 205,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/lib.rs",
+      "additions": 1,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/osc_cwd.rs",
+      "additions": 9,
+      "deletions": 3,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/render.rs",
+      "additions": 20,
+      "deletions": 1,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/term/cell.rs",
+      "additions": 131,
+      "deletions": 19,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/term/inline_image.rs",
+      "additions": 119,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/term/mod.rs",
+      "additions": 12,
+      "deletions": 30,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/src/term/title.rs",
+      "additions": 46,
+      "deletions": 0,
+      "ignored": false
+    },
+    {
+      "path": "nebula_terminal/tests/inline_image.rs",
+      "additions": 348,
+      "deletions": 0,
+      "ignored": false
+    }
+  ]
+}

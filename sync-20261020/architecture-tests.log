@@ -1,0 +1,11 @@
+....................................................................Switched to a new branch 'feature'
+Switched to branch 'main'
+Switched to branch 'feature'
+Switched to a new branch 'feature-bad'
+.Switched to branch 'main'
+Switched to a new branch 'feature'
+.......
+----------------------------------------------------------------------
+Ran 76 tests in 1.418s
+
+OK

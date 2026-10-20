@@ -1,0 +1,483 @@
+   Compiling windows-sys v0.61.2
+   Compiling windows-sys v0.60.2
+   Compiling miow v0.6.1
+   Compiling polling v3.11.0
+   Compiling nebula_terminal v2.2.2 (F:\Git\pebrel\tmp\pr316-sync-20261020\source\nebula_terminal)
+warning: unused import: `UnicodeWidthChar`
+ --> nebula_terminal\src\term\emoji_input_tests.rs:9:21
+  |
+9 | use unicode_width::{UnicodeWidthChar as _, UnicodeWidthStr as _};
+  |                     ^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `UnicodeWidthStr`
+ --> nebula_terminal\src\term\emoji_input_tests.rs:9:44
+  |
+9 | use unicode_width::{UnicodeWidthChar as _, UnicodeWidthStr as _};
+  |                                            ^^^^^^^^^^^^^^^
+
+warning: unused import: `Handler`
+ --> nebula_terminal\src\term\emoji_input_tests.rs:6:24
+  |
+6 | use crate::vte::ansi::{Handler as _, Processor};
+  |                        ^^^^^^^
+
+warning: unused import: `unicode_properties::UnicodeEmoji`
+ --> nebula_terminal\src\term\emoji_input_tests.rs:7:5
+  |
+7 | use unicode_properties::UnicodeEmoji as _;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `nebula_terminal` (lib test) generated 4 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.87s
+     Running unittests src\lib.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\nebula_terminal-14dcd33f41930c42.exe)
+
+running 327 tests
+test event_loop::tests::input_boundaries_require_a_prompt_and_do_not_survive_reflow_or_reset ... ok
+test event_loop::tests::animation_snapshots_cannot_observe_a_partial_synchronized_update ... ok
+test event_loop::tests::shell_semantic_events_track_the_active_prompt ... ok
+test grid::row::tests::capacity_reclamation_requires_both_thresholds ... ok
+test grid::row::tests::large_width_changes_reclaim_row_capacity ... ok
+test grid::row::tests::reclaimed_tail_preserves_content_and_cursor_space_without_regrowing_capacity ... ok
+test grid::row::tests::short_rows_reclaim_without_losing_occupied_cells ... ok
+test grid::row::tests::small_width_changes_keep_row_capacity ... ok
+test grid::storage::tests::grow_after_zero ... ok
+test grid::storage::tests::grow_before_zero ... ok
+test grid::storage::tests::indexing ... ok
+test event_loop::tests::semantic_input_boundary_survives_chunking_and_scrolling ... ok
+test grid::storage::tests::initialize ... ok
+test grid::storage::tests::initialize_caches_one_bounded_viewport ... ok
+test grid::storage::tests::indexing_above_inner_len - should panic ... ok
+test grid::storage::tests::rotate ... ok
+test grid::storage::tests::repeated_growth_and_rotated_reclamation_preserve_line_order ... ok
+test grid::storage::tests::rotate_wrap_zero ... ok
+test grid::storage::tests::shrink_after_zero ... ok
+test grid::storage::tests::shrink_before_and_after_zero ... ok
+test grid::storage::tests::shrink_before_zero ... ok
+test grid::storage::tests::shrink_lines_releases_cache_beyond_one_viewport ... ok
+test grid::storage::tests::shrink_then_grow ... ok
+test grid::storage::tests::shrinking_viewport_uses_the_smaller_cache_allowance ... ok
+test grid::storage::tests::truncate_invisible_lines ... ok
+test grid::storage::tests::truncate_invisible_lines_beginning ... ok
+test grid::storage::tests::with_capacity ... ok
+test grid::tests::a_cursor_parked_after_the_text_survives_a_narrow_drag ... ok
+test grid::tests::accurate_size_hint ... ok
+test grid::tests::conpty_grow_lines_pins_rows_cursor_and_scrollback ... ok
+test grid::tests::conpty_shrink_lines_keeps_the_last_written_row_visible ... ok
+test grid::tests::display_iterator_can_crop_to_the_bottom_of_the_live_viewport ... ok
+test grid::tests::display_iterator_crop_stops_above_uncovered_bottom_rows ... ok
+test grid::tests::dragging_one_column_at_a_time_keeps_the_cursor_on_its_cell ... ok
+test grid::tests::grow_does_not_reflow_when_disabled_on_the_grid ... ok
+test grid::tests::grow_reflow ... ok
+test grid::tests::grow_reflow_disabled ... ok
+test grid::tests::grow_reflow_multiline ... ok
+test grid::tests::scroll_down ... ok
+test grid::tests::scroll_down_with_history ... ok
+test grid::tests::scroll_up ... ok
+test grid::tests::shrink_reflow ... ok
+test grid::tests::shrink_reflow_disabled ... ok
+test grid::tests::shrink_reflow_empty_cell_inside_line ... ok
+test grid::tests::shrink_reflow_twice ... ok
+test grid::tests::shrink_then_grow_restores_a_cursor_inside_wrapped_text ... ok
+test grid::tests::shrink_then_grow_restores_the_cursor ... ok
+test grid::tests::shrink_then_grow_restores_the_original_layout ... ok
+test grid::tests::shrinking_at_the_cursor_column_reflows_implicit_cursor_whitespace ... ok
+test grid::tests::test_iter ... ok
+test index::tests::add ... ok
+test index::tests::add_clamp ... ok
+test index::tests::add_grid_clamp ... ok
+test index::tests::add_none_clamp ... ok
+test index::tests::add_wrap ... ok
+test index::tests::location_ordering ... ok
+test index::tests::sub ... ok
+test index::tests::sub_clamp ... ok
+test index::tests::sub_grid_clamp ... ok
+test index::tests::sub_none_clamp ... ok
+test index::tests::sub_wrap ... ok
+test osc_cwd::tests::cwd_and_mark_interleaved ... ok
+test osc_cwd::tests::ignores_other_osc ... ok
+test osc_cwd::tests::ignores_plain_text ... ok
+test osc_cwd::tests::keeps_order_of_multiple ... ok
+test osc_cwd::tests::mark_split_across_chunks ... ok
+test osc_cwd::tests::osc1337_accepts_jpeg_and_gif_headers ... ok
+test osc_cwd::tests::osc1337_inline_png ... ok
+test osc_cwd::tests::osc1337_rejects_video_unknown_formats_and_pixel_bombs ... ok
+test osc_cwd::tests::osc1337_set_user_var ... ok
+test osc_cwd::tests::osc1337_survives_chunk_splits ... ok
+test osc_cwd::tests::osc1337_without_inline_ignored ... ok
+test osc_cwd::tests::osc133_done_exit_code_variants ... ok
+test osc_cwd::tests::osc133_mark_offset_mid_stream ... ok
+test osc_cwd::tests::osc133_other_phases_ignored ... ok
+test osc_cwd::tests::osc133_prompt_mark_bel ... ok
+test osc_cwd::tests::osc133_prompt_mark_st ... ok
+test osc_cwd::tests::osc133_with_params ... ok
+test osc_cwd::tests::osc7_percent_encoded_space ... ok
+test osc_cwd::tests::osc7_unix_with_host_and_st ... ok
+test osc_cwd::tests::osc7_windows_drive ... ok
+test osc_cwd::tests::osc9_4_reports_conemu_progress ... ok
+test osc_cwd::tests::osc9_9_conemu_path ... ok
+test osc_cwd::tests::osc9_text_notification ... ok
+test osc_cwd::tests::remote_hook_requires_valid_token_and_base64 ... ok
+test osc_cwd::tests::split_across_chunks ... ok
+test event_loop::tests::shell_identity_cwd_and_title_keep_wire_order_across_chunk_boundaries ... ok
+test render::boxdraw::tests::corner_arms_meet_at_joint ... ok
+test render::boxdraw::tests::double_horizontal_has_two_separated_bands ... ok
+test render::boxdraw::tests::coverage_matches_legacy_builtin_font ... ok
+test render::boxdraw::tests::full_block_and_shades ... ok
+test render::boxdraw::tests::heavy_stroke_doubles_light ... ok
+test render::boxdraw::tests::light_horizontal_spans_full_width ... ok
+test render::boxdraw::tests::partial_blocks_and_quadrants ... ok
+test render::boxdraw::tests::powerline_triangle_shape ... ok
+test render::boxdraw::tests::rect_bounds_snap_to_device_pixels ... ok
+test render::boxdraw::tests::rounded_corner_arms_follow_the_corner_direction ... ok
+test render::boxdraw::tests::rounded_corner_is_clipped_to_cell ... ok
+test render::tests::capture_carries_sgr_dim_on_text_and_box_glyphs ... ok
+test render::tests::capture_keeps_a_hidden_cursor_and_its_cell ... ok
+test render::tests::capture_keeps_decscusr_hidden_block_glyph ... ok
+test render::tests::capture_maps_a_deferred_resize_crop_to_visual_rows ... ok
+test render::boxdraw::tests::rounded_corners_keep_clipped_geometry_at_narrow_dpi_sizes ... ok
+test render::tests::capture_marks_wide_cursor ... ok
+test render::tests::capture_moves_sgr_dim_to_the_background_under_inverse ... ok
+test render::tests::capture_routes_builtin_glyphs_to_geometry ... ok
+test render::tests::capture_segments_ignore_cursor_position ... ok
+test render::tests::capture_splits_segments_on_width_class ... ok
+test render::tests::capture_selects_complete_wide_cells_and_copy_keeps_complete_text ... ok
+test render::tests::tracker_coalesces_and_advances_revision ... ok
+test render::tests::viewport_floor_division_and_clamps ... ok
+test render::tests::viewport_reports_exact_text_area_pixels ... ok
+test selection::tests::across_adjacent_lines_upward_final_cell_exclusive ... ok
+test selection::tests::between_adjacent_cells_left_to_right ... ok
+test selection::tests::between_adjacent_cells_right_to_left ... ok
+test selection::tests::block_is_empty ... ok
+test selection::tests::block_selection ... ok
+test selection::tests::line_selection ... ok
+test selection::tests::range_intersection ... ok
+test selection::tests::rotate_in_region_down ... ok
+test selection::tests::rotate_in_region_up ... ok
+test selection::tests::rotate_in_region_up_block ... ok
+test selection::tests::selection_bigger_then_smaller ... ok
+test selection::tests::semantic_selection ... ok
+test selection::tests::simple_is_empty ... ok
+test selection::tests::simple_selection ... ok
+test selection::tests::single_cell_left_to_right ... ok
+test selection::tests::single_cell_right_to_left ... ok
+test term::cell::tests::cell_size_is_below_cap ... ok
+test term::cell::tests::line_length_works ... ok
+test term::cell::tests::line_length_works_with_wrapline ... ok
+test term::input::tests::leading_wide_placeholder_copy_handles_a_removed_following_row ... ok
+test render::boxdraw::tests::rounded_corners_join_straight_lines_at_every_device_pixel ... ok
+test event_loop::tests::authenticated_hook_frames_survive_every_chunk_boundary_and_reject_other_panes ... ok
+test term::input::tests::emoji_continuity_survives_sgr_sync_and_noop_resize_but_not_cursor_or_grid_edits ... ok
+test term::input::tests::nonemoji_scripts_keep_existing_char_width_and_long_marks_use_incremental_context ... ok
+test term::input::tests::promoted_emoji_spacer_keeps_first_cell_hyperlink_and_underline_color ... ok
+test term::input::tests::ordinary_ascii_ends_emoji_clusters_while_keycaps_still_compose ... ok
+test term::input::tests::selector_wrap_at_bottom_outside_margin_has_no_nonexistent_row_placeholder ... ok
+test term::input::tests::selectors_expand_at_last_column_and_keep_wrapped_copy_and_reflow_intact ... ok
+test term::input::tests::ordinary_input_preserves_insert_wrap_and_mapped_characters ... ok
+test term::input::tests::wrapped_wide_input_and_selector_promotion_preserve_insert_mode_target_text ... ok
+test term::input::tests::reported_emoji_are_one_wide_cell_across_utf8_chunks_copy_and_snapshot ... ok
+test term::keyboard_contract_tests::keyboard_contract_each_screen_preserves_its_modified_frame ... ok
+test term::keyboard_contract_tests::keyboard_contract_reset_clears_both_screens ... ok
+test term::keyboard_contract_tests::keyboard_contract_overflow_preserves_titles_and_bounds_keyboard_storage ... ok
+test term::keyboard_contract_tests::keyboard_contract_set_without_push_survives_nested_modes ... ok
+test term::keyboard_contract_tests::keyboard_contract_union_and_difference_persist_after_nested_pop ... ok
+test term::reading::tests::alt_screen_is_searchable_but_does_not_record_shell_commands ... ok
+test term::reading::tests::bounded_reading_cost_sample ... ignored
+test term::reading::tests::backwards_output_and_invalid_cursors_are_rejected ... ok
+test term::reading::tests::all_small_chunk_budgets_preserve_spaces_soft_wrap_and_cjk_mapping ... ok
+test term::reading::tests::compact_guard_and_copy_cost_sample ... ignored
+test term::reading::tests::exact_byte_budget_defers_hard_break_without_losing_it ... ok
+test term::reading::tests::budget_zero_short_utf8_and_extreme_combining_sequence_fail_without_partial_cell ... ok
+test term::reading::tests::guard_detects_live_overwrite_even_after_the_modified_tail_freezes_into_history ... ok
+test term::reading::tests::guard_partial_checks_do_not_rescan_distant_tail_but_final_validation_rejects_it ... ok
+test term::reading::tests::guard_preserves_zero_width_and_consumed_breaks_but_allows_append_after_full_width_end ... ok
+test term::reading::tests::command_metadata_and_live_tail_have_hard_limits ... ok
+test term::reading::tests::incomplete_duplicate_and_out_of_order_markers_never_invent_commands ... ok
+test term::reading::tests::live_guard_accepts_normal_200_by_50_window_after_long_output ... ok
+test term::reading::tests::guard_compact_metadata_stays_under_total_budget_for_many_large_windows ... ok
+test term::reading::tests::live_tail_overwrite_is_rejected_even_when_dimensions_and_endpoints_match ... ok
+test term::reading::tests::long_rows_and_all_whitespace_still_yield_bounded_chunks ... ok
+test term::reading::tests::pending_wrap_zero_output_and_leading_wide_spacer_are_not_newlines ... ok
+test term::reading::tests::read_queries_leave_selection_cursor_modes_and_viewport_untouched ... ok
+test term::reading::tests::live_guard_bounds_hostile_width_without_rejecting_its_short_output ... ok
+test term::reading::tests::reset_resize_saved_clear_and_alt_switch_invalidate_addresses ... ok
+test term::reading::tests::scroll_append_preserves_epoch_and_eviction_is_explicit ... ok
+test term::reading::tests::synchronized_uncommitted_markers_are_not_assigned_stale_coordinates ... ok
+test term::reading::tests::two_commands_and_zero_output_have_disjoint_exact_ranges ... ok
+test term::reading::tests::stream_markers_preserve_order_at_every_byte_split ... ok
+test term::search::tests::anchored_empty ... ok
+test term::search::tests::empty_match ... ok
+test term::search::tests::empty_match_multibyte ... ok
+test term::input::tests::locked_unicode_data_has_no_initial_positive_bmp_emoji_extension ... ok
+test term::search::tests::empty_match_multiline ... ok
+test term::search::tests::end_on_fullwidth ... ok
+test term::search::tests::fullwidth_across_lines ... ok
+test term::search::tests::end_on_multibyte_unicode ... ok
+test term::search::tests::fullwidth_semantic ... ok
+test term::search::tests::fullwidth_into_halfwidth_across_lines ... ok
+test term::search::tests::fullwidth ... ok
+test term::search::tests::include_linebreak_left ... ok
+test term::search::tests::include_linebreak_right ... ok
+test term::search::tests::greed_is_good ... ok
+test term::search::tests::inline_word_search ... ok
+test term::search::tests::leading_spacer ... ok
+test term::search::tests::multibyte_unicode ... ok
+test term::search::tests::newline_breaking_semantic ... ok
+test term::search::tests::multiline ... ok
+test term::search::tests::nested_regex ... ok
+test term::search::tests::no_match_left ... ok
+test term::search::tests::no_match_right ... ok
+test term::search::tests::no_spacer_fullwidth_linewrap ... ok
+test term::search::tests::regex_left ... ok
+test term::search::tests::reverse_search_dead_recovery ... ok
+test term::search::tests::regex_right ... ok
+test term::search::tests::singlecell_fullwidth ... ok
+test term::search::tests::skip_dead_cell ... ok
+test term::search::tests::wide_without_spacer ... ok
+test term::search::tests::wrap_around_to_another_end ... ok
+test term::search::tests::wrapping ... ok
+test term::search::tests::wrapping_into_fullwidth ... ok
+test term::tests::background_darkness_uses_perceptual_luminance_not_the_channel_mean ... ok
+test term::search::tests::nfa_compile_error ... ok
+test term::tests::block_selection_works ... ok
+test term::tests::clear_saved_lines ... ok
+test term::tests::clearing_scrollback_resets_display_offset ... ok
+test term::tests::clearing_scrollback_sets_vi_cursor_into_viewport ... ok
+test term::tests::clearing_viewport_keeps_history_position ... ok
+test term::tests::clearing_viewport_with_vi_mode_keeps_history_position ... ok
+test term::tests::color_scheme_change_stays_quiet_without_a_subscriber ... ok
+test term::tests::color_scheme_reports_only_on_a_real_flip ... ok
+test term::tests::conpty_realign_is_a_noop_when_both_sides_agree ... ok
+test term::tests::composed_emoji_occupy_one_two_column_cell ... ok
+test term::tests::conpty_realign_pushes_content_down_when_conhost_wrapped_more ... ok
+test term::tests::conpty_realign_scrolls_excess_rows_into_history ... ok
+test term::tests::damage_cursor_movements ... ok
+test term::tests::damage_public_usage ... ok
+test term::tests::decset_2031_subscribes_without_reporting_the_current_scheme ... ok
+test term::tests::decset_2031_survives_the_real_parser ... ok
+test term::tests::full_damage ... ok
+test term::tests::grow_lines_updates_active_cursor_pos ... ok
+test term::tests::grow_lines_updates_inactive_cursor_pos ... ok
+test term::tests::input_line_drawing_character ... ok
+test term::tests::grid_serde ... ok
+test term::tests::keyboard_queries_follow_live_flags_after_replace_union_and_difference ... ok
+test term::tests::line_selection_works ... ok
+test term::tests::parse_cargo_version ... ok
+test term::tests::reflow_keeps_prompt_input_at_the_logical_cursor ... ok
+test term::tests::reflow_preserves_pending_wrap_before_the_next_input ... ok
+test term::tests::reset_dynamic_colors_clears_overrides_and_marks_full_damage ... ok
+test term::tests::scroll_display_page_down ... ok
+test term::tests::scroll_display_page_up ... ok
+test term::tests::semantic_selection_works ... ok
+test term::tests::shrink_lines_updates_active_cursor_pos ... ok
+test term::tests::repeated_color_subscriptions_are_silent_at_every_stream_boundary ... ok
+test term::tests::shrink_lines_updates_inactive_cursor_pos ... ok
+test term::tests::simple_selection_works ... ok
+test term::tests::single_codepoint_emoji_keep_two_column_cells ... ok
+test term::tests::vi_cursor_keep_pos_on_scrollback_buffer ... ok
+test term::tests::viewport_origin_previews_the_deferred_resize_crop ... ok
+test term::tests::win32_input_mode_tracks_decset_9001 ... ok
+test tty::tests::connection_script_survives_crlf_and_mixed_checkouts ... ok
+test term::tests::window_title ... ok
+test tty::windows::blocking::tests::reposts_readable_after_draining_the_pipe ... ok
+test tty::windows::child::tests::cancellation_releases_context_and_poller_before_child_exit ... ok
+test term::search::tests::runtime_cache_error ... ok
+test tty::windows::cmd_prompt::tests::native_prompt_defaults_and_is_idempotent ... ok
+test tty::windows::cmd_prompt::tests::native_prompt_does_not_instrument_other_shells ... ok
+test tty::windows::cmd_prompt::tests::native_prompt_preserves_custom_text_without_mutating_caller ... ok
+test tty::windows::cmd_prompt::tests::native_prompt_preserves_explicit_empty_prompt ... ok
+test tty::windows::cmd_prompt::tests::native_prompt_upgrades_a_prefix_only_marker_without_duplicating_it ... ok
+test tty::windows::conpty::runtime_asset_tests::complete_environment_block_is_sorted_case_insensitively ... ok
+test tty::windows::conpty::runtime_asset_tests::complete_environment_does_not_restore_parent_variables ... ok
+test term::reading::tests::hundred_thousand_line_output_records_only_its_bounded_live_tail ... ok
+test tty::windows::conpty::runtime_asset_tests::conpty_does_not_mix_partial_runtime_with_legacy_pair ... ok
+test tty::windows::conpty::runtime_asset_tests::conpty_prefers_complete_runtime_pair ... ok
+test tty::windows::environment::tests::deleted_registry_values_do_not_remove_process_private_values ... ok
+test tty::windows::environment::tests::expandable_values_see_plain_values_from_later_hives ... ok
+test tty::windows::environment::tests::expandable_values_see_plain_values_from_the_same_hive ... ok
+test tty::windows::conpty::runtime_asset_tests::conpty_returns_none_without_complete_pair ... ok
+test tty::windows::environment::tests::later_plain_value_still_overrides_an_earlier_expanded_value ... ok
+test tty::windows::environment::tests::pane_overrides_are_applied_after_the_registry_snapshot ... ok
+test tty::windows::environment::tests::path_stored_as_reg_sz_is_still_expanded ... ok
+test tty::windows::environment::tests::path_variables_append_machine_before_user ... ok
+test tty::windows::environment::tests::user_variables_override_machine_variables ... ok
+test tty::windows::environment::tests::variable_names_are_case_insensitive ... ok
+test tty::windows::powershell_launch::tests::custom_commands_shells_and_same_named_files_outside_managed_roots_are_untouched ... ok
+test tty::windows::powershell_launch::tests::a_missing_old_generation_is_refreshed_without_accepting_arbitrary_subdirectories ... ok
+test tty::windows::powershell_launch::tests::frozen_managed_launch_can_use_the_current_bootstrap_without_changing_user_flags ... ok
+test tty::windows::powershell_launch::tests::script_generations_change_with_version_or_contents_but_are_stable_otherwise ... ok
+test tty::windows::powershell_launch::tests::restored_command_line_loads_current_generated_script_and_leaves_flat_file_unchanged ... ok
+test tty::windows::child::tests::event_is_emitted_when_child_exits ... ok
+test tty::windows::child::tests::drop_waits_for_an_in_flight_callback ... ok
+test tty::windows::proxy_tests::empty_http_marker_does_not_configure_a_socks_proxy_as_http ... ok
+test tty::windows::test::bash_input::prompt_width_tracks_locale_changes_without_overriding_user_configuration ... ok
+test tty::windows::test::bash_prompt_composes_array_hooks_once_and_gives_each_original_status ... ok
+test tty::windows::proxy_tests::selected_http_proxy_reaches_real_powershell5_and_7_requests ... ok
+test tty::windows::test::bash_input::git_bash_wrapped_input_can_be_fully_erased_in_byte_and_utf8_locales ... ok
+test tty::windows::test::bash_prompt_script_contains_composition_and_status_contracts ... ok
+test tty::windows::test::default_powershell_loads_the_user_profile_and_ends_with_the_integration ... ok
+test tty::windows::test::disabling_powerline_keeps_the_complete_osc_lifecycle ... ok
+test tty::windows::test::explicit_bash_quotes_the_generated_rcfile_without_touching_user_config ... ok
+test tty::windows::test::explicit_powershell_keeps_existing_args_and_adds_only_integration ... ok
+test tty::windows::test::legacy_wsl_setting_preserves_the_guest_default_shell ... ok
+test tty::windows::test::powershell_cat_defaults_to_utf8 ... ok
+test tty::windows::test::bash_prompt_composes_string_hook_and_preserves_status_pipeline_and_ps0 ... ok
+test tty::windows::test::powershell_ctrl_backspace_binds_backward_kill_word_in_the_managed_prompt ... ok
+test tty::windows::test::bash_prompt_detects_a_ps1_set_by_the_user_bashrc ... ok
+test tty::windows::test::bash_prompt_leaves_a_user_supplied_ps1_visible ... ok
+test tty::windows::test::powershell_prompt_detects_a_user_prompt_by_its_body ... ok
+test tty::windows::test::powershell_prompt_preserves_previous_hooks_and_both_status_channels ... ok
+test tty::windows::test::powershell_connection_preserves_arguments_exit_code_and_parent_report ... ok
+test tty::windows::test::powershell_integration_preserves_the_users_prediction_source ... ok
+test tty::windows::test::powershell_keeps_a_user_prompt_visible_and_only_adds_the_markers ... ok
+test tty::windows::test::powershell_prompt_uses_only_theme_ansi_slots ... ok
+test tty::windows::test::powershell_reports_absolute_cwd_while_displaying_home_as_tilde ... ok
+test tty::windows::test::powershell_renders_its_own_prompt_when_the_shell_has_no_user_prompt ... ok
+test tty::windows::test::powershell_reports_stable_shell_identity_and_accepted_alias_command ... ok
+test tty::windows::test::powershell_startup_uses_the_rust_http_proxy_marker ... ok
+test tty::windows::test::shell_integrations_share_the_portable_settings_override ... ok
+test tty::windows::test::test_cmdline ... ok
+test tty::windows::test::test_escape ... ok
+test vi_mode::tests::motion_bracket ... ok
+test vi_mode::tests::motion_first_occupied ... ok
+test vi_mode::tests::motion_high_middle_low ... ok
+test vi_mode::tests::motion_semantic_left_end ... ok
+test vi_mode::tests::motion_semantic_left_start ... ok
+test vi_mode::tests::motion_semantic_right_end ... ok
+test vi_mode::tests::motion_semantic_right_start ... ok
+test vi_mode::tests::motion_simple ... ok
+test vi_mode::tests::motion_start_end ... ok
+test vi_mode::tests::motion_word ... ok
+test vi_mode::tests::scroll_over_bottom ... ok
+test vi_mode::tests::scroll_over_top ... ok
+test vi_mode::tests::scroll_semantic ... ok
+test vi_mode::tests::scroll_simple ... ok
+test vi_mode::tests::scroll_word ... ok
+test vi_mode::tests::semantic_wide ... ok
+test vi_mode::tests::simple_wide ... ok
+test vi_mode::tests::wide_semantic_char ... ok
+test vi_mode::tests::word_wide ... ok
+test tty::windows::test::powershell_python_environment_conda_hook_preserves_active_prefix ... ok
+test tty::windows::test::powershell_python_environment_real_venv_activate_and_deactivate ... ok
+test tty::windows::test::powershell_rewraps_a_prompt_replaced_mid_session ... ok
+
+test result: ok. 325 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 17.48s
+
+     Running tests\connection_transport.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\connection_transport-56b54a678dc412b7.exe)
+
+running 1 test
+test connection_reports_survive_native_conpty_in_execution_order ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.54s
+
+     Running tests\inline_image.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\inline_image-3105c0f6eb41f3d9.exe)
+
+running 16 tests
+test external_image_cells_invalidate_reading_and_release_after_eviction ... ok
+test alternate_screen_hides_main_images_and_restores_them_on_return ... ok
+test image_at_pending_right_margin_does_not_overwrite_last_text_cell ... ok
+test image_from_bottom_scrolls_only_between_image_rows ... ok
+test image_geometry_honors_units_and_preserves_explicit_footprint ... ok
+test image_replay_does_not_change_application_title_stack ... ok
+test image_sync_timeout_is_atomic_and_post_image_clear_invalidates_decode ... ok
+test omp_save_move_image_restore_does_not_scroll_reserved_bottom_rows ... ok
+test interrupted_sync_stream_releases_pending_image_quota ... ok
+test partial_erasure_preserves_source_coordinates_of_remaining_pixels ... ok
+test reset_during_sync_preserves_images_queued_after_reset ... ok
+test resize_and_reset_do_not_leave_images_at_old_absolute_rows ... ok
+test timed_out_image_frame_commits_before_command_output_is_recorded ... ok
+test uncommitted_command_markers_do_not_record_image_output ... ok
+test image_at_every_chunk_boundary_obeys_synchronized_cursor_order ... ok
+test command_output_with_images_preserves_reading_at_every_split ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\pi_redraw_anchor.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\pi_redraw_anchor-b28056ad8f2c021f.exe)
+
+running 16 tests
+test bottom_follow_and_append_remain_unchanged ... ok
+test ambiguous_normalized_padding_does_not_choose_a_matching_copy ... ok
+test cancellation_resize_reset_and_alt_screen_do_not_restore_old_anchor ... ok
+test complete_sync_redraw_reanchors_new_content_without_resurrecting_history ... ok
+test disabled_policy_preserves_standard_clear_behavior ... ok
+test forced_sync_stop_does_not_restore_a_partial_redraw ... ok
+test paragraph_spacing_preserves_anchor_including_blank_top_row ... ok
+test partial_clear_does_not_trigger_compatibility_relocation ... ok
+test plain_clear_and_missing_or_ambiguous_anchor_do_not_reanchor ... ok
+test repeated_sync_frames_recapture_the_current_reading_position ... ok
+test table_padding_changes_preserve_three_row_anchor ... ok
+test table_rules_widen_without_losing_the_reading_row ... ok
+test user_scroll_or_disable_during_sync_cancels_pending_anchor ... ok
+test wide_and_combining_characters_survive_reanchoring ... ok
+test byte_boundaries_do_not_change_reanchoring ... ok
+test oversized_sync_update_cancels_even_for_single_large_input ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\ref.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\ref-ff515bfa2ed62688.exe)
+
+running 45 tests
+test clear_underline ... ok
+test alt_reset ... ok
+test colored_reset ... ok
+test colored_underline ... ok
+test csi_rep ... ok
+test decaln_reset ... ok
+test deccolm_reset ... ok
+test delete_chars_reset ... ok
+test delete_lines ... ok
+test erase_chars_reset ... ok
+test fish_cc ... ok
+test erase_in_line ... ok
+test hyperlinks ... ok
+test indexed_256_colors ... ok
+test grid_reset ... ok
+test insert_blank_reset ... ok
+test ll ... ok
+test newline_with_cursor_beyond_scroll_region ... ok
+test origin_goto ... ok
+test region_scroll_down ... ok
+test saved_cursor ... ok
+test saved_cursor_alt ... ok
+test scroll_in_region_up_preserves_history ... ok
+test scroll_up_reset ... ok
+test selective_erasure ... ok
+test sgr ... ok
+test tab_rendering ... ok
+test tmux_git_log ... ok
+test tmux_htop ... ok
+test underline ... ok
+test vim_large_window_scroll ... ok
+test vim_simple_edit ... ok
+test vim_24bitcolors_bce ... ok
+test history ... ok
+test vttest_cursor_movement_1 ... ok
+test vttest_insert ... ok
+test vttest_origin_mode_1 ... ok
+test vttest_origin_mode_2 ... ok
+test vttest_scroll ... ok
+test vttest_tab_clear_set ... ok
+test wrapline_alt_toggle ... ok
+test zerowidth ... ok
+test zsh_bck_i_search ... ok
+test zsh_tab_completion ... ok
+test row_reset ... ok
+
+test result: ok. 45 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests\windows_pty_lifecycle.rs (F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current\debug\deps\windows_pty_lifecycle-7e727eee3aa6dec4.exe)
+
+running 1 test
+
+running 1 test
+idle tab close: 86 handles (warm baseline 84)
+busy tab close: 86 handles (warm baseline 84)
+failed shell spawntest bundled_conpty_resources_return_after_close_and_failed_spawn ... : 85 handles (warm baseline 84)
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.52s
+
+test bundled_conpty_resources_return_after_close_and_failed_spawn ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.60s

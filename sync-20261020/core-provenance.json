@@ -1,0 +1,12 @@
+{
+  "previous_head": "fe45d862238c817dade384a7e954d0f1be413b5e",
+  "candidate": "5a5fa0e8b5047e250b090189385809aebb6891e9",
+  "changed_terminal_files": [
+    "nebula_terminal/Cargo.toml",
+    "nebula_terminal/src/term/tests.rs"
+  ],
+  "production_core_rust_changed": false,
+  "core_dependency_version_changes": [
+    "nebula_terminal package version 2.2.0 -> 2.2.2"
+  ]
+}

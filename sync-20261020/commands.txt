@@ -1,0 +1,106 @@
+PR #316 upstream sync verification, 2026-10-20 (Asia/Taipei)
+
+Candidate: 5a5fa0e8b5047e250b090189385809aebb6891e9
+Previous PR head: fe45d862238c817dade384a7e954d0f1be413b5e
+Merged upstream: f5cf5a688675e88c976d6ca286068fac2c475b21
+Candidate tree: ad1606133af325dc498477d07231f4fcca2a2e24
+
+The merge completed without conflict or additional product-code changes. The 65
+upstream commits since the previous merge have no changed-path intersection with
+the pre-sync PR diff. Tests and existing repair commits remain in the PR.
+
+Source provenance
+-----------------
+The resolved merge index was exported before committing; its tree was checked
+against the merge commit. All 2,369 tracked files in the native candidate snapshot
+were compared byte-for-byte with git archive HEAD. SHA-256 values are recorded in
+source-manifest.json. The separate main snapshot came from git archive f5cf5a68.
+Native test binaries were frozen after each source-specific build; their hashes
+are in results.json. Executables are not published here.
+
+Native environment
+------------------
+Windows x64; Rust 1.97.1 MSVC; PowerShell 7. The runner constructs native PATH from
+machine + user PATH, with D:\Program Files\Git\bin first, and restores machine
+PATHEXT. This avoids inheriting WSL's shell resolution and missing native tools.
+Compiler path configuration is preserved as native-compiler.toml.
+
+Candidate cwd: F:\Git\pebrel\tmp\pr316-sync-20261020\source
+Main cwd: F:\Git\pebrel\tmp\pr316-sync-20261020\main-source
+Target: F:\Git\pebrel\tmp\acrylic-repro-20260921\target-current
+The nebula_terminal package was cleaned before switching candidate/main sources
+to prevent same-version Cargo cache reuse. Logs show source-specific rebuilds.
+Both snapshots used the current pinned ConPTY/OpenConsole pair in the ignored
+assets/windows/conhost directory. Runtime hashes are in desktop-result.json.
+
+Native commands / runners
+-------------------------
+cargo.exe check --locked -p nebula --bin pebrel --features gpui-shell --tests \
+  --target-dir <target above> --config <native-compiler.toml>
+cargo.exe test --locked -p nebula --bin pebrel --features gpui-shell --no-run \
+  --target-dir <target above> --config <native-compiler.toml>
+pwsh.exe -NoProfile -File run-native.ps1 -Mode Core
+pwsh.exe -NoProfile -File run-native.ps1 -Mode Full
+pwsh.exe -NoProfile -File run-native.ps1 -Mode Editor
+pwsh.exe -NoProfile -File run-baseline-controls.ps1
+
+Full and exact tests use Start-Process -Wait -PassThru and redirected stdout/stderr
+so GUI-subsystem executable exit codes are captured. Tests run from checkout
+roots (file_uri contracts require cwd/Cargo.toml). Exact main controls cover only
+the two failures, not a full main suite. Both exact failures returned 101 on both
+binaries with matching assertions; this does not prove the underlying root cause.
+
+Windows core count includes each executable once. The lifecycle child process
+prints an inner summary; that inner result is not counted again (404 total).
+The editor script used its private desktop, without switching desktops or global
+input injection. Its eight scenarios exercise the product input handler with
+PowerShell/ConPTY; they do not constitute new image/GPU/OMP visual acceptance.
+
+Linux core
+----------
+The candidate terminal crate and locked dependencies were copied without edits
+to /tmp/pr316-sync-20261020-core, a one-member workspace. Its workspace manifest:
+[workspace]
+members=["nebula_terminal"]
+resolver="2"
+[workspace.package]
+edition="2024"
+rust-version="1.97.1"
+[profile.dev.package]
+"*"={opt-level=2}
+nebula_terminal={opt-level=3}
+
+From that workspace: cargo +1.97.1 test --offline --all-targets
+Unit 271 + inline images 16 + pi refresh 16 + ref tests 45 = 348 passed;
+2 ignored. Core selected dependency versions are unchanged from the previous
+PR head except nebula_terminal's own version bump to 2.2.2 (core-provenance.json).
+
+Static checks (candidate managed worktree)
+-----------------------------------------
+cargo fmt --all -- --check
+python3 scripts/check_architecture.py --base upstream/main
+python3 -m unittest scripts.tests.test_architecture_budgets \
+  scripts.tests.test_architecture_dependencies scripts.tests.test_architecture_governance \
+  scripts.tests.test_prohibited_names
+python3 scripts/check_prohibited_names.py range --base upstream/main --head HEAD
+cargo test --manifest-path tools/i18n-contract/Cargo.toml --locked
+git diff --cached --check  # resolved merge before committing
+
+Results and limits
+------------------
+See results.json and raw logs. Windows product: 2470 passed / 2 failed / 38 ignored;
+all 56 image-named tests passed. Linux core: 348 / 0 / 2. Windows core: 404 / 0 / 2.
+Architecture checker tests: 76 passed. i18n: 24 passed / 1 ignored.
+No current-head legacy-only build, macOS local runtime, or performance rebenchmark
+was performed. Prior performance/memory measurements remain explicitly historical
+on their original candidate. Full compiler-warning logs were retained locally;
+35-line tails here retain completion evidence, not every existing warning.
+
+Counted PR size: 2050, ignored note lines: 417, default limit: 1500 (550 over).
+No test removal, split, budget/rule change, or size-exempt label was applied.
+The publication-time GitHub snapshot remains CHANGES_REQUESTED/BLOCKED despite
+MERGEABLE. JoyElliot has READ on upstream and cannot dismiss Kuddev's review.
+CI status in post-push-status.json is a point-in-time snapshot, not a final result.
+
+Publication copies normalize ANSI escapes, line endings and blank EOF lines;
+local raw logs remain retained. JSON values and all test output lines are preserved.

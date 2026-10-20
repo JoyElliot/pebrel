@@ -1,0 +1,125 @@
+{
+  "candidate": "5a5fa0e8b5047e250b090189385809aebb6891e9",
+  "upstream": "f5cf5a688675e88c976d6ca286068fac2c475b21",
+  "linux_core": {
+    "passed": 348,
+    "ignored": 2
+  },
+  "windows_core": {
+    "passed": 404,
+    "ignored": 2,
+    "lifecycle_child_counted_once": true
+  },
+  "architecture_unit_tests": 76,
+  "i18n": {
+    "passed": 24,
+    "ignored": 1
+  },
+  "counted_pr_lines": 2050,
+  "review_state_before_push": "CHANGES_REQUESTED",
+  "review_id": "PRR_kwDOTOM2Ss8AAAABPheNQA",
+  "viewer_login": "JoyElliot",
+  "upstream_viewer_permission": "READ",
+  "review_clearance": "Requires upstream reviewer/maintainer; no dismissal attempted with insufficient permissions",
+  "windows_product": {
+    "passed": 2470,
+    "failed": 2,
+    "ignored": 38,
+    "image_named_tests_passed": 56
+  },
+  "baseline_controls": [
+    {
+      "exit_code": 101,
+      "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "variant": "merged"
+    },
+    {
+      "exit_code": 101,
+      "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
+      "variant": "merged"
+    },
+    {
+      "exit_code": 101,
+      "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "variant": "main"
+    },
+    {
+      "exit_code": 101,
+      "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns",
+      "variant": "main"
+    }
+  ],
+  "baseline_control_scope": "Only the two failing tests were run individually on upstream main; the main full suite was not run.",
+  "native_editor": {
+    "passed_scenarios": 8,
+    "desktop": {
+      "exit_code": 0,
+      "global_input_injected": false,
+      "cursor_before": [
+        629,
+        1014
+      ],
+      "cursor_after": [
+        629,
+        1014
+      ],
+      "foreground_before": 196694,
+      "console_runtime": "supplied pair",
+      "desktop_was_switched": false,
+      "case": "editor",
+      "prediction_enabled": false,
+      "input_path": "product EntityInputHandler and keyboard handler",
+      "foreground_after": 196694,
+      "console_runtime_sha256": [
+        {
+          "name": "conpty.dll",
+          "Hash": "39FBA2713E2495117B1591AE8C32A3B904BEA7AA66069CF7815E2844C76D75D8"
+        },
+        {
+          "name": "OpenConsole.exe",
+          "Hash": "B7FD936C2668B87B9ECF7B3366DC6568AFC1C6F981874CBA3E955A1C35CF8160"
+        }
+      ]
+    }
+  },
+  "binary_sha256": {
+    "merged-test.exe": "4916d83197ab94863738bcc6bfd7d53f6e61aa099a6f942293c6dfc9f696e19d",
+    "main-test.exe": "2c761eaaa119cc8beddb3dbbd616b29336097154a666204acc1523719a33ea54"
+  },
+  "post_push_snapshot": {
+    "head": "5a5fa0e8b5047e250b090189385809aebb6891e9",
+    "main": "f5cf5a688675e88c976d6ca286068fac2c475b21",
+    "mergeable": "MERGEABLE",
+    "merge_state_status": "BLOCKED",
+    "review_decision": "CHANGES_REQUESTED",
+    "requested_reviewers": [
+      "Kuddev"
+    ],
+    "cloud_ci": "Running at publication; see latest PR checks, not historical runs."
+  },
+  "static_checks": {
+    "fmt": "passed",
+    "architecture": "passed",
+    "architecture_unit_tests": 76,
+    "i18n": {
+      "passed": 24,
+      "ignored": 1
+    },
+    "prohibited_names": "passed",
+    "gpui_product_check": "passed",
+    "gpui_product_test_build": "passed"
+  },
+  "scope": {
+    "upstream_commits_merged": 65,
+    "old_pr_paths_intersect_upstream_delta": [],
+    "product_edits_added_during_sync": false,
+    "tests_retained": true,
+    "ignored_pr_lines": 417,
+    "default_size_limit": 1500,
+    "excess_counted_lines": 550,
+    "size_exemption_applied": false,
+    "historical_performance_rerun": false,
+    "legacy_only_rechecked": false,
+    "macos_runtime_tested_locally": false
+  }
+}
