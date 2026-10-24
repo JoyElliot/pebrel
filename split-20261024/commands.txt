@@ -140,3 +140,8 @@ Publication
   data; its required blank context lines contain one space and are preserved.
   Evidence whitespace checks exclude only that patch data, not product sources.
   Mac/ARM native CI and actual final-GPU visual acceptance are not claimed here.
+
+Reporting note: full.stdout contains two nested one-test handover child summaries.
+The product_summary uses the final full-suite summary and excludes both child
+summaries; raw stdout is preserved. Core summaries separately exclude their one
+lifecycle child summary. file-budget has its own two-test result.

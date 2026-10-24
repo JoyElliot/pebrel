@@ -21,10 +21,10 @@
       "nested_lifecycle_summaries_removed": 1
     },
     "product_summary": {
-      "passed": 2635,
+      "passed": 2633,
       "failed": 4,
       "ignored": 43,
-      "nested_lifecycle_summaries_removed": 0
+      "nested_lifecycle_summaries_removed": 2
     },
     "failures": [
       "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
@@ -55,10 +55,10 @@
       "nested_lifecycle_summaries_removed": 1
     },
     "product_summary": {
-      "passed": 2637,
+      "passed": 2635,
       "failed": 4,
       "ignored": 43,
-      "nested_lifecycle_summaries_removed": 0
+      "nested_lifecycle_summaries_removed": 2
     },
     "failures": [
       "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
@@ -89,10 +89,10 @@
       "nested_lifecycle_summaries_removed": 1
     },
     "product_summary": {
-      "passed": 2647,
+      "passed": 2645,
       "failed": 4,
       "ignored": 43,
-      "nested_lifecycle_summaries_removed": 0
+      "nested_lifecycle_summaries_removed": 2
     },
     "failures": [
       "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
