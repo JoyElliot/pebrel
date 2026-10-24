@@ -1,0 +1,142 @@
+PR #316 split validation, 2026-10-24 (Asia/Taipei)
+
+Fixed source commits
+  main: 4e93a085f15467fbce202a9bbd5bad0132e346c6
+  original integrated PR: 2e798a59fddd6483fb3d85ae07cf5842d1cf7368
+  A: a0bd5d8aa807057815b7c0336c6459998c862eee (grid-owned-inline-images)
+  B: 3abc1cb31e9473583589f210f58360444911f963 (original PR #316 head branch)
+  C: d97c03011df52d65cf4d0aa7458d78319764ae30 (inline-image-math-layout)
+
+Merge order: A -> original #316 (B) -> C. B is a normal merge descendant of
+the old PR head and A. C descends from B. History was not rewritten.
+After each prerequisite merges, merge current upstream/main into its dependent
+branch and rerun the affected checks, particularly if GitHub used squash/rebase
+to merge the prerequisite. Do not infer a green size check from dependency text.
+
+Counted additions + deletions against the immediate predecessor:
+  A/main: 896; B/A: 1354; C/B: 574.
+Actual current upstream/main comparisons: 896 / 2244 / 2794.
+The repository workflow uses the actual PR base and has no stack awareness.
+Later PRs therefore retain a cumulative size failure until prerequisites are
+integrated and their branches are synchronized. No budget, exclusion or workflow
+was changed. These counts are not additive across successive Git diffs.
+
+Source provenance
+  export_revision.py exports a fixed Git commit and verifies every tracked file's
+  Git blob and SHA-256. Each stage has a source-manifest.json: 2589 / 2598 / 2600
+  tracked files. post-validation-source-check.json verifies their bytes again
+  after runtime tests. Compiled binaries remain local; their hashes are retained.
+  B and C have identical nebula_terminal subtrees.
+  Existing apparent SVG worktree changes are raw-byte identical to HEAD and were
+  not staged. worktree-line-endings.json records this separately from source edits.
+
+Linux terminal core
+  Export the stage's nebula_terminal directory into a one-member workspace with:
+    [workspace]
+    members = ["nebula_terminal"]
+    resolver = "2"
+    [workspace.package]
+    edition = "2024"
+    rust-version = "1.97.1"
+    [profile.dev.package]
+    "*" = { opt-level = 2 }
+    nebula_terminal = { opt-level = 3 }
+  Use the existing locked core dependency set. Between source variants:
+    cargo +1.97.1 clean -p nebula_terminal --target-dir <core-target>
+    cargo +1.97.1 test --locked -p nebula_terminal --all-targets --target-dir <core-target>
+  A: 367 passed, 0 failed, 2 ignored; B: 389 passed, 0 failed, 2 ignored.
+  C core is byte-identical to B; C's Windows core suite was also run independently.
+  cargo check --locked -p nebula_terminal --lib --no-default-features passes for A/B.
+
+Native Windows validation
+  Rust 1.97.1 x64 MSVC. validate-stage.ps1 -Stage a|b|c records:
+    cargo clean -p nebula_terminal -p nebula
+    cargo test --locked -p nebula_terminal --all-targets -- --test-threads=4
+    cargo test --locked -p nebula --test file_line_budget --features gpui-shell
+    cargo check --locked -p nebula --bin pebrel --tests --features gpui-shell
+    cargo check --locked -p nebula --bin pebrel --no-default-features --features legacy-shell
+    cargo check --locked -p nebula --bin pebrel --tests --no-default-features --features legacy-shell
+    cargo test --locked -p nebula --bin pebrel --features gpui-test-support --no-run --message-format=json
+    <frozen-test-executable> --test-threads=4
+  See scripts for target/compiler paths and stdout/stderr files. Tool paths can
+  be adapted to another host; do not silently replace the pinned toolchain.
+  The process wrapper hides consoles, waits for the actual process and reads an
+  explicit exit code; build JSON is read as UTF-8. Package artifacts are cleaned
+  between snapshots to avoid reusing same-version outputs from another source path.
+  a-file-budget.ps1 ran the same budget command after A's full test run.
+
+  Core: A 428 / B 445 / C 445 passed, 0 failed, 2 ignored each. The lifecycle
+  test's nested child summary is counted once (results-by-stage.json).
+  GPUI check, ordinary legacy product check and both file-budget tests pass.
+  Full GPUI product: A 2633 / B 2635 / C 2645 passed; every stage has the same
+  4 failures and 43 ignored tests. The main full run is in ../sync-20261024.
+  run-controls.ps1 reruns those four tests on frozen main/A/B/C binaries from
+  their respective source roots. All four variants yield [101,101,0,101]:
+    symlink writer permit, mobile minimum bounds, tab density, WSL prompt command.
+  Density fails in all full suites but passes individually on all four variants;
+  no new root-cause claim is made. The symlink test reports Windows error 1314.
+  Legacy-only --tests fails on main and all candidates with the same existing
+  E0433 at native_result_model.rs:329, where a GPUI module is configured out.
+  This failure is not reported as passing or hidden by test removal.
+
+Native editor acceptance
+  run-editor.ps1 uses C's frozen product binary, actual PowerShell/ConPTY, a fresh
+  output directory and the supplied runtime pair. All eight editor scenarios pass.
+  c/native-editor/result.json contains the cases; desktop-result.json records
+  no desktop switch and no global input injection. Prediction was not enabled.
+  These are editor/input checks, not image GPU screenshots or a new live OMP run.
+
+Common contracts
+  Python architecture/name-checker tests: 81 passed.
+  nebula-settings (isolated zero-dependency workspace, Rust 1.97.1): 99 passed.
+  tools/i18n-contract: 24 passed, 1 existing ignored test.
+  cargo fmt --all -- --check: A/B/C pass.
+  python3 scripts/check_architecture.py --base <immediate-predecessor>: A/B/C pass.
+  python3 scripts/check_prohibited_names.py range --base <base> --head <head>:
+    all three incremental ranges pass; git diff --check also passes.
+  Governance files, dependency versions, line budgets and exclusions are unchanged.
+
+Regression preservation and negative controls
+  coverage-receipt.json records the original 17 protocol test bodies and five PTY
+  tests unchanged. Two whole tests moved to grid_images.rs with their assertions
+  retained; that file has 12 tests, including ten additional direct API cases.
+  App math/image test files match the original integrated PR's Git blobs.
+  A's new pending-wrap case fails with A's parent implementation (8ea9b437)
+  and passes with a0bd5d8a. a-wrap-controls.json and a-wrap-red.log retain this.
+  marker-cache-control contains the earlier isolated real CommandCapture fixture:
+  main fails, removing only marker discard from integrated 2e798a59 fails, and
+  2e798a59 passes. A retains the same cell/storage cleanup implementation and
+  independently passes the history=1 regression. No image or text fixture is
+  discarded to make a size check pass.
+
+Current-head cost comparison
+  cost/build.ps1 builds A and B into a separate release target and freezes three
+  console executables per variant. Original main binaries are copied unchanged
+  from the prior fixed-main build; baseline-provenance.json verifies their hashes.
+  Harnesses, locks, profiles and package names are identical between variants;
+  only the core source path and images fixture feature differ where required.
+  cost/compare.py runs after owned compilers/product tests have stopped:
+    21 warmups, 189 timed samples (7 workloads x 3 variants x 9 rotated rounds),
+    3 validation warmups, 27 source-validation samples and 5 allocator cases.
+  Every sample checks input bytes, text checksum, cursor, cells, marker count,
+  capture seed and Cell/CellExtra/Row size across all variants. Summary arithmetic
+  was independently recalculated from saved samples.
+  Timing uses an uninstrumented release binary; allocator counts use a separate
+  binary. Native input triggers real core CommandCapture via synthetic protocol,
+  not a live shell/PTY or GUI frame. It retains 39 visible markers in the native
+  workload. Post-native workloads start after a verified real capture, but their
+  subsequent 50000 rows scroll those markers out of view.
+  All seven feed-time sample ranges overlap. This is no universal performance or
+  zero-cost guarantee. Cell/CellExtra/Row remain 24/56/32 bytes on this target;
+  Grid is 192 bytes on main and 200 on A/B. Native-command requested-live-byte
+  figures match in this fixture. Drop returns to zero; A/B's extra 9600 mixed
+  marker/image-cell case releases both owners. Counts are not RSS or GPU memory.
+
+Publication
+  Source and binary hashes describe the original inputs. Log copies normalize
+  ANSI/LF/trailing whitespace and private home prefixes; executable files are not
+  published. Rust harnesses, locks and repro scripts retain their input bytes.
+  ../sync-20261024/cost/before-shared-fingerprint/core.patch is historical diff
+  data; its required blank context lines contain one space and are preserved.
+  Evidence whitespace checks exclude only that patch data, not product sources.
+  Mac/ARM native CI and actual final-GPU visual acceptance are not claimed here.

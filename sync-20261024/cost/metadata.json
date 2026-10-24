@@ -1,0 +1,32 @@
+{
+  "platform": "Windows x64",
+  "rust": "1.97.1 MSVC",
+  "profile": "release opt-level=3, thin LTO, codegen-units=1",
+  "main": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+  "merged_core_source_tree": "ab5b1c8c2fcefb9008020f864c1432d7f044c0ba",
+  "samples": 126,
+  "warmups": 14,
+  "rounds": 9,
+  "summary_revalidated_from_saved_samples": true,
+  "driver_print_note": "Final driver completed normally. The earlier pre-optimization dataset is retained separately, including its summary-print error note.",
+  "lock_sha256": "906ad89c3583d4e7faa51cb4502a08cc9f9f527d0fd70b0984e9c4563212d28c",
+  "binaries": {
+    "main": {
+      "native-cost.exe": "cf07be0f1a1fcce77f241610b5611c28815c8bcadfc48c99aedd04052c3feaf0",
+      "native-memory.exe": "4f08840aacf6c04a14818e5d13616e2fc2acddec1c2d3a165da3af72d1cf5e5c",
+      "native-validate.exe": "165004b1d1a3a446b2e28b3020f1cc300a21c140de50bfb6a5ae39a4818cff36"
+    },
+    "merged": {
+      "native-cost.exe": "e959d3be5a00aad41f4a837b74982bc6db412054065c62edb366d6221d09c3e5",
+      "native-memory.exe": "e07e61ace0961d4166ce87f3a9a35f5c049ee097ac7f25186bbc5ed398415971",
+      "native-validate.exe": "7dfd95517b312aee5002378396b6eb85708ef53fb02f7fb3a0c4e2b7d0f14618"
+    }
+  },
+  "cpu": "Intel Core Ultra 7 255HX",
+  "main_core_tree": "4d85b17dea8b4d49cf7b33144974e4bae2e2d1b4",
+  "merged_core_tree": "43292ce1eeb5f7bcf8d0be54092169096d662b92",
+  "merged": "2e798a59fddd6483fb3d85ae07cf5842d1cf7368",
+  "validation_samples": 18,
+  "validation_warmups": 2,
+  "validation_rows_per_pass": 39
+}

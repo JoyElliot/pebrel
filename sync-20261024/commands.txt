@@ -1,0 +1,138 @@
+PR #316: upstream merge and image/native-result integration, 2026-10-24
+
+Candidate: 2e798a59fddd6483fb3d85ae07cf5842d1cf7368
+Upstream: 4e93a085f15467fbce202a9bbd5bad0132e346c6
+Previous PR head: 5a5fa0e8b5047e250b090189385809aebb6891e9
+Tested tree: ab5b1c8c2fcefb9008020f864c1432d7f044c0ba
+The candidate is a normal two-parent merge. No force push or rebase was used.
+No tests, source budgets, workflow exclusions or size limits were removed/changed.
+
+Provenance
+----------
+All 2,597 tracked files in the candidate native source snapshot were byte-checked
+against the sealed Git tree. The merge commit has that exact tree. The two native
+product executables were frozen separately; SHA-256 values are in results.json.
+Main was exported from its pinned commit, with the same current pinned runtime.
+The terminal package was cleaned before changing the shared compiled target from
+candidate to main, preventing same-version core metadata from crossing sources.
+
+Git reports ten upstream SVG files as modified because of text normalization;
+worktree-line-endings.json proves their raw bytes equal HEAD. They are absent from
+the PR diff. The original user checkout was not reset or modified.
+
+Native environment and commands
+-------------------------------
+Windows x64, Intel Core Ultra 7 255HX, Rust 1.97.1 MSVC, PowerShell 7.
+Runners build native PATH from machine + user PATH with native Git Bash first,
+and restore machine PATHEXT rather than inheriting WSL command resolution.
+Native compiler path: native-compiler.toml. Checkout and tool paths in the saved
+scripts describe this host and need adjustment on another host.
+
+From an exported candidate checkout:
+cargo.exe test --locked -p nebula_terminal --all-targets -- --test-threads=4
+cargo.exe test --locked -p nebula --bin pebrel --features gpui-test-support --no-run
+cargo.exe check --locked -p nebula --bin pebrel --features gpui-shell --tests
+cargo.exe check --locked -p nebula --bin pebrel --no-default-features --features legacy-shell --tests
+All commands also use the saved native compiler config and explicit target dir;
+see build-native.ps1, check-products.ps1, build-main.ps1 and check-main-legacy.ps1.
+
+Full product: frozen merged-test.exe --test-threads=4
+Main control: frozen main-test.exe --test-threads=4
+Exact controls: each failing name with --exact --nocapture --test-threads=1.
+Start-Process -Wait -PassThru captures the true GUI-subsystem process exit code.
+Run from checkout roots, not the result directory (file_uri needs Cargo.toml).
+See run-native.ps1 and run-main-controls.ps1.
+
+Candidate full product: 2645 passed / 4 failed / 43 ignored.
+Main full product: 2633 passed / the same 4 failed / 43 ignored.
+The symlink test fails with OS error 1314 on both, mobile minimum width and WSL
+prompt tests fail individually on both, while density passes individually on both
+and fails in both full suites. This establishes the observed baseline behavior,
+not the unknown cause of the density or WSL failure. See all raw control logs.
+Legacy-only --tests check fails identically with E0433 at native_result_model.rs:329
+on both candidate and main; it is not reported as a successful legacy build.
+
+Native editor acceptance: use the existing run_completion_e2e.ps1 through runner
+Mode Editor with a fresh output directory, the frozen binary, PowerShell 7 and the
+pinned runtime pair. Eight scenarios passed. Desktop switching and global input
+injection were false. The publication runner uses LOCALAPPDATA for the same
+installed runtime path. Runtime hashes are in native-editor/desktop-result.json.
+This is not new OMP/image screenshot or macOS visual acceptance.
+
+Linux terminal core
+-------------------
+The exact candidate terminal crate was copied to a one-member workspace with the
+same selected lockfile versions. Its workspace manifest is cost/source-workspace.toml.
+cargo +1.97.1 test --offline --all-targets
+Result: unit 289 + images 19 + OSC7501 10 + pi refresh 16 + ref 45 = 379 passed;
+2 existing ignored. Windows core total is 435 passed / 2 ignored, counting the
+lifecycle child process only once rather than adding its nested printed summary.
+
+Regression evidence
+-------------------
+Removing final source-fingerprint image rejection and routing native markers back
+through public grid_mut makes three regressions fail: guard classification, mixed
+command output preservation and later image source invalidation. The isolated copy
+was restored and its complete core suite rerun successfully (red-controls.json).
+The padded-prefix geometry case fails before the final row-height boundary fix
+with clip_top=1.6000004 instead of at least 32; it passes after the fix. It uses
+controlled metrics through the existing layout resolver to avoid font dependence.
+See red-projected-image.* and green-projected-image.*. Final full suite includes
+that strengthened regression and all existing image tests (59 image-named cases).
+
+Static checks
+-------------
+cargo fmt --all -- --check
+python3 scripts/check_architecture.py --base 4e93a085f15467fbce202a9bbd5bad0132e346c6
+python3 -m unittest scripts.tests.test_architecture_budgets scripts.tests.test_architecture_dependencies scripts.tests.test_architecture_governance scripts.tests.test_prohibited_names
+cargo test --manifest-path tools/i18n-contract/Cargo.toml --locked
+python3 scripts/check_prohibited_names.py range --base 4e93a085f15467fbce202a9bbd5bad0132e346c6 --head 2e798a59fddd6483fb3d85ae07cf5842d1cf7368
+git diff 4e93a085f15467fbce202a9bbd5bad0132e346c6 2e798a59fddd6483fb3d85ae07cf5842d1cf7368 --check
+81 checker tests passed; i18n 24 passed / 1 existing ignored. Other checks passed.
+
+Cost probes
+-----------
+From this folder, export fixed sources using:
+python cost/prepare.py <local-git-checkout-with-both-commits>
+Then build main and merged harness manifests with Rust 1.97.1 MSVC release;
+merged enables --features images. The saved build-cost.ps1 documents host paths.
+Both variants use identical Cargo.lock bytes and opt-level 3, thin LTO,
+codegen-units 1. The source manifests bind each exported core byte to its revision.
+Timing and counted-allocation probes are separate executables.
+
+python cost/compare.py
+Seven workloads, 9 alternating/reversed rounds, 14 warmups and 126 saved samples.
+Payloads exercise actual core CommandCapture with synthetic OSC input and a fixture
+command classifier, not an actual shell/PTY or the complete application/GPU loop.
+Native: 100 successful commands of 100 output rows; 39 markers remain visible.
+Post-native: a real captured seed is verified before timing subsequent 50,000 rows;
+its marker is no longer visible at the end. RenderSnapshot::capture includes all
+rows, rather than claiming full native-result GUI layout/frame timing.
+
+python cost/compare-validation.py
+The native-validate binary separately measures source_row_matches on 39 visible result rows,
+1000 passes per process, 9 paired samples plus two warmups. Final medians are
+27.9036 us main / 28.2789 us merged; ranges overlap. The source-fingerprint pass
+reuses upstream hashing and rejects image-bearing rows without a separate scan.
+All input/snapshot ranges also overlap; medians and raw variation are retained,
+without a universal zero-cost, improvement or FPS claim.
+
+native-memory reports requested live allocator bytes, not RSS/usable allocation
+size or GPU memory. Marker-only fill/clear/reset/drop match main; the additional
+9600 marker+image cell case releases both owners and returns to zero after drop.
+Cell/CellExtra/Row sizes are 24/56/32 bytes on both; Grid is 192 bytes main and
+200 bytes merged. The earlier dataset before sharing the fingerprint pass remains
+under cost/before-shared-fingerprint, including its final-print error disclosure;
+the final compare driver completed normally and its saved summary was verified.
+
+PR size
+-------
+37 files: +2210 / -292 counted source lines, net +1918, counted total 2502.
+595 Markdown note lines are excluded by the existing workflow. The default limit
+is 1500: excess 1002. This is 452 counted lines above the previous 2050-line PR.
+GitHub PR files API matches the local count. No size-exempt label was applied.
+
+Publication copies strip ANSI escapes, normalize line endings/blank EOF lines and
+redact private home prefixes. Source and executable digests refer to original bytes.
+Only diagnostic tails plus exact errors are included for verbose compiler warnings;
+complete test output and baseline control logs are retained here.

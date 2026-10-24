@@ -1,0 +1,22 @@
+   Compiling nebula_terminal v2.2.2 (/mnt/f/git/pebrel/tmp/pr316-necessity-20261024/main/nebula_terminal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.05s
+     Running tests/necessity_marker.rs (/tmp/pr316-sync-20261020-core/target/debug/deps/necessity_marker-e17e6103ec15c9bd)
+
+running 1 test
+test cached_native_owner_dies_when_its_last_logical_row_leaves ... FAILED
+
+failures:
+
+---- cached_native_owner_dies_when_its_last_logical_row_leaves stdout ----
+
+thread 'cached_native_owner_dies_when_its_last_logical_row_leaves' (85563) panicked at nebula_terminal/tests/necessity_marker.rs:29:13:
+no logical markers remain, but cached row still owns the native surface
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    cached_native_owner_dies_when_its_last_logical_row_leaves
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test necessity_marker`

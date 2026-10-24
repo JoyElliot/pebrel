@@ -1,0 +1,70 @@
+{
+  "data": {
+    "repository": {
+      "viewerPermission": "READ",
+      "pullRequest": {
+        "headRefOid": "2e798a59fddd6483fb3d85ae07cf5842d1cf7368",
+        "baseRefOid": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "BLOCKED",
+        "reviewDecision": "CHANGES_REQUESTED"
+      }
+    }
+  },
+  "check_runs": [
+    {
+      "name": "Native tests (windows-11-arm)",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845348770"
+    },
+    {
+      "name": "Native tests (windows-2022)",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845348761"
+    },
+    {
+      "name": "Native tests (macos-26)",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845348741"
+    },
+    {
+      "name": "Native tests (ubuntu-24.04)",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845348740"
+    },
+    {
+      "name": "Native tests (macos-26-intel)",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845348731"
+    },
+    {
+      "name": "windows-diagnostics",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845230350"
+    },
+    {
+      "name": "pr-size",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736163/job/120845229398"
+    },
+    {
+      "name": "lint",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736161/job/120845229244"
+    },
+    {
+      "name": "architecture-contracts",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Kuddev/pebrel/actions/runs/40084736162/job/120845228972"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+OWNED_QA_PID=19916 DESKTOP=PebrelCompletionQa_736cb58addc045e3be3d3ec7dffdc1eb
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: prepared at 181us
+probe timing: spawned at 6206us
+probe timing: prepared at 209us
+probe timing: spawned at 7317us
+probe timing: attached at 49343us
+probe timing: stopped at 49366us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: attached at 45643us
+probe timing: stopped at 45664us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2691 filtered out; finished in 6.62s

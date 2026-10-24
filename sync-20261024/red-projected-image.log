@@ -1,0 +1,10 @@
+
+running 1 test
+test gpui_shell::terminal::math_overlay::tests::adjacent_image_rows_are_solid_formula_clip_boundaries ... FAILED
+
+failures:
+
+failures:
+    gpui_shell::terminal::math_overlay::tests::adjacent_image_rows_are_solid_formula_clip_boundaries
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2691 filtered out; finished in 0.01s

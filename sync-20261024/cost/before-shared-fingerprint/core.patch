@@ -1,0 +1,73 @@
+diff --git a/nebula_terminal/src/inline_content.rs b/nebula_terminal/src/inline_content.rs
+index c45a7aac..cea71ba2 100644
+--- a/nebula_terminal/src/inline_content.rs
++++ b/nebula_terminal/src/inline_content.rs
+@@ -159,9 +159,9 @@ impl Surface {
+     }
+ 
+     pub fn source_row_matches(&self, row: u16, cells: &[crate::term::cell::Cell]) -> bool {
+-        self.source_hashes
+-            .get(usize::from(row))
+-            .is_some_and(|expected| source_hash(cells) == Some(*expected))
++        self.source_hashes.get(usize::from(row)).is_some_and(|expected| {
++            !cells.iter().any(|cell| cell.image().is_some()) && *expected == source_hash(cells)
++        })
+     }
+ 
+     pub fn revision(&self) -> u64 {
+@@ -338,7 +338,7 @@ impl Registry {
+     }
+ }
+ 
+-fn source_hash(cells: &[crate::term::cell::Cell]) -> Option<u64> {
++fn source_hash(cells: &[crate::term::cell::Cell]) -> u64 {
+     use std::hash::{Hash, Hasher};
+     let mut hash = std::collections::hash_map::DefaultHasher::new();
+     // 窗口加宽补的空白不是输出内容；软折行标记仍参与校验，避免把重排后的旧跨度当真。
+@@ -348,18 +348,14 @@ fn source_hash(cells: &[crate::term::cell::Cell]) -> Option<u64> {
+             cell.c != ' '
+                 || cell.zerowidth().is_some_and(|z| !z.is_empty())
+                 || !cell.flags.is_empty()
+-                || cell.image().is_some()
+         })
+         .map_or(0, |index| index + 1);
+     for cell in &cells[..end] {
+-        if cell.image().is_some() {
+-            return None;
+-        }
+         cell.c.hash(&mut hash);
+         cell.zerowidth().unwrap_or_default().hash(&mut hash);
+         cell.flags.bits().hash(&mut hash);
+     }
+-    Some(hash.finish())
++    hash.finish()
+ }
+ 
+ impl Drop for Registry {
+diff --git a/nebula_terminal/src/inline_content/command.rs b/nebula_terminal/src/inline_content/command.rs
+index 2ec0df1f..a109c91e 100644
+--- a/nebula_terminal/src/inline_content/command.rs
++++ b/nebula_terminal/src/inline_content/command.rs
+@@ -75,17 +75,19 @@ impl CommandCapture {
+         let mut hashes = Vec::with_capacity(rows);
+         for row in 0..rows {
+             let line = first + row;
+-            if term.grid()[line][..].iter().any(|cell| cell.inline_marker().is_some()) {
++            if term.grid()[line][..]
++                .iter()
++                .any(|cell| cell.inline_marker().is_some() || cell.image().is_some())
++            {
+                 return;
+             }
+-            let Some(hash) = source_hash(&term.grid()[line][..]) else { return };
+             // 每个物理行只消费一次；选区 API 会补入下一行宽字，逐行相加会重复。
+             let part = term.line_to_string(line, Column(0)..term.last_column(), false);
+             if text.len().saturating_add(part.len()) > MAX_CONTENT_BYTES {
+                 return;
+             }
+             text.push_str(&part);
+-            hashes.push(hash);
++            hashes.push(source_hash(&term.grid()[line][..]));
+         }
+         if text.trim().is_empty() {
+             return;

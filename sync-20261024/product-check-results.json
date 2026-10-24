@@ -1,0 +1,10 @@
+[
+  {
+    "exit_code": 0,
+    "configuration": "gpui"
+  },
+  {
+    "exit_code": 101,
+    "configuration": "legacy"
+  }
+]

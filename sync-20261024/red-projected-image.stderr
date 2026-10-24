@@ -1,0 +1,4 @@
+
+thread 'gpui_shell::terminal::math_overlay::tests::adjacent_image_rows_are_solid_formula_clip_boundaries' (15632) panicked at nebula_app\src\gpui_shell\terminal\math_overlay.rs:724:13:
+prefixed=true, clip_top=1.6000004
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

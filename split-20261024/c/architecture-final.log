@@ -1,0 +1,11 @@
+Architecture: 1119 source files, 10 crates, 9 legacy exceptions
+Review guidance only: 110 files exceed the 800-line soft target
+Initial policy adoption: no budget in base; review the initial debt inventory
+NOTICE: nebula_app/src/event.rs: tighten exception to 3451
+NOTICE: nebula_app/src/window_context.rs: tighten exception to 3139
+NOTICE: nebula_app/src/display/chrome.rs: tighten exception to 2422
+NOTICE: nebula_app/src/display/command_palette.rs: tighten exception to 3705
+NOTICE: nebula_app/src/display/mod.rs: tighten exception to 10506
+NOTICE: nebula_app/src/display/settings.rs: tighten exception to 8367
+NOTICE: nebula_app/src/gpui_shell/workspace.rs: tighten exception to 2686
+NOTICE: nebula_terminal/src/term/mod.rs: tighten exception to 2495

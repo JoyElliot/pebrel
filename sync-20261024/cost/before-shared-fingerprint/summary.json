@@ -1,0 +1,198 @@
+{
+  "ascii": {
+    "main": {
+      "feed_us": {
+        "median": 42179.1,
+        "min": 41397.5,
+        "max": 45952.3
+      },
+      "snapshot_us": {
+        "median": 148.364,
+        "min": 142.495,
+        "max": 158.857
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 41353.4,
+        "min": 40429.0,
+        "max": 45255.799999999996
+      },
+      "snapshot_us": {
+        "median": 150.444,
+        "min": 147.359,
+        "max": 165.12400000000002
+      }
+    },
+    "feed_us_delta_percent": -1.9576045956409605,
+    "snapshot_us_delta_percent": 1.4019573481437453
+  },
+  "cjk": {
+    "main": {
+      "feed_us": {
+        "median": 51597.799999999996,
+        "min": 50464.4,
+        "max": 54860.600000000006
+      },
+      "snapshot_us": {
+        "median": 90.71799999999999,
+        "min": 86.756,
+        "max": 94.085
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 50989.600000000006,
+        "min": 49998.9,
+        "max": 51747.799999999996
+      },
+      "snapshot_us": {
+        "median": 89.46300000000001,
+        "min": 87.78200000000001,
+        "max": 90.56
+      }
+    },
+    "feed_us_delta_percent": -1.1787324265763122,
+    "snapshot_us_delta_percent": -1.3834079234550822
+  },
+  "ansi": {
+    "main": {
+      "feed_us": {
+        "median": 48750.1,
+        "min": 47557.4,
+        "max": 50089.3
+      },
+      "snapshot_us": {
+        "median": 148.39800000000002,
+        "min": 143.481,
+        "max": 152.485
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 48527.4,
+        "min": 47933.4,
+        "max": 49347.200000000004
+      },
+      "snapshot_us": {
+        "median": 146.584,
+        "min": 144.017,
+        "max": 152.391
+      }
+    },
+    "feed_us_delta_percent": -0.4568195757547078,
+    "snapshot_us_delta_percent": -1.2223884418927633
+  },
+  "native": {
+    "main": {
+      "feed_us": {
+        "median": 23973.600000000002,
+        "min": 23884.5,
+        "max": 24740.0
+      },
+      "snapshot_us": {
+        "median": 141.595,
+        "min": 135.489,
+        "max": 145.401
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 24358.3,
+        "min": 23962.899999999998,
+        "max": 25597.600000000002
+      },
+      "snapshot_us": {
+        "median": 138.352,
+        "min": 135.951,
+        "max": 144.908
+      }
+    },
+    "feed_us_delta_percent": 1.6046818166649768,
+    "snapshot_us_delta_percent": -2.2903351107030567
+  },
+  "post-ascii": {
+    "main": {
+      "feed_us": {
+        "median": 41274.4,
+        "min": 40300.299999999996,
+        "max": 44464.799999999996
+      },
+      "snapshot_us": {
+        "median": 150.019,
+        "min": 146.679,
+        "max": 159.81300000000002
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 41451.700000000004,
+        "min": 40017.9,
+        "max": 42213.9
+      },
+      "snapshot_us": {
+        "median": 153.16,
+        "min": 149.173,
+        "max": 160.054
+      }
+    },
+    "feed_us_delta_percent": 0.4295640881514906,
+    "snapshot_us_delta_percent": 2.0937347935928052
+  },
+  "post-cjk": {
+    "main": {
+      "feed_us": {
+        "median": 51646.0,
+        "min": 50043.0,
+        "max": 54844.700000000004
+      },
+      "snapshot_us": {
+        "median": 91.336,
+        "min": 88.77599999999998,
+        "max": 93.78
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 50462.9,
+        "min": 49936.6,
+        "max": 53063.2
+      },
+      "snapshot_us": {
+        "median": 92.277,
+        "min": 88.52699999999999,
+        "max": 113.90799999999999
+      }
+    },
+    "feed_us_delta_percent": -2.2907872826549935,
+    "snapshot_us_delta_percent": 1.0302618901637972
+  },
+  "post-ansi": {
+    "main": {
+      "feed_us": {
+        "median": 48222.4,
+        "min": 46909.5,
+        "max": 49047.100000000006
+      },
+      "snapshot_us": {
+        "median": 151.095,
+        "min": 147.57299999999998,
+        "max": 155.713
+      }
+    },
+    "merged": {
+      "feed_us": {
+        "median": 48640.700000000004,
+        "min": 47883.4,
+        "max": 51963.200000000004
+      },
+      "snapshot_us": {
+        "median": 152.32,
+        "min": 150.05,
+        "max": 157.049
+      }
+    },
+    "feed_us_delta_percent": 0.8674391983808372,
+    "snapshot_us_delta_percent": 0.8107482047718273
+  }
+}

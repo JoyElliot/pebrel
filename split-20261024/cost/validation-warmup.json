@@ -1,0 +1,23 @@
+[
+  {
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.063899999999997,
+    "variant": "main"
+  },
+  {
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.911399999999997,
+    "variant": "a"
+  },
+  {
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.270799999999998,
+    "variant": "b"
+  }
+]

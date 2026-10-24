@@ -1,0 +1,8 @@
+   Compiling nebula_terminal v2.2.2 (/mnt/f/git/pebrel/tmp/pr316-necessity-20261024/final/nebula_terminal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.23s
+     Running tests/necessity_marker.rs (/tmp/pr316-sync-20261020-core/target/debug/deps/necessity_marker-e17e6103ec15c9bd)
+
+running 1 test
+test cached_native_owner_dies_when_its_last_logical_row_leaves ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s

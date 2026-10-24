@@ -1,0 +1,131 @@
+{
+  "candidate": "2e798a59fddd6483fb3d85ae07cf5842d1cf7368",
+  "upstream": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+  "previous_head": "5a5fa0e8b5047e250b090189385809aebb6891e9",
+  "tree": "ab5b1c8c2fcefb9008020f864c1432d7f044c0ba",
+  "tracked_native_source_files": 2597,
+  "linux_core": {
+    "passed": 379,
+    "failed": 0,
+    "ignored": 2
+  },
+  "windows_core": {
+    "passed": 435,
+    "failed": 0,
+    "ignored": 2,
+    "lifecycle_child_counted_once": true
+  },
+  "windows_product": {
+    "passed": 2645,
+    "failed": 4,
+    "ignored": 43,
+    "failures": [
+      "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
+      "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    ]
+  },
+  "upstream_windows_product": {
+    "passed": 2633,
+    "failed": 4,
+    "ignored": 43,
+    "failures": [
+      "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
+      "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    ]
+  },
+  "image_named_product_tests_passed": 59,
+  "baseline_exact": [
+    {
+      "exit_code": 101,
+      "variant": "merged",
+      "test": "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit"
+    },
+    {
+      "exit_code": 101,
+      "variant": "merged",
+      "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls"
+    },
+    {
+      "exit_code": 0,
+      "variant": "merged",
+      "test": "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch"
+    },
+    {
+      "exit_code": 101,
+      "variant": "merged",
+      "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    },
+    {
+      "exit_code": 101,
+      "variant": "main",
+      "test": "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit"
+    },
+    {
+      "exit_code": 101,
+      "variant": "main",
+      "test": "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls"
+    },
+    {
+      "exit_code": 0,
+      "variant": "main",
+      "test": "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch"
+    },
+    {
+      "exit_code": 101,
+      "variant": "main",
+      "test": "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    }
+  ],
+  "legacy_test_configuration": {
+    "candidate_exit_code": 101,
+    "upstream_exit_code": 101,
+    "same_error": "E0433 native_result_model.rs:329 cannot find gpui_shell in crate"
+  },
+  "product_configurations": [
+    {
+      "exit_code": 0,
+      "configuration": "gpui"
+    },
+    {
+      "exit_code": 101,
+      "configuration": "legacy"
+    }
+  ],
+  "native_editor": {
+    "passed": 8,
+    "private_desktop_switched": false,
+    "global_input_injected": false
+  },
+  "architecture_checker_tests": 81,
+  "i18n": {
+    "passed": 24,
+    "ignored": 1
+  },
+  "source_line_counts": {
+    "base": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+    "source_additions": 2210,
+    "source_deletions": 292,
+    "ignored": 595,
+    "counted": 2502,
+    "net_source_lines": 1918,
+    "default_limit": 1500,
+    "excess": 1002,
+    "delta_from_previous_count": 452
+  },
+  "binary_sha256": {
+    "merged": "a769ceea0a5e620efe63a19a5cb33ac70b7f8348aa1476dc571643631517af83",
+    "main": "a38132e35ace3898e86bdefea408b59d7e474977ba45f959428b6ff1835347e2"
+  },
+  "validation_limits": [
+    "Full Windows product suite is not all green; current main reproduces all four failures.",
+    "Density test passes individually on both binaries and fails in both complete suites; root cause not established.",
+    "Legacy-only --tests compilation fails identically on current main and candidate.",
+    "Cost probes exercise actual core capture/source-validation code with synthetic OSC input, not an actual shell/PTY or GPU frame benchmark.",
+    "Native editor acceptance uses actual PowerShell/ConPTY on a private desktop; it is not new image screenshot or macOS visual acceptance.",
+    "Unstaged upstream SVG normalization artifacts have exact HEAD bytes and are absent from the PR diff."
+  ]
+}

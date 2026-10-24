@@ -1,0 +1,8 @@
+ascii feed delta percent 3.45
+cjk feed delta percent 2.03
+ansi feed delta percent -0.06
+native feed delta percent 1.4
+post-ascii feed delta percent -0.91
+post-cjk feed delta percent -0.64
+post-ansi feed delta percent -0.74
+Measured samples 126 plus warmups 14

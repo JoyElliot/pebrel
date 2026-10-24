@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "compiler-artifact",
+    "package_id": "path+file:///F:/Git/pebrel/tmp/pr316-split-20261024/c/source/nebula_terminal#2.2.2",
+    "manifest_path": "F:\\Git\\pebrel\\tmp\\pr316-split-20261024\\c\\source\\nebula_terminal\\Cargo.toml",
+    "target": {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "nebula_terminal",
+      "src_path": "F:\\Git\\pebrel\\tmp\\pr316-split-20261024\\c\\source\\nebula_terminal\\src\\lib.rs",
+      "edition": "2024",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    "profile": {
+      "opt_level": "3",
+      "debuginfo": 1,
+      "debug_assertions": true,
+      "overflow_checks": true,
+      "test": false
+    },
+    "features": [
+      "default",
+      "serde"
+    ],
+    "filenames": [
+      "F:\\Git\\pebrel\\tmp\\acrylic-repro-20260921\\target-current\\debug\\deps\\libnebula_terminal-c6fd4b4323e3ca9c.rlib",
+      "F:\\Git\\pebrel\\tmp\\acrylic-repro-20260921\\target-current\\debug\\deps\\libnebula_terminal-c6fd4b4323e3ca9c.rmeta"
+    ],
+    "executable": null,
+    "fresh": true
+  },
+  {
+    "reason": "compiler-artifact",
+    "package_id": "path+file:///F:/Git/pebrel/tmp/pr316-split-20261024/c/source/nebula_app#nebula@2.2.2",
+    "manifest_path": "F:\\Git\\pebrel\\tmp\\pr316-split-20261024\\c\\source\\nebula_app\\Cargo.toml",
+    "target": {
+      "kind": [
+        "bin"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "pebrel",
+      "src_path": "F:\\Git\\pebrel\\tmp\\pr316-split-20261024\\c\\source\\nebula_app\\src\\main.rs",
+      "edition": "2024",
+      "doc": true,
+      "doctest": false,
+      "test": true
+    },
+    "profile": {
+      "opt_level": "0",
+      "debuginfo": 1,
+      "debug_assertions": true,
+      "overflow_checks": true,
+      "test": true
+    },
+    "features": [
+      "default",
+      "gif-background",
+      "gpui-shell",
+      "gpui-test-support",
+      "shader-background",
+      "video-background"
+    ],
+    "filenames": [
+      "F:\\Git\\pebrel\\tmp\\acrylic-repro-20260921\\target-current\\debug\\deps\\pebrel-c7db51c183491ac3.exe",
+      "F:\\Git\\pebrel\\tmp\\acrylic-repro-20260921\\target-current\\debug\\deps\\pebrel-c7db51c183491ac3.pdb"
+    ],
+    "executable": "F:\\Git\\pebrel\\tmp\\acrylic-repro-20260921\\target-current\\debug\\deps\\pebrel-c7db51c183491ac3.exe",
+    "fresh": false
+  },
+  {
+    "reason": "build-finished",
+    "success": true
+  }
+]

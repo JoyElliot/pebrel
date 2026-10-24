@@ -1,0 +1,16 @@
+{
+    "source":  {
+                   "commit":  "3abc1cb31e9473583589f210f58360444911f963",
+                   "tree":  "1e7affadb2efe91b3918cadac0e39760c6827479",
+                   "base":  "a0bd5d8aa807057815b7c0336c6459998c862eee"
+               },
+    "test_binary_sha256":  "695EB2C0DEEBE5B85524AC0FD871B24B10CD5B5A8D0E8C9DF0A52A2F38E5EE37",
+    "build":  0,
+    "legacy-tests-check":  101,
+    "file-budget":  0,
+    "legacy-product-check":  0,
+    "full":  101,
+    "core":  0,
+    "gpui-check":  0,
+    "clean":  0
+}

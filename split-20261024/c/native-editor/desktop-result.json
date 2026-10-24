@@ -1,0 +1,29 @@
+{
+    "input_path":  "product EntityInputHandler and keyboard handler",
+    "console_runtime":  "supplied pair",
+    "global_input_injected":  false,
+    "console_runtime_sha256":  [
+                                   {
+                                       "name":  "conpty.dll",
+                                       "Hash":  "39FBA2713E2495117B1591AE8C32A3B904BEA7AA66069CF7815E2844C76D75D8"
+                                   },
+                                   {
+                                       "name":  "OpenConsole.exe",
+                                       "Hash":  "B7FD936C2668B87B9ECF7B3366DC6568AFC1C6F981874CBA3E955A1C35CF8160"
+                                   }
+                               ],
+    "case":  "editor",
+    "desktop_was_switched":  false,
+    "cursor_after":  [
+                         491,
+                         1064
+                     ],
+    "cursor_before":  [
+                          491,
+                          1064
+                      ],
+    "foreground_before":  132744,
+    "exit_code":  0,
+    "prediction_enabled":  false,
+    "foreground_after":  132744
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-anthropic.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-azure.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-deepseek.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-doubao.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-gemini.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-ollama.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-openrouter.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-qwen.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-xiaomimimo.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-zhipu.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "c"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-anthropic.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-azure.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-deepseek.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-doubao.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-gemini.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-ollama.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-openrouter.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-qwen.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-xiaomimimo.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  },
+  {
+    "worktree": "pebrel",
+    "path": "nebula_app/assets/icons/nebula-provider-zhipu.svg",
+    "raw_bytes_equal_head": true,
+    "stage": "b"
+  }
+]

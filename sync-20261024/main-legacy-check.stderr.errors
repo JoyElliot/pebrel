@@ -1,0 +1,18 @@
+error[E0433]: cannot find `gpui_shell` in `crate`
+   --> nebula_app\src\native_result_model.rs:329:20
+    |
+329 |             crate::gpui_shell::try_write_stderr(format_args!(
+    |                    ^^^^^^^^^^ could not find `gpui_shell` in the crate root
+    |
+note: found an item that was configured out
+   --> nebula_app\src\main.rs:75:5
+    |
+ 74 | #[cfg(feature = "gpui-shell")]
+    |       ---------------------- the item is gated behind the `gpui-shell` feature
+ 75 | mod gpui_shell;
+    |     ^^^^^^^^^^
+
+warning: unused import: `AiHookCapabilities`
+  --> nebula_app\src\ai_hook.rs:24:24
+   |
+24 |     AiBackgroundTasks, AiHookCapabilities, AiHookEvent, AiHookKind, AiPermissionMode,

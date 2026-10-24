@@ -1,0 +1,17 @@
+{
+  "main": {
+    "native-cost.exe": "cf07be0f1a1fcce77f241610b5611c28815c8bcadfc48c99aedd04052c3feaf0",
+    "native-memory.exe": "4f08840aacf6c04a14818e5d13616e2fc2acddec1c2d3a165da3af72d1cf5e5c",
+    "native-validate.exe": "165004b1d1a3a446b2e28b3020f1cc300a21c140de50bfb6a5ae39a4818cff36"
+  },
+  "a": {
+    "native-cost.exe": "29ccb76923408d7f45cbb3b0c027af976dfdab0e95915074f209d16bbf5188da",
+    "native-memory.exe": "31bd0d9202e3c810cc4d5ecb3ff8a7716a2d71db92bb43ba1b3a3fe28ed996fd",
+    "native-validate.exe": "842256d82c92ab9d3a3e2586a73591a7f661c44931f3ec4b526db3ebd54c963a"
+  },
+  "b": {
+    "native-cost.exe": "7a35acf38aee79fe4ac805b3ba3c58dd2c2b1d117e62c5f3eda86ddd0d44dd6e",
+    "native-memory.exe": "bf312ea9dbceff2461d6b0b6eaf4324e0f129f4a0d6cdaf51f081b12329a59b5",
+    "native-validate.exe": "813c4a37802d03b4dbcb2ab8d85b8e6ec89db51b1a997307c80f29ec3b4fd12b"
+  }
+}

@@ -1,0 +1,3782 @@
+[
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43709.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 151.673,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42081.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 155.461,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43532.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 150.386,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53756.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 89.43400000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53267.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 89.92299999999999,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53006.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 90.73700000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52980.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 160.251,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51817.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.569,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50063.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.911,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24696.699999999997,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 141.254,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24726.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 147.661,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24252.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 141.90400000000002,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44777.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 163.432,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44223.899999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 161.81799999999998,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43328.899999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 161.05100000000002,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52820.8,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.054,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52851.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 95.883,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52907.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.74600000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49923.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 160.322,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 0
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49566.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.349,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 0
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50299.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 154.58,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 0
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53709.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 95.26400000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54287.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 91.705,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 57019.100000000006,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 91.641,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50518.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 156.798,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50910.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 156.441,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50856.899999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.744,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24715.899999999998,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.12699999999998,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24786.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 143.774,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25495.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 143.23,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44585.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 163.41299999999998,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43468.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.457,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44151.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.25599999999997,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54398.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 92.973,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52707.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 95.134,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53465.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.425,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50281.1,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.011,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50058.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 166.169,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49848.200000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.31799999999998,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44102.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.36599999999999,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 1
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44978.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.228,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 1
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42439.200000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 151.849,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 1
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50251.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.512,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50210.7,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 155.806,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52963.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 160.795,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25787.899999999998,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.976,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24780.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 143.87199999999999,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 26448.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.194,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42893.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.88899999999998,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43122.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.957,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42738.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.02100000000002,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53074.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 92.32700000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53581.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 96.14200000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52778.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 92.662,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50935.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 163.238,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50451.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.42100000000002,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49569.299999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.48899999999998,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 41791.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 155.421,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 46658.1,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 161.49699999999999,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 46013.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 164.12699999999998,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55377.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 94.634,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 2
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54498.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 93.40799999999999,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 2
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53350.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 89.46,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 2
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24478.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 145.821,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24711.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 143.622,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24427.8,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.64600000000002,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44414.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.984,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43902.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.53300000000002,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 45408.799999999996,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 160.065,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52779.399999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.69,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52281.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.242,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54145.8,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 95.139,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50850.8,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.00199999999998,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51087.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.668,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50523.7,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.399,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43742.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 156.689,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43008.8,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.59699999999998,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42444.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 150.275,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55538.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 90.564,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53284.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 90.697,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53190.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 93.40899999999999,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49199.2,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 151.089,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 3
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50629.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 155.437,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 3
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51351.8,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.18200000000002,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 3
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43405.600000000006,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 160.803,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42455.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.52100000000002,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44549.8,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.988,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52822.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.972,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54845.8,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.695,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52635.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 92.47099999999999,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50264.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 162.804,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51165.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.809,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49971.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 161.232,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43275.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.896,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44798.8,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.476,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43524.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 159.351,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55113.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 98.964,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 56682.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 92.98100000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54058.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 90.42400000000002,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51038.100000000006,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.661,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51918.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 148.909,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51973.7,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 155.569,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25315.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 143.748,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 4
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25311.2,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 142.798,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 4
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24499.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.295,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 4
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53027.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 97.4,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54214.3,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.57600000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54196.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 91.84,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50728.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.6,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50549.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.083,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53340.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 177.232,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 46031.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 165.645,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44351.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 151.473,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42531.399999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 158.73499999999999,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53657.299999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 93.156,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55330.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 92.16300000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52284.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 92.925,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52274.2,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 151.22099999999998,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 48749.3,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.084,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50856.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 157.687,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25986.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 145.418,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25104.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 147.62,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24705.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 145.16299999999998,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44304.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 157.005,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 5
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43692.700000000004,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.925,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 5
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42883.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 153.879,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 5
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49853.4,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 161.4,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50469.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.514,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51511.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.11700000000002,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43513.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 149.254,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43910.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 160.98000000000002,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42072.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 150.545,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54548.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 95.41199999999999,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53881.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 90.057,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53122.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 93.449,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51824.799999999996,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.011,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50875.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.47299999999998,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49946.200000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 156.524,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24644.2,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 147.444,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24303.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 140.57299999999998,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24268.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 141.237,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 45176.2,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 154.797,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42378.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.736,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44456.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.135,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55748.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.98200000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 6
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55661.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.192,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 6
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53833.399999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.64200000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 6
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43292.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.611,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43424.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.574,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 47175.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 168.56099999999998,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54152.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 90.23200000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54445.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 91.444,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54781.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 94.65100000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52028.1,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 158.901,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52291.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 161.417,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51926.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.93699999999998,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25256.899999999998,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 151.573,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 26001.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.00699999999998,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25636.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.615,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44673.7,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 159.65,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 46548.600000000006,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.993,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 45525.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.979,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 56411.5,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 96.72099999999999,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 57109.399999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 92.75200000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 57694.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.68199999999999,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53330.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.915,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 7
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50526.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 155.042,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 7
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49793.6,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 158.441,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 7
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55435.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 99.109,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53727.299999999996,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 92.40800000000002,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 56216.799999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 95.134,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a",
+    "round": 8
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51597.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 150.064,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50056.6,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 158.446,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 49959.700000000004,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.477,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a",
+    "round": 8
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25670.399999999998,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 145.669,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25434.3,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.37300000000002,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24798.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 150.131,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a",
+    "round": 8
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42438.299999999996,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 153.632,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 41432.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 168.409,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43141.899999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.149,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a",
+    "round": 8
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53733.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.946,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 56747.899999999994,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 98.61800000000001,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54586.4,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 94.873,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a",
+    "round": 8
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50369.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 166.12,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51189.2,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 162.66,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52255.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 163.17700000000002,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a",
+    "round": 8
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43903.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 152.616,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b",
+    "round": 8
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 42479.0,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.57399999999998,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main",
+    "round": 8
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43889.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.351,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a",
+    "round": 8
+  }
+]

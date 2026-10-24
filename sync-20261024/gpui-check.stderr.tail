@@ -1,0 +1,120 @@
+
+warning: variant `StartFailed` is never constructed
+  --> nebula_app\src\provider_test.rs:24:5
+   |
+ 7 | pub enum ProviderTestOutcome {
+   |          ------------------- variant in this enum
+...
+24 |     StartFailed { error: String },
+   |     ^^^^^^^^^^^
+   |
+   = note: `ProviderTestOutcome` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: associated function `for_test` is never used
+  --> nebula_app\src\ssh_prompt.rs:31:19
+   |
+24 | impl Prompt {
+   | ----------- associated function in this implementation
+...
+31 |     pub(crate) fn for_test(kind: PromptKind) -> (Arc<Self>, oneshot::Receiver<PromptResponse>) {
+   |                   ^^^^^^^^
+
+warning: method `has_identity_files` is never used
+   --> nebula_app\src\ssh_session.rs:211:19
+    |
+209 | impl SshDestination {
+    | ------------------- method in this implementation
+210 |     #[cfg(test)]
+211 |     pub(crate) fn has_identity_files(&self) -> bool {
+    |                   ^^^^^^^^^^^^^^^^^^
+
+warning: function `prepare_owned_fixture` is never used
+  --> nebula_app\src\ssh_session\completion.rs:31:21
+   |
+31 | pub(crate) async fn prepare_owned_fixture(
+   |                     ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `probe_script` is never used
+   --> nebula_app\src\ssh_sftp\remote_cwd.rs:145:15
+    |
+145 | pub(crate) fn probe_script() -> &'static [u8] {
+    |               ^^^^^^^^^^^^
+
+warning: constant `PROBE_BUDGET` is never used
+   --> nebula_app\src\ssh_sftp\remote_cwd.rs:154:7
+    |
+154 | const PROBE_BUDGET: std::time::Duration = std::time::Duration::from_secs(3);
+    |       ^^^^^^^^^^^^
+
+warning: function `probe` is never used
+   --> nebula_app\src\ssh_sftp\remote_cwd.rs:161:21
+    |
+161 | pub(crate) async fn probe(destination: &str) -> RemoteCwd {
+    |                     ^^^^^
+
+warning: method `resolve` is never used
+   --> nebula_app\src\theme_library\document.rs:287:12
+    |
+ 67 | impl ThemeDocument {
+    | ------------------ method in this implementation
+...
+287 |     pub fn resolve(&self) -> Result<ThemeDefinition, DocumentError> {
+    |            ^^^^^^^
+
+warning: variant `Any` is never constructed
+  --> nebula_app\src\theme_library\store.rs:25:5
+   |
+19 | pub enum RevisionPrecondition {
+   |          -------------------- variant in this enum
+...
+25 |     Any,
+   |     ^^^
+   |
+   = note: `RevisionPrecondition` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: methods `load_theme` and `delete` are never used
+   --> nebula_app\src\theme_library\store.rs:202:12
+    |
+104 | impl ThemeLibraryStore {
+    | ---------------------- methods in this implementation
+...
+202 |     pub fn load_theme(&self, id: &str) -> Result<ThemeDocument, StoreError> {
+    |            ^^^^^^^^^^
+...
+306 |     pub fn delete(&self, id: &str, expected_revision: u64) -> Result<(), StoreError> {
+    |            ^^^^^^
+
+warning: variants `OpenSettings` and `OpenLogs` are never constructed
+  --> nebula_app\src\ux.rs:9:5
+   |
+ 6 | pub enum RetryAction {
+   |          ----------- variants in this enum
+...
+ 9 |     OpenSettings,
+   |     ^^^^^^^^^^^^
+10 |     OpenLogs,
+   |     ^^^^^^^^
+   |
+   = note: `RetryAction` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: method `is_refreshing` is never used
+   --> nebula_app\src\ux.rs:167:12
+    |
+146 | impl<T> Refreshing<T> {
+    | --------------------- method in this implementation
+...
+167 |     pub fn is_refreshing(&self) -> bool {
+    |            ^^^^^^^^^^^^^
+
+warning: method `set` is never used
+   --> nebula_app\src\ux.rs:182:12
+    |
+177 | impl FocusIndex {
+    | --------------- method in this implementation
+...
+182 |     pub fn set(&mut self, index: usize, count: usize) {
+    |            ^^^
+
+warning: `nebula` (bin "pebrel") generated 1586 warnings (run `cargo fix --bin "pebrel" -p nebula` to apply 59 suggestions)
+warning: `nebula` (bin "pebrel" test) generated 1323 warnings (1259 duplicates) (run `cargo fix --bin "pebrel" -p nebula --tests` to apply 6 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 10.71s

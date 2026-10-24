@@ -1,0 +1,18 @@
+[
+  {
+    "check": "fmt",
+    "exit_code": 0
+  },
+  {
+    "check": "architecture",
+    "exit_code": 0
+  },
+  {
+    "check": "names-staged",
+    "exit_code": 0
+  },
+  {
+    "check": "diff-check",
+    "exit_code": 0
+  }
+]

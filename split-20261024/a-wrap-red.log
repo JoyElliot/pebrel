@@ -1,0 +1,24 @@
+   Compiling nebula_terminal v2.2.2 (/tmp/pr316-split-20261024-a/nebula_terminal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.39s
+     Running tests/grid_images.rs (/tmp/pr316-sync-20261020-core/target/debug/deps/grid_images-6124a0716c644609)
+
+running 1 test
+test direct_image_wraps_before_insertion_without_overwriting_full_text_line ... FAILED
+
+failures:
+
+---- direct_image_wraps_before_insertion_without_overwriting_full_text_line stdout ----
+
+thread 'direct_image_wraps_before_insertion_without_overwriting_full_text_line' (129564) panicked at nebula_terminal/tests/grid_images.rs:167:5:
+assertion `left == right` failed
+  left: ' '
+ right: '0'
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    direct_image_wraps_before_insertion_without_overwriting_full_text_line
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 11 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p nebula_terminal --test grid_images`

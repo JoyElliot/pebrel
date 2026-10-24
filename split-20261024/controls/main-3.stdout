@@ -1,0 +1,17 @@
+
+running 1 test
+test shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns ... FAILED
+
+failures:
+
+---- shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns stdout ----
+
+thread 'shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns' (14824) panicked at nebula_app\src\shell_detect.rs:1493:13:
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2679 filtered out; finished in 0.49s

@@ -1,0 +1,82 @@
+[
+    {
+        "variant":  "main",
+        "exit_code":  101,
+        "test":  "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit"
+    },
+    {
+        "variant":  "main",
+        "exit_code":  101,
+        "test":  "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls"
+    },
+    {
+        "variant":  "main",
+        "exit_code":  0,
+        "test":  "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch"
+    },
+    {
+        "variant":  "main",
+        "exit_code":  101,
+        "test":  "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    },
+    {
+        "variant":  "a",
+        "exit_code":  101,
+        "test":  "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit"
+    },
+    {
+        "variant":  "a",
+        "exit_code":  101,
+        "test":  "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls"
+    },
+    {
+        "variant":  "a",
+        "exit_code":  0,
+        "test":  "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch"
+    },
+    {
+        "variant":  "a",
+        "exit_code":  101,
+        "test":  "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    },
+    {
+        "variant":  "b",
+        "exit_code":  101,
+        "test":  "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit"
+    },
+    {
+        "variant":  "b",
+        "exit_code":  101,
+        "test":  "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls"
+    },
+    {
+        "variant":  "b",
+        "exit_code":  0,
+        "test":  "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch"
+    },
+    {
+        "variant":  "b",
+        "exit_code":  101,
+        "test":  "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    },
+    {
+        "variant":  "c",
+        "exit_code":  101,
+        "test":  "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit"
+    },
+    {
+        "variant":  "c",
+        "exit_code":  101,
+        "test":  "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls"
+    },
+    {
+        "variant":  "c",
+        "exit_code":  0,
+        "test":  "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch"
+    },
+    {
+        "variant":  "c",
+        "exit_code":  101,
+        "test":  "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    }
+]

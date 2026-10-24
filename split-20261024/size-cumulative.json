@@ -1,0 +1,17 @@
+[
+  {
+    "stage": "a",
+    "actual_pr_base": "4e93a085",
+    "counted_against_main": 896
+  },
+  {
+    "stage": "b",
+    "actual_pr_base": "4e93a085",
+    "counted_against_main": 2244
+  },
+  {
+    "stage": "c",
+    "actual_pr_base": "4e93a085",
+    "counted_against_main": 2794
+  }
+]

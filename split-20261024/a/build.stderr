@@ -1,0 +1,9 @@
+   Compiling nebula v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\nebula_app)
+   Compiling nebula_terminal v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\nebula_terminal)
+   Compiling pebrel-mobile-link v0.1.0 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\mobile\link)
+   Compiling winit v0.30.13 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\third_party\winit-0.30.13)
+   Compiling pebrel-completions v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\nebula-completions)
+   Compiling nebula_config v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\nebula_config)
+   Compiling nebula-split v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\nebula_split)
+   Compiling nebula-settings v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\a\source\nebula_settings)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 31s

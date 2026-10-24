@@ -1,0 +1,19 @@
+{
+  "main": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+  "final": "2e798a59fddd6483fb3d85ae07cf5842d1cf7368",
+  "test": "actual command capture; 3 screen rows; history=1; assert Weak dead immediately when last logical marker disappears",
+  "results": [
+    {
+      "variant": "main",
+      "exit_code": 101
+    },
+    {
+      "variant": "without-marker-discard",
+      "exit_code": 101
+    },
+    {
+      "variant": "final",
+      "exit_code": 0
+    }
+  ]
+}

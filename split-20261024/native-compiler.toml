@@ -1,0 +1,2 @@
+[build]
+rustc = 'D:\DevTools\Rust\rustup\toolchains\1.97.1-x86_64-pc-windows-msvc\bin\rustc.exe'

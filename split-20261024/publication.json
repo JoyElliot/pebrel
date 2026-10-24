@@ -1,0 +1,7 @@
+{
+  "publication_scope": "Local validation of A a0bd5d8a, B 3abc1cb3 and C d97c0301 against main 4e93a085; source refs are in manifests.",
+  "normalization": "Log copies use UTF-8/LF, remove ANSI/trailing whitespace, and redact home prefixes. Rust harnesses, locks and repro scripts retain original bytes. Source/binary hashes identify original inputs, not normalized logs.",
+  "baseline": "The same main 4e93a085 full-suite and legacy-test baseline is preserved in ../sync-20261024; current paired single-test controls are under controls/.",
+  "limitations": "Windows full product has the same four baseline failures on every stage; density passes individually in all four variants. Legacy products compile, but legacy-only tests fail on main and all candidates with the same pre-existing E0433. No new GPU screenshot, macOS or ARM host acceptance is claimed.",
+  "source_tree_relationship": "B is a normal merge descendant of original PR head 2e798a59 and A; C descends from B. No rebase/force push. B and C actual upstream-base size includes prerequisites until main is synchronized after those merges."
+}

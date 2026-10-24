@@ -1,0 +1,33 @@
+{
+  "source-validation": {
+    "main": {
+      "validation_us": {
+        "median": 28.5975,
+        "min": 27.947300000000002,
+        "max": 29.553800000000003
+      }
+    },
+    "a": {
+      "validation_us": {
+        "median": 28.262700000000002,
+        "min": 27.4374,
+        "max": 28.8753
+      }
+    },
+    "b": {
+      "validation_us": {
+        "median": 28.0086,
+        "min": 27.619,
+        "max": 28.781299999999998
+      }
+    },
+    "delta_percent": {
+      "a": {
+        "validation_us": -1.170731707317063
+      },
+      "b": {
+        "validation_us": -2.0592709152897903
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "platform": "Windows x64",
+  "cpu": "Intel Core Ultra 7 255HX",
+  "rust": "1.97.1 MSVC",
+  "profile": "release opt-level=3, thin LTO, codegen-units=1",
+  "rounds": 9,
+  "samples": 189,
+  "warmups": 21,
+  "validation_samples": 27,
+  "validation_warmups": 3,
+  "source_validation_rows": 39,
+  "summary_revalidated_from_raw_samples": true,
+  "no_cargo_rustc_or_product_test_processes_at_start": true,
+  "no_owned_build_or_test_ran_during_measurement": true,
+  "scope": "core StreamProcessor and RenderSnapshot with synthetic protocol input; actual CommandCapture logic, not live shell or GPU frame timing",
+  "post_native_scope": "a real capture is seeded before timing; the subsequent 50000 rows scroll its markers out of view",
+  "memory_scope": "allocator requested live bytes; separate instrumented binary, not RSS or timing",
+  "lock_sha256": "906ad89c3583d4e7faa51cb4502a08cc9f9f527d0fd70b0984e9c4563212d28c",
+  "revisions": {
+    "main": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+    "a": "a0bd5d8aa807057815b7c0336c6459998c862eee",
+    "b": "3abc1cb31e9473583589f210f58360444911f963",
+    "c_core_equals_b": true,
+    "lock_sha256": "906ad89c3583d4e7faa51cb4502a08cc9f9f527d0fd70b0984e9c4563212d28c"
+  }
+}

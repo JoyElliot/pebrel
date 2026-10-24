@@ -1,0 +1,107 @@
+
+running 1 test
+test gpui_shell::terminal::view::completion_native_tests::editor_completion_native_shell_end_to_end ... probe timing: prepared at 189us
+probe timing: spawned at 6090us
+probe timing: attached at 45427us
+probe timing: finished at 87501us
+probe timing: prepared at 212us
+probe timing: spawned at 7466us
+probe timing: attached at 46301us
+probe timing: finished at 130209us
+probe timing: prepared at 225us
+probe timing: spawned at 7729us
+probe timing: attached at 46680us
+probe timing: stopped at 46727us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: prepared at 188us
+probe timing: spawned at 6844us
+probe timing: attached at 44224us
+probe timing: prepared at 308us
+probe timing: spawned at 6547us
+probe timing: stopped at 64645us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: attached at 41978us
+probe timing: finished at 83954us
+probe timing: prepared at 222us
+probe timing: spawned at 6516us
+probe timing: attached at 42113us
+probe timing: finished at 115706us
+probe timing: prepared at 215us
+probe timing: prepared at 193us
+probe timing: spawned at 6725us
+probe timing: spawned at 9743us
+probe timing: attached at 72932us
+probe timing: stopped at 72956us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: attached at 75870us
+probe timing: finished at 118017us
+probe timing: prepared at 160us
+probe timing: spawned at 6078us
+probe timing: attached at 48396us
+probe timing: finished at 121115us
+probe timing: prepared at 164us
+probe timing: spawned at 6365us
+probe timing: attached at 43656us
+probe timing: stopped at 43685us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: prepared at 183us
+probe timing: spawned at 5989us
+probe timing: attached at 41583us
+probe timing: finished at 83645us
+probe timing: prepared at 281us
+probe timing: spawned at 7295us
+probe timing: attached at 43932us
+probe timing: finished at 117232us
+probe timing: prepared at 233us
+probe timing: spawned at 6139us
+probe timing: attached at 43510us
+probe timing: finished at 84399us
+probe timing: prepared at 227us
+probe timing: spawned at 6473us
+probe timing: attached at 43778us
+probe timing: finished at 117039us
+probe timing: prepared at 232us
+probe timing: spawned at 7236us
+probe timing: attached at 50017us
+probe timing: stopped at 50039us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: prepared at 227us
+probe timing: spawned at 7123us
+probe timing: attached at 46074us
+probe timing: finished at 86971us
+probe timing: prepared at 202us
+probe timing: spawned at 6791us
+probe timing: attached at 45437us
+probe timing: finished at 118483us
+probe timing: prepared at 165us
+probe timing: spawned at 6718us
+probe timing: prepared at 206us
+probe timing: spawned at 7620us
+probe timing: attached at 47950us
+probe timing: stopped at 47974us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: attached at 44136us
+probe timing: stopped at 44155us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: prepared at 181us
+probe timing: spawned at 6206us
+probe timing: prepared at 209us
+probe timing: spawned at 7317us
+probe timing: attached at 49343us
+probe timing: stopped at 49366us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+probe timing: attached at 45643us
+probe timing: stopped at 45664us
+metadata acquisition failed: tool=Some("git") budget_ms=2999 kind=Interrupted os_error=None reason=operation interrupted
+Git metadata stage unavailable: Some("config"), expired=false
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2691 filtered out; finished in 6.62s

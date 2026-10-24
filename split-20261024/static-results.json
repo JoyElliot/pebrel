@@ -1,0 +1,62 @@
+[
+  {
+    "stage": "a",
+    "check": "names",
+    "exit_code": 0
+  },
+  {
+    "stage": "a",
+    "check": "diff-check",
+    "exit_code": 0
+  },
+  {
+    "stage": "b",
+    "check": "names",
+    "exit_code": 0
+  },
+  {
+    "stage": "b",
+    "check": "diff-check",
+    "exit_code": 0
+  },
+  {
+    "stage": "c",
+    "check": "names",
+    "exit_code": 0
+  },
+  {
+    "stage": "c",
+    "check": "diff-check",
+    "exit_code": 0
+  },
+  {
+    "stage": "a",
+    "check": "architecture-final",
+    "exit_code": 0
+  },
+  {
+    "stage": "a",
+    "check": "fmt-final",
+    "exit_code": 0
+  },
+  {
+    "stage": "b",
+    "check": "architecture-final",
+    "exit_code": 0
+  },
+  {
+    "stage": "b",
+    "check": "fmt-final",
+    "exit_code": 0
+  },
+  {
+    "stage": "c",
+    "check": "architecture-final",
+    "exit_code": 0
+  },
+  {
+    "stage": "c",
+    "check": "fmt-final",
+    "exit_code": 0
+  }
+]

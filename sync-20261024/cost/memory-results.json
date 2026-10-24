@@ -1,0 +1,29 @@
+[
+  {
+    "variant": "main",
+    "after_drop": 0,
+    "case": "real_native_capture",
+    "clear_history": 2681081,
+    "fill": 32728593,
+    "metric": "live requested allocator bytes; not RSS; not a timing result",
+    "reset": 2663377
+  },
+  {
+    "variant": "merged",
+    "after_drop": 0,
+    "case": "real_native_capture",
+    "clear_history": 2681081,
+    "fill": 32728593,
+    "metric": "live requested allocator bytes; not RSS; not a timing result",
+    "reset": 2663377
+  },
+  {
+    "variant": "merged",
+    "after_discard": 2562217,
+    "after_drop": 0,
+    "both_owners_released": true,
+    "case": "9600_marker_and_image_cells",
+    "fill": 3253561,
+    "metric": "live requested allocator bytes; not RSS"
+  }
+]

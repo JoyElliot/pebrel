@@ -1,0 +1,28 @@
+{
+  "platform": "Windows x64",
+  "rust": "1.97.1 MSVC",
+  "profile": "release opt-level=3, thin LTO, codegen-units=1",
+  "main": "4e93a085f15467fbce202a9bbd5bad0132e346c6",
+  "merged_core_source_tree": "19d36a2d440b61e750bd18fe3cbbd3697aa369a4",
+  "samples": 126,
+  "warmups": 14,
+  "rounds": 9,
+  "summary_revalidated_from_saved_samples": true,
+  "driver_print_note": "The initial driver shadowed round during final stdout formatting, after samples and summary had been saved. The checked-in driver uses round_index; saved-sample summary was independently recomputed without rerunning measurements.",
+  "lock_sha256": "906ad89c3583d4e7faa51cb4502a08cc9f9f527d0fd70b0984e9c4563212d28c",
+  "binaries": {
+    "main": {
+      "native-cost.exe": "cf07be0f1a1fcce77f241610b5611c28815c8bcadfc48c99aedd04052c3feaf0",
+      "native-memory.exe": "4f08840aacf6c04a14818e5d13616e2fc2acddec1c2d3a165da3af72d1cf5e5c"
+    },
+    "merged": {
+      "native-cost.exe": "0bdc45e10d616b3928d1ce3ecf00354de9b478913c94f6130d0ee3474dd2efc6",
+      "native-memory.exe": "2e56f79ed759fb94f3fae0b373edef5c313f8704491bfee12b713a9d1abd87fb"
+    }
+  },
+  "cpu": "Intel Core Ultra 7 255HX",
+  "validation_binaries": {
+    "main": "165004b1d1a3a446b2e28b3020f1cc300a21c140de50bfb6a5ae39a4818cff36",
+    "merged": "b169c2b1dd2b6fc6c6c15098942f5cdbde357f379c44f455f4d04deaec6b23c5"
+  }
+}

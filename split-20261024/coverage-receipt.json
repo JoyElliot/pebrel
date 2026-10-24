@@ -1,0 +1,55 @@
+{
+  "old": "2e798a59fddd6483fb3d85ae07cf5842d1cf7368",
+  "final": "d97c03011df52d65cf4d0aa7458d78319764ae30",
+  "file_hash_checks": [
+    {
+      "path": "nebula_app/src/display/terminal_math/tests.rs",
+      "old_blob": "6694c33d544522f47cfaa18e5e4bef34437e11e0",
+      "final_blob": "6694c33d544522f47cfaa18e5e4bef34437e11e0",
+      "identical": true
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/math_overlay.rs",
+      "old_blob": "6c2ce10f723f12792c80b553734c0f9a4cfda45a",
+      "final_blob": "6c2ce10f723f12792c80b553734c0f9a4cfda45a",
+      "identical": true
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/native_results/viewport.rs",
+      "old_blob": "61e923b0b5819c209677762e24dbcd99229c331f",
+      "final_blob": "61e923b0b5819c209677762e24dbcd99229c331f",
+      "identical": true
+    },
+    {
+      "path": "nebula_app/src/gpui_shell/terminal/inline_image.rs",
+      "old_blob": "d914d2d6a6f6b10b29fe6c4be776b7811962abe1",
+      "final_blob": "d914d2d6a6f6b10b29fe6c4be776b7811962abe1",
+      "identical": true
+    },
+    {
+      "path": "nebula_terminal/src/event_loop/sync_tests.rs",
+      "old_blob": "867330cf2146f82bdfb0c6bf823e6b7aa8ff3b51",
+      "final_blob": "867330cf2146f82bdfb0c6bf823e6b7aa8ff3b51",
+      "identical": true
+    }
+  ],
+  "protocol_tests_unchanged": 17,
+  "pty_wakeup_tests_unchanged": 5,
+  "direct_api_tests": 12,
+  "direct_api_new_tests": 10,
+  "moved_tests": [
+    {
+      "name": "native_source_rejects_image_changes_and_snapshot_obeys_row_filter",
+      "from": "nebula_terminal/tests/inline_image.rs",
+      "to": "nebula_terminal/tests/grid_images.rs",
+      "assertions_retained": true
+    },
+    {
+      "name": "external_image_cells_invalidate_reading_and_release_after_eviction",
+      "from": "nebula_terminal/tests/inline_image.rs",
+      "to": "nebula_terminal/tests/grid_images.rs",
+      "assertions_retained": true
+    }
+  ],
+  "review_scope": "Independent fixed-ref source review plus exact Git blob comparisons; source declaration counts are not runtime pass counts."
+}

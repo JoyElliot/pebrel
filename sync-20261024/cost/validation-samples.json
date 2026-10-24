@@ -1,0 +1,146 @@
+[
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.8543,
+    "round": 0
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.386200000000002,
+    "round": 0
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.812099999999997,
+    "round": 1
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.3381,
+    "round": 1
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.775899999999996,
+    "round": 2
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.4281,
+    "round": 2
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.278899999999997,
+    "round": 3
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.1333,
+    "round": 3
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.7187,
+    "round": 4
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.0775,
+    "round": 4
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.1872,
+    "round": 5
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.9036,
+    "round": 5
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 27.8496,
+    "round": 6
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.313200000000002,
+    "round": 6
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.289900000000003,
+    "round": 7
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.734800000000003,
+    "round": 7
+  },
+  {
+    "variant": "main",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.0586,
+    "round": 8
+  },
+  {
+    "variant": "merged",
+    "matched": 39000,
+    "rows": 39,
+    "scope": "core source_row_matches for 39 visible native result rows; not GUI frame time",
+    "validation_us": 28.192700000000002,
+    "round": 8
+  }
+]

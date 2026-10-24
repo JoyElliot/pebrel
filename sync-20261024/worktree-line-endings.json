@@ -1,0 +1,52 @@
+[
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-anthropic.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "98eec462461963bcb7c6561f7fb99af9a35549f6ab92925ecdfb210181fa134d"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-azure.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "b8ddc2d7d3ceae89398eb0aecd147539eca389411916a3def6c83b0c2d540b79"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-deepseek.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "39b33b000f6d1b34a6410ba4927db691db7bd3ac944cd55ed36e4e4c4207889e"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-doubao.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "4d315e75315e57fc858cf4bcbde90ec3a14999dc8dc5b7f30cc4691cb24b7f52"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-gemini.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "024cb12e2d353d21ee42cdd05c7c8854678415bf8f2081bb8996f4748f66e3cd"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-ollama.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "9816bbae40abcd5936879dd5467cae12703ec9f25d751cedd9dcf1f9d1aaace7"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-openrouter.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "7f8eb5768d2e7f38210bfea3e48263d134bad92ceee649909af0a43d902979cd"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-qwen.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "5e8d2265259842061a4bec2db2bb01ee748cbce7e365913d0e7f687f2481c1a8"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-xiaomimimo.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "649487f8d63e6a9b9243eb31240369b4a04074ff15eaebbd95cddfc838cf9152"
+  },
+  {
+    "path": "nebula_app/assets/icons/nebula-provider-zhipu.svg",
+    "raw_bytes_match_head": true,
+    "sha256": "d2ad833da72b051d129fb281cf6306618f8a6b6db1b11f1c85cf4efea62cea22"
+  }
+]

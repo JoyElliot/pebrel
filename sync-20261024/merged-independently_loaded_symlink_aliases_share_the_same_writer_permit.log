@@ -1,0 +1,10 @@
+
+running 1 test
+test gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit ... FAILED
+
+failures:
+
+failures:
+    gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2691 filtered out; finished in 0.01s

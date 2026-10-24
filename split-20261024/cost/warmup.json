@@ -1,0 +1,401 @@
+[
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 43068.9,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 154.637,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "main"
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44383.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.139,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "a"
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44097.8,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 149.756,
+    "visible_markers": 0,
+    "workload": "ascii",
+    "variant": "b"
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 54573.1,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 91.15899999999999,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "main"
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 55077.1,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 91.51,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "a"
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52786.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 91.01700000000001,
+    "visible_markers": 0,
+    "workload": "cjk",
+    "variant": "b"
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53558.2,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 157.334,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "main"
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52746.0,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 160.986,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "a"
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 57738.8,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 153.87,
+    "visible_markers": 0,
+    "workload": "ansi",
+    "variant": "b"
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 24730.3,
+    "grid_size": 192,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 146.899,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "main"
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25913.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 149.184,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "a"
+  },
+  {
+    "bytes": 1111600,
+    "cell_size": 24,
+    "cells": 4173,
+    "checksum": 502734,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 25490.7,
+    "grid_size": 200,
+    "real_native_capture_seeded": false,
+    "row_size": 32,
+    "snapshot_us": 141.505,
+    "visible_markers": 39,
+    "workload": "native",
+    "variant": "b"
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 44539.200000000004,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.59900000000002,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "main"
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 46022.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 162.2,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "a"
+  },
+  {
+    "bytes": 6100000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 46585.3,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 168.329,
+    "visible_markers": 0,
+    "workload": "post-ascii",
+    "variant": "b"
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53515.7,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.682,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "main"
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 53251.9,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 93.244,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "a"
+  },
+  {
+    "bytes": 8950000,
+    "cell_size": 24,
+    "cells": 2418,
+    "checksum": 54908319,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52896.899999999994,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 91.336,
+    "visible_markers": 0,
+    "workload": "post-cjk",
+    "variant": "b"
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 52608.799999999996,
+    "grid_size": 192,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.943,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "main"
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 51212.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 156.694,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "a"
+  },
+  {
+    "bytes": 7200000,
+    "cell_size": 24,
+    "cells": 4641,
+    "checksum": 549300,
+    "cursor": [
+      39,
+      0
+    ],
+    "extra_size": 56,
+    "feed_us": 50267.5,
+    "grid_size": 200,
+    "real_native_capture_seeded": true,
+    "row_size": 32,
+    "snapshot_us": 162.145,
+    "visible_markers": 0,
+    "workload": "post-ansi",
+    "variant": "b"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "stage": "a",
+    "commit": "a0bd5d8aa807057815b7c0336c6459998c862eee",
+    "tracked_files": 2589,
+    "all_bytes_still_match": true
+  },
+  {
+    "stage": "b",
+    "commit": "3abc1cb31e9473583589f210f58360444911f963",
+    "tracked_files": 2598,
+    "all_bytes_still_match": true
+  },
+  {
+    "stage": "c",
+    "commit": "d97c03011df52d65cf4d0aa7458d78319764ae30",
+    "tracked_files": 2600,
+    "all_bytes_still_match": true
+  }
+]

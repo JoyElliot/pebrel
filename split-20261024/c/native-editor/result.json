@@ -1,0 +1,53 @@
+{
+  "Ok": [
+    {
+      "scenario": "immediate-tab",
+      "mode": "Inline",
+      "accepted": "git switch qa/rapid-inline"
+    },
+    {
+      "scenario": "middle-unicode-quoted-token",
+      "mode": "Inline",
+      "accepted": "git switch \"qa/editor-inline-中文😀\" --quiet",
+      "following_options_preserved": true,
+      "history_verified": true,
+      "non_bmp_supported": true
+    },
+    {
+      "scenario": "immediate-tab",
+      "mode": "Popup",
+      "accepted": "git switch qa/rapid-popup"
+    },
+    {
+      "scenario": "middle-unicode-quoted-token",
+      "mode": "Popup",
+      "accepted": "git switch \"qa/editor-popup-中文😀\" --quiet",
+      "following_options_preserved": true,
+      "history_verified": true,
+      "non_bmp_supported": true
+    },
+    {
+      "scenario": "immediate-tab",
+      "mode": "Hybrid",
+      "accepted": "git switch qa/rapid-hybrid"
+    },
+    {
+      "scenario": "middle-unicode-quoted-token",
+      "mode": "Hybrid",
+      "accepted": "git switch \"qa/editor-hybrid-中文😀\" --quiet",
+      "following_options_preserved": true,
+      "history_verified": true,
+      "non_bmp_supported": true
+    },
+    {
+      "scenario": "cancel-escape",
+      "stale_result_rejected": true,
+      "native_buffer_verified": true
+    },
+    {
+      "scenario": "cancel-settings",
+      "stale_result_rejected": true,
+      "native_buffer_verified": true
+    }
+  ]
+}

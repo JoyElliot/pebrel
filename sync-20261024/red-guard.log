@@ -1,0 +1,57 @@
+   Compiling nebula_terminal v2.2.2 (/tmp/pr316-sync-20261024-core/nebula_terminal)
+warning: unused import: `UnicodeWidthChar`
+ --> nebula_terminal/src/term/emoji_input_tests.rs:9:21
+  |
+9 | use unicode_width::{UnicodeWidthChar as _, UnicodeWidthStr as _};
+  |                     ^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `UnicodeWidthStr`
+ --> nebula_terminal/src/term/emoji_input_tests.rs:9:44
+  |
+9 | use unicode_width::{UnicodeWidthChar as _, UnicodeWidthStr as _};
+  |                                            ^^^^^^^^^^^^^^^
+
+warning: unused import: `unicode_properties::UnicodeEmoji`
+ --> nebula_terminal/src/term/emoji_input_tests.rs:7:5
+  |
+7 | use unicode_properties::UnicodeEmoji as _;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Handler`
+ --> nebula_terminal/src/term/emoji_input_tests.rs:6:24
+  |
+6 | use crate::vte::ansi::{Handler as _, Processor};
+  |                        ^^^^^^^
+
+warning: method `inline_content_grid_mut` is never used
+   --> nebula_terminal/src/term/mod.rs:723:19
+    |
+349 | impl<T> Term<T> {
+    | --------------- method in this implementation
+...
+723 |     pub(crate) fn inline_content_grid_mut(&mut self) -> &mut Grid<Cell> {
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nebula_terminal` (lib test) generated 5 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.64s
+     Running unittests src/lib.rs (/tmp/pr316-sync-20261020-core/target/debug/deps/nebula_terminal-c70e1ea9b58b907f)
+
+running 1 test
+
+thread 'event_loop::tests::ordinary_command_view_preserves_grid_cursor_and_chunk_boundaries' (53484) panicked at nebula_terminal/src/event_loop.rs:1115:17:
+assertion failed: !term.grid().may_have_images()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test event_loop::tests::ordinary_command_view_preserves_grid_cursor_and_chunk_boundaries ... FAILED
+
+failures:
+
+failures:
+    event_loop::tests::ordinary_command_view_preserves_grid_cursor_and_chunk_boundaries
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 290 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--lib`

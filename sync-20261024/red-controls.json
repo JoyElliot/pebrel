@@ -1,0 +1,12 @@
+[
+  {
+    "case": "guard",
+    "exit_code": 101,
+    "expected": 101
+  },
+  {
+    "case": "mixed-source",
+    "exit_code": 101,
+    "expected": 101
+  }
+]

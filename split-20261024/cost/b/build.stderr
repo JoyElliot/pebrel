@@ -1,0 +1,19 @@
+   Compiling nebula_terminal v2.2.2 (F:\Git\pebrel\tmp\pr316-split-20261024\b\source\nebula_terminal)
+   Compiling pr316-native-cost v0.1.0 (F:\Git\pebrel\tmp\pr316-split-20261024\cost\b)
+warning: function `payload` is never used
+  --> ..\native-cost.rs:32:4
+   |
+32 | fn payload(kind: &str) -> Vec<u8> {
+   |    ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `main` is never used
+  --> ..\native-cost.rs:44:4
+   |
+44 | fn main() {
+   |    ^^^^
+
+warning: `pr316-native-cost` (bin "native-validate") generated 2 warnings
+warning: `pr316-native-cost` (bin "native-memory") generated 2 warnings (2 duplicates)
+    Finished `release` profile [optimized] target(s) in 8.26s

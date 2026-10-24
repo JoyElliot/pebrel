@@ -1,0 +1,17 @@
+
+running 1 test
+test gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit ... FAILED
+
+failures:
+
+---- gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit stdout ----
+
+thread 'gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit' (36200) panicked at nebula_app\src\gpui_shell\file_editor\document\writer_tests.rs:71:9:
+synthetic alias creation failed: 客户端没有所需的特权。 (os error 1314)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2691 filtered out; finished in 0.00s

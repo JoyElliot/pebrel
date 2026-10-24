@@ -1,0 +1,116 @@
+{
+  "a": {
+    "source": {
+      "commit": "a0bd5d8aa807057815b7c0336c6459998c862eee",
+      "tree": "e86aac67966d06246fff8f9edc677fb70b34c90e",
+      "base": "4e93a085f15467fbce202a9bbd5bad0132e346c6"
+    },
+    "test_binary_sha256": "CAE26B5EE81AE2E1267E8572869E526F01256ADB4E65E33C5617223D06E8C7BF",
+    "legacy-tests-check": 101,
+    "build": 0,
+    "legacy-product-check": 0,
+    "full": 101,
+    "core": 0,
+    "gpui-check": 0,
+    "clean": 0,
+    "file-budget": 0,
+    "core_summary": {
+      "passed": 428,
+      "failed": 0,
+      "ignored": 2,
+      "nested_lifecycle_summaries_removed": 1
+    },
+    "product_summary": {
+      "passed": 2635,
+      "failed": 4,
+      "ignored": 43,
+      "nested_lifecycle_summaries_removed": 0
+    },
+    "failures": [
+      "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
+      "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    ]
+  },
+  "b": {
+    "source": {
+      "commit": "3abc1cb31e9473583589f210f58360444911f963",
+      "tree": "1e7affadb2efe91b3918cadac0e39760c6827479",
+      "base": "a0bd5d8aa807057815b7c0336c6459998c862eee"
+    },
+    "test_binary_sha256": "695EB2C0DEEBE5B85524AC0FD871B24B10CD5B5A8D0E8C9DF0A52A2F38E5EE37",
+    "build": 0,
+    "legacy-tests-check": 101,
+    "file-budget": 0,
+    "legacy-product-check": 0,
+    "full": 101,
+    "core": 0,
+    "gpui-check": 0,
+    "clean": 0,
+    "core_summary": {
+      "passed": 445,
+      "failed": 0,
+      "ignored": 2,
+      "nested_lifecycle_summaries_removed": 1
+    },
+    "product_summary": {
+      "passed": 2637,
+      "failed": 4,
+      "ignored": 43,
+      "nested_lifecycle_summaries_removed": 0
+    },
+    "failures": [
+      "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
+      "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    ]
+  },
+  "c": {
+    "source": {
+      "commit": "d97c03011df52d65cf4d0aa7458d78319764ae30",
+      "tree": "30e8c7526e32e98b13bb86178e37963f349ed2ef",
+      "base": "3abc1cb31e9473583589f210f58360444911f963"
+    },
+    "test_binary_sha256": "604D792D00B66BC2F0D746943AF82A352F20173CA7496BD6D8360D25E41AABA4",
+    "build": 0,
+    "legacy-tests-check": 101,
+    "file-budget": 0,
+    "legacy-product-check": 0,
+    "full": 101,
+    "core": 0,
+    "gpui-check": 0,
+    "clean": 0,
+    "core_summary": {
+      "passed": 445,
+      "failed": 0,
+      "ignored": 2,
+      "nested_lifecycle_summaries_removed": 1
+    },
+    "product_summary": {
+      "passed": 2647,
+      "failed": 4,
+      "ignored": 43,
+      "nested_lifecycle_summaries_removed": 0
+    },
+    "failures": [
+      "gpui_shell::file_editor::document::writer_tests::independently_loaded_symlink_aliases_share_the_same_writer_permit",
+      "gpui_shell::settings_pane::mobile::tests::mobile_three_states_and_manual_copy_use_the_rendered_controls",
+      "gpui_shell::workspace::settings_navigation::ui_tests::density_changes_real_tab_bounds_and_sidebar_drag_pitch",
+      "shell_detect::tests::wsl_prompt_command_executes_repeatedly_without_checkout_carriage_returns"
+    ]
+  },
+  "linux_a": {
+    "passed": 367,
+    "failed": 0,
+    "ignored": 2,
+    "nested_lifecycle_summaries_removed": 0
+  },
+  "linux_b": {
+    "passed": 389,
+    "failed": 0,
+    "ignored": 2,
+    "nested_lifecycle_summaries_removed": 0
+  }
+}

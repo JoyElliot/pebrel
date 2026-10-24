@@ -1,0 +1,10 @@
+[
+  {
+    "case": "a-wrap-red",
+    "exit_code": 101
+  },
+  {
+    "case": "a-linux-core-final-v2",
+    "exit_code": 0
+  }
+]

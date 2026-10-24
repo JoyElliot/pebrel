@@ -1,0 +1,120 @@
+
+warning: function `remind_later` is never used
+   --> nebula_app\src\update_check.rs:287:8
+    |
+287 | pub fn remind_later(version: &str) -> Result<(), String> {
+    |        ^^^^^^^^^^^^
+
+warning: function `skip_version` is never used
+   --> nebula_app\src\update_check.rs:292:8
+    |
+292 | pub fn skip_version(version: &str) -> Result<(), String> {
+    |        ^^^^^^^^^^^^
+
+warning: function `select_windows_x64_installer` is never used
+   --> nebula_app\src\update_check.rs:362:4
+    |
+362 | fn select_windows_x64_installer(
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `can_install_version` is never used
+   --> nebula_app\src\update_check.rs:390:15
+    |
+390 | pub(crate) fn can_install_version(latest: &str) -> Result<bool, String> {
+    |               ^^^^^^^^^^^^^^^^^^^
+
+warning: function `version_is_installable` is never used
+   --> nebula_app\src\update_check.rs:397:4
+    |
+397 | fn version_is_installable(latest: &str, current: &str, rehearsal: bool) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: enum `TaskKind` is never used
+  --> nebula_app\src\ux.rs:69:10
+   |
+69 | pub enum TaskKind {
+   |          ^^^^^^^^
+
+warning: enum `TaskState` is never used
+  --> nebula_app\src\ux.rs:76:10
+   |
+76 | pub enum TaskState {
+   |          ^^^^^^^^^
+
+warning: associated items `running`, `show_busy`, and `show_stage` are never used
+   --> nebula_app\src\ux.rs:95:12
+    |
+ 94 | impl TaskState {
+    | -------------- associated items in this implementation
+ 95 |     pub fn running(kind: TaskKind, label: impl Into<String>, cancellable: bool) -> Self {
+    |            ^^^^^^^
+...
+105 |     pub fn show_busy(&self, now: Instant) -> bool {
+    |            ^^^^^^^^^
+...
+109 |     pub fn show_stage(&self, now: Instant) -> bool {
+    |            ^^^^^^^^^^
+
+warning: struct `Refreshing` is never constructed
+   --> nebula_app\src\ux.rs:134:12
+    |
+134 | pub struct Refreshing<T> {
+    |            ^^^^^^^^^^
+
+warning: methods `begin`, `succeed`, `fail`, `value`, and `is_refreshing` are never used
+   --> nebula_app\src\ux.rs:147:12
+    |
+146 | impl<T> Refreshing<T> {
+    | --------------------- methods in this implementation
+147 |     pub fn begin(&mut self) {
+    |            ^^^^^
+...
+152 |     pub fn succeed(&mut self, value: T) {
+    |            ^^^^^^^
+...
+158 |     pub fn fail(&mut self, error: UserFacingError) {
+    |            ^^^^
+...
+163 |     pub fn value(&self) -> Option<&T> {
+    |            ^^^^^
+...
+167 |     pub fn is_refreshing(&self) -> bool {
+    |            ^^^^^^^^^^^^^
+
+warning: methods `tab_count`, `active_tab_index`, and `spawn_tab_profile` are never used
+   --> nebula_app\src\window_context.rs:879:12
+    |
+231 | impl WindowContext {
+    | ------------------ methods in this implementation
+...
+879 |     pub fn tab_count(&self) -> usize {
+    |            ^^^^^^^^^
+...
+885 |     pub fn active_tab_index(&self) -> usize {
+    |            ^^^^^^^^^^^^^^^^
+...
+970 |     fn spawn_tab_profile(&mut self, index: usize) {
+    |        ^^^^^^^^^^^^^^^^^
+
+warning: function `nebula_fastfetch_intro_command` is never used
+   --> nebula_app\src\window_context\welcome.rs:187:15
+    |
+187 | pub(super) fn nebula_fastfetch_intro_command() -> Vec<u8> {
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `nebula` (bin "pebrel") generated 787 warnings (run `cargo fix --bin "pebrel" -p nebula` to apply 33 suggestions)
+warning: unused import: `Seek`
+ --> nebula_app\src\platform\ai_session_identity\windows\tests.rs:2:26
+  |
+2 | use std::io::{Read as _, Seek as _, SeekFrom, Write as _};
+  |                          ^^^^
+
+warning: unused import: `Read`
+ --> nebula_app\src\platform\ai_session_identity\windows\tests.rs:2:15
+  |
+2 | use std::io::{Read as _, Seek as _, SeekFrom, Write as _};
+  |               ^^^^
+
+For more information about this error, try `rustc --explain E0433`.
+warning: `nebula` (bin "pebrel" test) generated 28 warnings (22 duplicates)
+error: could not compile `nebula` (bin "pebrel" test) due to 1 previous error; 28 warnings emitted
